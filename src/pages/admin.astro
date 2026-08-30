@@ -1,607 +1,550 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 ---
 
-<Layout
-  title="Panel de Control Administrativo | SERVITOTALES S.A.C."
-  description="Gestión integral de flota pesada, solicitudes de cotizaciones, inventario de EPP, suministros y operadores homologados."
->
-  <div class="min-h-screen bg-[var(--bg-main)] py-8 px-4 sm:px-6 lg:px-8" id="admin-app">
-    <div class="max-w-7xl mx-auto space-y-8">
-      
-      <!-- Top Admin Header Bar -->
-      <div class="p-6 rounded-3xl industrial-card shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-[#DC2626] text-white flex items-center justify-center font-bold text-xl shadow-lg">
+<!doctype html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Panel de Administración & CMS | SERVITOTALES S.A.C.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'dark';
+      })();
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-[var(--bg-main)] text-[var(--text-primary)] antialiased min-h-screen selection:bg-[#DC2626] selection:text-white font-sans flex flex-col">
+    
+    <!-- Standalone Admin Top Navigation Bar (NO PUBLIC NAVBAR) -->
+    <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-3.5 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] backdrop-blur-md flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <a href="/admin" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#DC2626] to-[#991B1B] text-white font-black flex items-center justify-center text-lg shadow-md">
             ST
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h1 class="text-xl sm:text-2xl font-black text-[var(--text-primary)] font-heading">
-                Panel de Operaciones & Control
-              </h1>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-mono text-[10px] font-bold">
-                EN LÍNEA
-              </span>
-            </div>
-            <p class="text-xs text-[var(--text-secondary)]">
-              Servicios Totales del Perú S.A.C. • SGC ISO 9001:2015
-            </p>
+          <div class="flex flex-col">
+            <span class="text-base font-black tracking-wider text-[var(--text-primary)] font-heading leading-tight">
+              SERVI<span class="text-[#DC2626]">TOTALES</span>
+            </span>
+            <span class="text-[9px] font-mono font-bold text-amber-500 uppercase tracking-widest">
+              PANEL DE CONTROL & CMS
+            </span>
           </div>
-        </div>
+        </a>
 
-        <div class="flex items-center gap-3 self-end md:self-auto">
-          <div class="text-right hidden sm:block">
-            <span class="text-[11px] font-bold text-[var(--text-primary)] block font-mono" id="admin-user-display">admin@servitotales.com</span>
-            <span class="text-[10px] text-slate-400">Rol: Administrador General</span>
-          </div>
-          <button
-            type="button"
-            id="btn-admin-logout"
-            class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold hover:bg-red-500 hover:text-white transition-colors cursor-pointer flex items-center gap-2 border border-slate-200 dark:border-slate-700"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-            <span>Cerrar Sesión</span>
-          </button>
+        <div class="hidden md:flex items-center gap-2 pl-4 border-l border-[var(--border-subtle)] text-xs text-[var(--text-secondary)] font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>SGC ISO 9001:2015 ACTIVO</span>
         </div>
       </div>
 
-      <!-- Executive KPI Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- KPI 1: Cotizaciones Recibidas -->
-        <div class="p-5 rounded-3xl industrial-card shadow-md space-y-2 border-l-4 border-blue-500">
-          <div class="flex items-center justify-between text-slate-400">
-            <span class="text-xs font-mono font-bold uppercase">Cotizaciones Web</span>
-            <span class="text-xl">📋</span>
-          </div>
-          <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-black text-[var(--text-primary)] font-heading" id="kpi-leads-count">12</span>
-            <span class="text-xs font-bold text-emerald-500">+3 hoy</span>
-          </div>
-          <span class="text-[11px] text-[var(--text-secondary)] block">4 pendientes de respuesta técnica</span>
+      <div class="flex items-center gap-3">
+        <!-- View Public Site Button -->
+        <a
+          href="/"
+          target="_blank"
+          class="px-3 py-2 rounded-xl text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] transition flex items-center gap-1.5 border border-[var(--border-subtle)]"
+          title="Ver Sitio Web Público"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          <span class="hidden sm:inline">Ver Sitio Web</span>
+        </a>
+
+        <!-- Admin User Badge -->
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-subtle)] text-xs">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span class="font-mono text-[11px] font-bold text-[var(--text-primary)]" id="admin-user-display">admin@servitotales.com</span>
         </div>
 
-        <!-- KPI 2: Flota de Maquinaria -->
-        <div class="p-5 rounded-3xl industrial-card shadow-md space-y-2 border-l-4 border-[#DC2626]">
-          <div class="flex items-center justify-between text-slate-400">
-            <span class="text-xs font-mono font-bold uppercase">Flota en Operación</span>
-            <span class="text-xl">🚜</span>
-          </div>
-          <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-black text-[var(--text-primary)] font-heading">28 / 34</span>
-            <span class="text-xs font-bold text-blue-500">82% Activa</span>
-          </div>
-          <span class="text-[11px] text-[var(--text-secondary)] block">6 unidades disponibles en patio</span>
+        <!-- Logout Button -->
+        <button
+          type="button"
+          id="btn-admin-logout"
+          class="px-3.5 py-2 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition text-xs font-bold border border-red-500/20 flex items-center gap-1.5 cursor-pointer"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+          <span>Salir</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Admin Workspace -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+      
+      <!-- Top Overview Metrics -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-blue-500 bg-[var(--bg-surface)]">
+          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Cotizaciones Web</span>
+          <span class="text-3xl font-black text-[var(--text-primary)] font-heading" id="metric-leads">12</span>
+          <span class="text-[11px] text-emerald-500 font-bold block mt-1">+3 solicitudes hoy</span>
         </div>
 
-        <!-- KPI 3: Stock de EPP & Suministros -->
-        <div class="p-5 rounded-3xl industrial-card shadow-md space-y-2 border-l-4 border-amber-500">
-          <div class="flex items-center justify-between text-slate-400">
-            <span class="text-xs font-mono font-bold uppercase">Almacén Central EPP</span>
-            <span class="text-xl">🦺</span>
-          </div>
-          <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-black text-[var(--text-primary)] font-heading">1,450</span>
-            <span class="text-xs font-bold text-amber-500">Kits OK</span>
-          </div>
-          <span class="text-[11px] text-[var(--text-secondary)] block">Stock óptimo para despachos inmediatos</span>
+        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-[#DC2626] bg-[var(--bg-surface)]">
+          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Flota en Operación</span>
+          <span class="text-3xl font-black text-[var(--text-primary)] font-heading">28 / 34</span>
+          <span class="text-[11px] text-blue-500 font-bold block mt-1">82% Flota Activa</span>
         </div>
 
-        <!-- KPI 4: Homologación & Calidad -->
-        <div class="p-5 rounded-3xl industrial-card shadow-md space-y-2 border-l-4 border-emerald-500">
-          <div class="flex items-center justify-between text-slate-400">
-            <span class="text-xs font-mono font-bold uppercase">SGC ISO 9001:2015</span>
-            <span class="text-xl">🛡️</span>
-          </div>
-          <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-black text-emerald-500 font-heading">100%</span>
-            <span class="text-xs font-bold text-emerald-500">Vigente</span>
-          </div>
-          <span class="text-[11px] text-[var(--text-secondary)] block">Auditoría y telemetría al día</span>
+        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-amber-500 bg-[var(--bg-surface)]">
+          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Productos & Lotes</span>
+          <span class="text-3xl font-black text-[var(--text-primary)] font-heading" id="metric-products">29</span>
+          <span class="text-[11px] text-amber-500 font-bold block mt-1">Con fotos asignadas</span>
+        </div>
+
+        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-emerald-500 bg-[var(--bg-surface)]">
+          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">SGC ISO 9001:2015</span>
+          <span class="text-3xl font-black text-emerald-500 font-heading">100%</span>
+          <span class="text-[11px] text-emerald-500 font-bold block mt-1">Auditoría al día</span>
         </div>
       </div>
 
-      <!-- Interactive Tabbed Workspace -->
-      <div class="p-6 sm:p-8 rounded-3xl industrial-card shadow-2xl space-y-6">
-        <!-- Navigation Tab Pills -->
+      <!-- Main Tabbed Panel Box -->
+      <div class="p-6 sm:p-8 rounded-3xl industrial-card shadow-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] space-y-6">
+        
+        <!-- Navigation Tabs -->
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-4">
-          <div class="flex flex-wrap items-center gap-2" id="admin-tabs-nav">
+          <div class="flex flex-wrap items-center gap-2" id="admin-main-tabs">
+            <button
+              type="button"
+              data-tab="cms"
+              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[#DC2626] text-white shadow-md"
+            >
+              📝 Editor de Textos & CMS
+            </button>
+            <button
+              type="button"
+              data-tab="products"
+              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+            >
+              🖼️ Gestor de Productos & Fotos
+            </button>
             <button
               type="button"
               data-tab="leads"
-              class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[#DC2626] text-white shadow-md"
+              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             >
-              📋 Mesa de Cotizaciones (Leads)
+              📋 Mesa de Cotizaciones
             </button>
             <button
               type="button"
               data-tab="fleet"
-              class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             >
-              🚜 Flota de Maquinaria & Minería
-            </button>
-            <button
-              type="button"
-              data-tab="inventory"
-              class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-            >
-              🦺 Inventario EPP & Suministros
-            </button>
-            <button
-              type="button"
-              data-tab="operators"
-              class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-            >
-              👷 Operadores & SST
+              🚜 Flota de Maquinaria
             </button>
           </div>
 
-          <div class="flex items-center gap-3">
-            <input
-              type="text"
-              id="admin-search-input"
-              placeholder="Buscar por cliente, equipo o SKU..."
-              class="px-3.5 py-1.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-xs focus:outline-none focus:border-[#DC2626] transition w-56"
-            />
+          <button
+            type="button"
+            id="btn-export-csv"
+            class="px-4 py-2 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold hover:bg-emerald-500 hover:text-white transition flex items-center gap-1.5 border border-emerald-500/30 cursor-pointer"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>Exportar Reporte CSV</span>
+          </button>
+        </div>
+
+        <!-- 1. TAB CMS: EDITOR DE CONTENIDO Y TEXTOS DEL SITIO -->
+        <div id="tab-cms" class="tab-panel space-y-6">
+          <div class="flex items-center justify-between border-b border-[var(--border-subtle)] pb-3">
+            <div>
+              <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
+                Gestor de Textos y Contenidos de la Web (CMS)
+              </h2>
+              <p class="text-xs text-[var(--text-secondary)]">
+                Modifica los textos principales del portal, teléfonos, correos y consignas de marca.
+              </p>
+            </div>
+            <span class="text-xs font-mono font-bold text-amber-500">Auto-Guardado Local</span>
+          </div>
+
+          <form id="cms-editor-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Hero Headline -->
+              <div class="md:col-span-2 space-y-2">
+                <label for="cms_hero_title" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
+                  Titular Principal del Hero (Portada) *
+                </label>
+                <input
+                  type="text"
+                  id="cms_hero_title"
+                  value="Potenciamos tus operaciones y proyectos con Maquinaria y Suministros"
+                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626] font-bold"
+                />
+              </div>
+
+              <!-- Hero Subtitle -->
+              <div class="md:col-span-2 space-y-2">
+                <label for="cms_hero_desc" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
+                  Descripción / Bajada del Hero *
+                </label>
+                <textarea
+                  id="cms_hero_desc"
+                  rows="2"
+                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
+                >Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.</textarea>
+              </div>
+
+              <!-- Phone & WhatsApp -->
+              <div class="space-y-2">
+                <label for="cms_phone" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
+                  Teléfono / WhatsApp Oficial *
+                </label>
+                <input
+                  type="text"
+                  id="cms_phone"
+                  value="+51 963 895 085"
+                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
+                />
+              </div>
+
+              <!-- Corporate Email -->
+              <div class="space-y-2">
+                <label for="cms_email" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
+                  Correo Institucional *
+                </label>
+                <input
+                  type="email"
+                  id="cms_email"
+                  value="contacto@servitotales.com"
+                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
+                />
+              </div>
+
+              <!-- ISO 9001 Badge Text -->
+              <div class="space-y-2">
+                <label for="cms_iso" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
+                  Texto del Sello de Calidad *
+                </label>
+                <input
+                  type="text"
+                  id="cms_iso"
+                  value="SGC ISO 9001:2015 CERTIFICADO"
+                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
+                />
+              </div>
+
+              <!-- Location / Coverage -->
+              <div class="space-y-2">
+                <label for="cms_coverage" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
+                  Cobertura y Alcance *
+                </label>
+                <input
+                  type="text"
+                  id="cms_coverage"
+                  value="Entrega en Obra a Nivel Nacional"
+                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
+                />
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-[var(--border-subtle)]">
+              <span id="cms-saved-msg" class="hidden text-xs font-bold text-emerald-500">
+                ✅ Cambios de texto guardados exitosamente.
+              </span>
+
+              <button
+                type="submit"
+                class="px-8 py-3.5 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-wider shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer ml-auto"
+              >
+                Guardar Cambios de Texto
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- 2. TAB PRODUCTS: GESTOR DE PRODUCTOS Y FOTOS -->
+        <div id="tab-products" class="tab-panel hidden space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-3">
+            <div>
+              <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
+                Catálogo de Productos & Fotografías
+              </h2>
+              <p class="text-xs text-[var(--text-secondary)]">
+                Agrega nuevos productos, modifica especificaciones y asigna imágenes personalizadas.
+              </p>
+            </div>
+
             <button
               type="button"
-              id="btn-export-csv"
-              class="px-3 py-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold hover:bg-emerald-500 hover:text-white transition flex items-center gap-1.5 cursor-pointer"
+              id="btn-open-new-product-modal"
+              class="px-4 py-2.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow transition flex items-center gap-1.5 cursor-pointer"
             >
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-              <span>Exportar CSV</span>
+              <span>+ Agregar Nuevo Producto</span>
             </button>
+          </div>
+
+          <!-- Product Cards Grid with Photos -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="admin-products-grid">
+            <!-- Dynamic Products Injected via JS -->
           </div>
         </div>
 
-        <!-- TAB 1: MESA DE COTIZACIONES (LEADS) -->
-        <div id="tab-content-leads" class="tab-panel space-y-4">
+        <!-- 3. TAB LEADS: MESA DE COTIZACIONES -->
+        <div id="tab-leads" class="tab-panel hidden space-y-4">
           <div class="flex items-center justify-between">
-            <h3 class="text-base font-bold text-[var(--text-primary)]">
+            <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
               Solicitudes Recientes de Cotización Técnica
-            </h3>
-            <span class="text-xs text-[var(--text-secondary)]">Actualizado en tiempo real</span>
+            </h2>
+            <span class="text-xs text-[var(--text-secondary)]">Tiempo real</span>
           </div>
 
           <div class="overflow-x-auto rounded-2xl border border-[var(--border-subtle)]">
             <table class="w-full text-left text-xs text-[var(--text-secondary)]">
-              <thead class="bg-slate-100 dark:bg-slate-900/80 text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
+              <thead class="bg-[var(--bg-main)] text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
                 <tr>
                   <th class="p-3.5">Fecha</th>
                   <th class="p-3.5">Cliente / Empresa</th>
                   <th class="p-3.5">División</th>
-                  <th class="p-3.5">Ubicación / Obra</th>
+                  <th class="p-3.5">Ubicación Obra</th>
                   <th class="p-3.5">Contacto</th>
                   <th class="p-3.5">Estado</th>
-                  <th class="p-3.5 text-right">Acción</th>
+                  <th class="p-3.5 text-right">Respuesta</th>
                 </tr>
               </thead>
               <tbody id="leads-table-body" class="divide-y divide-[var(--border-subtle)] bg-[var(--bg-surface)]">
-                <!-- Rows injected via JS -->
+                <!-- Injected via JS -->
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- TAB 2: FLOTA DE MAQUINARIA PESADA -->
-        <div id="tab-content-fleet" class="tab-panel hidden space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h3 class="text-base font-bold text-[var(--text-primary)]">
-                Control de Flota y Disponibilidad Operativa
-              </h3>
-              <p class="text-xs text-[var(--text-secondary)]">Monitoreo de equipos pesados, unidades trackless y generadores.</p>
-            </div>
-            <button
-              type="button"
-              id="btn-add-machine"
-              class="px-4 py-2 rounded-xl bg-[#DC2626] text-white text-xs font-bold hover:bg-[#B91C1C] transition shadow cursor-pointer flex items-center gap-1.5"
-            >
-              <span>+ Registrar Nuevo Equipo</span>
-            </button>
+        <!-- 4. TAB FLEET: FLOTA DE MAQUINARIA -->
+        <div id="tab-fleet" class="tab-panel hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
+              Control de Flota y Telemetría
+            </h2>
+            <span class="text-xs text-[var(--text-secondary)]">Monitoreo de equipos pesados y trackless</span>
           </div>
 
           <div class="overflow-x-auto rounded-2xl border border-[var(--border-subtle)]">
             <table class="w-full text-left text-xs text-[var(--text-secondary)]">
-              <thead class="bg-slate-100 dark:bg-slate-900/80 text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
+              <thead class="bg-[var(--bg-main)] text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
                 <tr>
                   <th class="p-3.5">Cód. Equipo</th>
                   <th class="p-3.5">Modelo / Tipo</th>
                   <th class="p-3.5">Categoría</th>
-                  <th class="p-3.5">Ubicación Actual</th>
+                  <th class="p-3.5">Ubicación Mina</th>
                   <th class="p-3.5">Horómetro</th>
-                  <th class="p-3.5">Estado Operativo</th>
-                  <th class="p-3.5 text-right">Acción</th>
+                  <th class="p-3.5">Estado</th>
                 </tr>
               </thead>
               <tbody id="fleet-table-body" class="divide-y divide-[var(--border-subtle)] bg-[var(--bg-surface)]">
-                <!-- Fleet rows injected via JS -->
+                <!-- Injected via JS -->
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- TAB 3: INVENTARIO EPP & SUMINISTROS -->
-        <div id="tab-content-inventory" class="tab-panel hidden space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h3 class="text-base font-bold text-[var(--text-primary)]">
-                Control de Stock de Almacén Central (EPP y Ferretería)
-              </h3>
-              <p class="text-xs text-[var(--text-secondary)]">Kits normados ANSI/OSHA, pernos estructurales y herramientas industriales.</p>
-            </div>
-            <button
-              type="button"
-              id="btn-add-stock"
-              class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition shadow cursor-pointer flex items-center gap-1.5"
-            >
-              <span>+ Añadir Lote al Inventario</span>
-            </button>
-          </div>
-
-          <div class="overflow-x-auto rounded-2xl border border-[var(--border-subtle)]">
-            <table class="w-full text-left text-xs text-[var(--text-secondary)]">
-              <thead class="bg-slate-100 dark:bg-slate-900/80 text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
-                <tr>
-                  <th class="p-3.5">SKU / Código</th>
-                  <th class="p-3.5">Descripción del Producto</th>
-                  <th class="p-3.5">Categoría / Marca</th>
-                  <th class="p-3.5">Stock Disponible</th>
-                  <th class="p-3.5">U.M.</th>
-                  <th class="p-3.5">Nivel de Stock</th>
-                  <th class="p-3.5 text-right">Ajuste</th>
-                </tr>
-              </thead>
-              <tbody id="inventory-table-body" class="divide-y divide-[var(--border-subtle)] bg-[var(--bg-surface)]">
-                <!-- Inventory rows injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- TAB 4: OPERADORES & SST -->
-        <div id="tab-content-operators" class="tab-panel hidden space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h3 class="text-base font-bold text-[var(--text-primary)]">
-                Personal Técnico & Operadores Homologados
-              </h3>
-              <p class="text-xs text-[var(--text-secondary)]">Cumplimiento del SGC ISO 9001:2015, EMO y licencias especiales para minería.</p>
-            </div>
-            <button
-              type="button"
-              id="btn-add-operator"
-              class="px-4 py-2 rounded-xl bg-amber-500 text-white text-xs font-bold hover:bg-amber-600 transition shadow cursor-pointer flex items-center gap-1.5"
-            >
-              <span>+ Registrar Operador</span>
-            </button>
-          </div>
-
-          <div class="overflow-x-auto rounded-2xl border border-[var(--border-subtle)]">
-            <table class="w-full text-left text-xs text-[var(--text-secondary)]">
-              <thead class="bg-slate-100 dark:bg-slate-900/80 text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
-                <tr>
-                  <th class="p-3.5">DNI</th>
-                  <th class="p-3.5">Nombre del Operador</th>
-                  <th class="p-3.5">Especialidad de Máquina</th>
-                  <th class="p-3.5">Homologación Minera</th>
-                  <th class="p-3.5">Vigencia EMO</th>
-                  <th class="p-3.5">Estado Asignación</th>
-                </tr>
-              </thead>
-              <tbody id="operators-table-body" class="divide-y divide-[var(--border-subtle)] bg-[var(--bg-surface)]">
-                <!-- Operators rows injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
-</Layout>
+    </main>
 
-<script>
-  // Authentication Guard
-  if (localStorage.getItem('servitotales_admin_auth') !== 'true') {
-    window.location.href = '/login';
-  }
+    <!-- Clean Standalone Admin Footer -->
+    <footer class="w-full py-4 px-6 border-t border-[var(--border-subtle)] text-center text-xs text-slate-500 font-mono">
+      Servicios Totales del Perú S.A.C. • Panel de Control & CMS v2.4 • Sistema de Gestión de Calidad ISO 9001:2015
+    </footer>
 
-  // Logout Handler
-  document.getElementById('btn-admin-logout')?.addEventListener('click', () => {
-    localStorage.removeItem('servitotales_admin_auth');
-    localStorage.removeItem('servitotales_admin_user');
-    window.location.href = '/login';
-  });
+    <script>
+      // Auth Guard
+      if (localStorage.getItem('servitotales_admin_auth') !== 'true') {
+        window.location.href = '/login';
+      }
 
-  const currentUser = localStorage.getItem('servitotales_admin_user') || 'admin@servitotales.com';
-  const userDisplay = document.getElementById('admin-user-display');
-  if (userDisplay) userDisplay.textContent = currentUser;
-
-  // Mock Database State with LocalStorage Persistence
-  const initialLeads = [
-    { id: 1, date: '29/08/2026', client: 'Ing. Carlos Mendoza', company: 'Consorcio Vial Junín', division: 'Maquinaria Pesada', location: 'Huancayo - Mina Yauli', phone: '+51 987 654 321', status: 'Pendiente', details: 'Alquiler de 2 Excavadoras CAT 336D por 6 meses con operador.' },
-    { id: 2, date: '29/08/2026', client: 'Ing. Lucía Paredes', company: 'Minera Las Cumbres SAC', division: 'Seguridad & EPP', location: 'Arequipa - Cerro Verde', phone: '+51 965 412 879', status: 'En Evaluación', details: 'Lote de 300 respiradores 3M 6200 con filtros 2097 P100.' },
-    { id: 3, date: '28/08/2026', client: 'Ing. Roberto Silva', company: 'Constructora del Sur EIRL', division: 'Ferretería & Suministros', location: 'Cusco - Espinar', phone: '+51 974 582 143', status: 'Cotizado', details: '50 millares de pernos hexagonales estructurales A325.' },
-    { id: 4, date: '27/08/2026', client: 'Ing. Raúl Huamán', company: 'Subterránea Minera SAC', division: 'Maquinaria Trackless', location: 'Pasco - San Cristóbal', phone: '+51 912 345 678', status: 'Aprobado', details: 'Alquiler de Jumbo Electrohidráulico 2 brazos con mantenimiento.' }
-  ];
-
-  const initialFleet = [
-    { code: 'EXC-01', model: 'Excavadora CAT 336D (36 Tn)', category: 'Línea Amarilla', location: 'Mina Toromocho - Junín', hours: '4,120 hrs', status: 'En Operación' },
-    { code: 'EXC-02', model: 'Excavadora Komatsu PC350LC', category: 'Línea Amarilla', location: 'Patio Central Lima', hours: '1,890 hrs', status: 'Disponible' },
-    { code: 'JMB-01', model: 'Jumbo Sandvik DD321 (2 Brazos)', category: 'Minería Trackless', location: 'Mina Yauli - Pasco', hours: '2,450 hrs', status: 'En Operación' },
-    { code: 'SCP-01', model: 'Scooptram Epiroc ST1030 (10 Tn)', category: 'Minería Trackless', location: 'Mina Huancavelica', hours: '3,800 hrs', status: 'En Operación' },
-    { code: 'GEN-01', model: 'Grupo Electrógeno Cummins 250 kVA', category: 'Energía & Soporte', location: 'Patio Central Lima', hours: '850 hrs', status: 'Disponible' },
-    { code: 'ROD-01', model: 'Rodillo Compactador CAT CS533E', category: 'Línea Amarilla', location: 'Taller Mantenimiento', hours: '5,200 hrs', status: 'Mantenimiento' }
-  ];
-
-  const initialInventory = [
-    { sku: 'EPP-3M-6200', name: 'Respirador Media Cara 3M Serie 6200', category: 'Protección Respiratoria', stock: 450, um: 'Und.', level: 'Óptimo' },
-    { sku: 'EPP-FIL-2097', name: 'Filtro de Alta Eficiencia 3M 2097 P100', category: 'Filtros & Cartuchos', stock: 1200, um: 'Pares', level: 'Óptimo' },
-    { sku: 'EPP-ARN-4A', name: 'Arnés de Seguridad 4 Anillos Dieléctrico ANSI', category: 'Trabajo en Altura', stock: 85, um: 'Und.', level: 'Alerta Reposición' },
-    { sku: 'FER-PRN-A325', name: 'Perno Estructural Grado A325 3/4" x 3"', category: 'Ferretería Pesada', stock: 25000, um: 'Und.', level: 'Óptimo' },
-    { sku: 'FER-DSC-09', name: 'Disco de Corte Inox Norton 9"', category: 'Abrasivos', stock: 320, um: 'Cajas', level: 'Óptimo' },
-    { sku: 'EPP-CAS-MSA', name: 'Casco Dieléctrico V-Gard MSA Tipo I Clase E', category: 'Protección Craneana', stock: 40, um: 'Und.', level: 'Crítico' }
-  ];
-
-  const initialOperators = [
-    { dni: '45892147', name: 'Marco Antonio Vilca', machine: 'Excavadora CAT 336D / 349D', cert: 'Certificado CETEMIN • Homologado Volcan', emo: 'Vigente (Jun 2027)', status: 'Asignado a Obra' },
-    { dni: '71254896', name: 'Edgar Quispe Rojas', machine: 'Jumbo Subterráneo Sandvik / Epiroc', cert: 'Homologado Antamina • Categoría Especial', emo: 'Vigente (Ene 2027)', status: 'Asignado a Obra' },
-    { dni: '40215879', name: 'Víctor Fernández Cárdenas', machine: 'Scooptram ST1030 / ST14', cert: 'Homologación Nexa Resources', emo: 'Vigente (Sep 2026)', status: 'Disponible en Base' },
-    { dni: '48963251', name: 'Jorge Luis Huayta', machine: 'Cargador Frontal CAT 966H', cert: 'Certificado Tecsup • Homologado Minsur', emo: 'Vigente (Dic 2026)', status: 'Disponible en Base' }
-  ];
-
-  // Render Leads Table
-  function renderLeads(leads: any[]) {
-    const tbody = document.getElementById('leads-table-body');
-    if (!tbody) return;
-    tbody.innerHTML = leads.map(lead => {
-      let badgeClass = 'bg-blue-500/10 text-blue-500 border-blue-500/30';
-      if (lead.status === 'Cotizado') badgeClass = 'bg-amber-500/10 text-amber-500 border-amber-500/30';
-      if (lead.status === 'Aprobado') badgeClass = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30';
-
-      return `
-        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-          <td class="p-3.5 font-mono text-[11px] text-slate-400">${lead.date}</td>
-          <td class="p-3.5">
-            <span class="font-bold text-[var(--text-primary)] block">${lead.client}</span>
-            <span class="text-[10px] text-slate-400 font-mono">${lead.company}</span>
-          </td>
-          <td class="p-3.5 font-semibold text-[var(--text-primary)]">${lead.division}</td>
-          <td class="p-3.5 text-slate-400">${lead.location}</td>
-          <td class="p-3.5 font-mono text-[11px] text-blue-500">${lead.phone}</td>
-          <td class="p-3.5">
-            <span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${badgeClass}">
-              ${lead.status}
-            </span>
-          </td>
-          <td class="p-3.5 text-right space-x-2">
-            <button
-              type="button"
-              onclick="window.open('https://wa.me/51963895085?text=' + encodeURIComponent('Hola ${lead.client} de ${lead.company}, le contactamos de Servitotales S.A.C. respecto a su requerimiento de ${lead.division}.'), '_blank')"
-              class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500 hover:text-white transition text-[10px] font-bold border border-emerald-500/30"
-            >
-              WhatsApp
-            </button>
-          </td>
-        </tr>
-      `;
-    }).join('');
-  }
-
-  // Render Fleet Table
-  function renderFleet(fleet: any[]) {
-    const tbody = document.getElementById('fleet-table-body');
-    if (!tbody) return;
-    tbody.innerHTML = fleet.map(item => {
-      let statusBadge = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30';
-      if (item.status === 'En Operación') statusBadge = 'bg-blue-500/10 text-blue-500 border-blue-500/30';
-      if (item.status === 'Mantenimiento') statusBadge = 'bg-red-500/10 text-red-500 border-red-500/30';
-
-      return `
-        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-          <td class="p-3.5 font-mono font-bold text-red-500">${item.code}</td>
-          <td class="p-3.5 font-bold text-[var(--text-primary)]">${item.model}</td>
-          <td class="p-3.5 text-slate-400 font-mono text-[11px]">${item.category}</td>
-          <td class="p-3.5 text-slate-400">${item.location}</td>
-          <td class="p-3.5 font-mono text-[11px] text-[var(--text-primary)]">${item.hours}</td>
-          <td class="p-3.5">
-            <span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${statusBadge}">
-              ${item.status}
-            </span>
-          </td>
-          <td class="p-3.5 text-right">
-            <button
-              type="button"
-              onclick="alert('Estado del equipo ${item.code} actualizado en telemetría.')"
-              class="px-2.5 py-1 rounded-lg bg-slate-200 dark:bg-slate-800 text-[var(--text-primary)] hover:bg-red-500 hover:text-white transition text-[10px] font-bold"
-            >
-              Editar Estado
-            </button>
-          </td>
-        </tr>
-      `;
-    }).join('');
-  }
-
-  // Render Inventory Table
-  function renderInventory(inv: any[]) {
-    const tbody = document.getElementById('inventory-table-body');
-    if (!tbody) return;
-    tbody.innerHTML = inv.map(item => {
-      let levelBadge = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30';
-      if (item.level === 'Alerta Reposición') levelBadge = 'bg-amber-500/10 text-amber-500 border-amber-500/30';
-      if (item.level === 'Crítico') levelBadge = 'bg-red-500/10 text-red-500 border-red-500/30';
-
-      return `
-        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-          <td class="p-3.5 font-mono font-bold text-blue-500">${item.sku}</td>
-          <td class="p-3.5 font-bold text-[var(--text-primary)]">${item.name}</td>
-          <td class="p-3.5 text-slate-400 text-[11px]">${item.category}</td>
-          <td class="p-3.5 font-black text-[var(--text-primary)] text-sm">${item.stock.toLocaleString()}</td>
-          <td class="p-3.5 font-mono text-[11px] text-slate-400">${item.um}</td>
-          <td class="p-3.5">
-            <span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${levelBadge}">
-              ${item.level}
-            </span>
-          </td>
-          <td class="p-3.5 text-right">
-            <button
-              type="button"
-              onclick="const cant = prompt('Ingresa la cantidad a ingresar o retirar para ' + '${item.sku}' + ':'); if(cant) alert('Stock de ' + '${item.sku}' + ' actualizado con éxito.');"
-              class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-500 hover:bg-blue-500 hover:text-white transition text-[10px] font-bold border border-blue-500/30"
-            >
-              + Ajustar Stock
-            </button>
-          </td>
-        </tr>
-      `;
-    }).join('');
-  }
-
-  // Render Operators Table
-  function renderOperators(ops: any[]) {
-    const tbody = document.getElementById('operators-table-body');
-    if (!tbody) return;
-    tbody.innerHTML = ops.map(op => {
-      const isAssigned = op.status === 'Asignado a Obra';
-      return `
-        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-          <td class="p-3.5 font-mono text-[11px] text-slate-400">${op.dni}</td>
-          <td class="p-3.5 font-bold text-[var(--text-primary)]">${op.name}</td>
-          <td class="p-3.5 text-slate-300 font-semibold">${op.machine}</td>
-          <td class="p-3.5 text-[11px] text-amber-500 font-mono">${op.cert}</td>
-          <td class="p-3.5 font-mono text-[11px] text-emerald-500">${op.emo}</td>
-          <td class="p-3.5">
-            <span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${isAssigned ? 'bg-blue-500/10 text-blue-500 border-blue-500/30' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30'}">
-              ${op.status}
-            </span>
-          </td>
-        </tr>
-      `;
-    }).join('');
-  }
-
-  // Initialize Tables
-  renderLeads(initialLeads);
-  renderFleet(initialFleet);
-  renderInventory(initialInventory);
-  renderOperators(initialOperators);
-
-  // Tab Navigation Handling
-  const tabBtns = document.querySelectorAll('#admin-tabs-nav .tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = btn.getAttribute('data-tab');
-
-      tabBtns.forEach(b => {
-        b.className = 'tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white';
+      document.getElementById('btn-admin-logout')?.addEventListener('click', () => {
+        localStorage.removeItem('servitotales_admin_auth');
+        window.location.href = '/login';
       });
-      btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[#DC2626] text-white shadow-md';
 
-      tabPanels.forEach(p => p.classList.add('hidden'));
-      const activePanel = document.getElementById(`tab-content-${tab}`);
-      if (activePanel) activePanel.classList.remove('hidden');
-    });
-  });
+      // Tab Switching
+      const tabBtns = document.querySelectorAll('#admin-main-tabs .tab-btn');
+      const tabPanels = document.querySelectorAll('.tab-panel');
 
-  // Search Filter Handler
-  const searchInput = document.getElementById('admin-search-input') as HTMLInputElement;
-  searchInput?.addEventListener('input', (e) => {
-    const q = (e.target as HTMLInputElement).value.toLowerCase().trim();
-    
-    const filteredLeads = initialLeads.filter(l => 
-      l.client.toLowerCase().includes(q) || 
-      l.company.toLowerCase().includes(q) || 
-      l.division.toLowerCase().includes(q) ||
-      l.location.toLowerCase().includes(q)
-    );
-    renderLeads(filteredLeads);
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tab = btn.getAttribute('data-tab');
 
-    const filteredFleet = initialFleet.filter(f =>
-      f.code.toLowerCase().includes(q) ||
-      f.model.toLowerCase().includes(q) ||
-      f.category.toLowerCase().includes(q) ||
-      f.location.toLowerCase().includes(q)
-    );
-    renderFleet(filteredFleet);
+          tabBtns.forEach(b => {
+            b.className = 'tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]';
+          });
+          btn.className = 'tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[#DC2626] text-white shadow-md';
 
-    const filteredInv = initialInventory.filter(i =>
-      i.sku.toLowerCase().includes(q) ||
-      i.name.toLowerCase().includes(q) ||
-      i.category.toLowerCase().includes(q)
-    );
-    renderInventory(filteredInv);
-  });
-
-  // Export CSV Handler
-  document.getElementById('btn-export-csv')?.addEventListener('click', () => {
-    const csvContent = "data:text/csv;charset=utf-8," 
-      + "Fecha,Cliente,Empresa,Division,Ubicacion,Telefono,Estado\n"
-      + initialLeads.map(e => `"${e.date}","${e.client}","${e.company}","${e.division}","${e.location}","${e.phone}","${e.status}"`).join("\n");
-    
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "servitotales_cotizaciones_reporte.csv");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
-
-  // Quick Action Modals
-  document.getElementById('btn-add-machine')?.addEventListener('click', () => {
-    const code = prompt('Código del equipo (ej. EXC-03):');
-    const model = prompt('Modelo y tonelaje (ej. Excavadora CAT 349D 50Tn):');
-    const loc = prompt('Ubicación (ej. Mina Las Bambas):');
-    if (code && model) {
-      initialFleet.unshift({
-        code: code.toUpperCase(),
-        model: model,
-        category: 'Línea Amarilla',
-        location: loc || 'Patio Central',
-        hours: '0 hrs',
-        status: 'Disponible'
+          tabPanels.forEach(p => p.classList.add('hidden'));
+          const activePanel = document.getElementById('tab-' + tab);
+          if (activePanel) activePanel.classList.remove('hidden');
+        });
       });
-      renderFleet(initialFleet);
-      alert('Equipo ' + code + ' registrado exitosamente en la flota.');
-    }
-  });
 
-  document.getElementById('btn-add-stock')?.addEventListener('click', () => {
-    const sku = prompt('Código SKU (ej. EPP-CAS-02):');
-    const name = prompt('Nombre o descripción del producto:');
-    const qty = prompt('Cantidad inicial:');
-    if (sku && name) {
-      initialInventory.unshift({
-        sku: sku.toUpperCase(),
-        name: name,
-        category: 'Seguridad & EPP',
-        stock: parseInt(qty || '100'),
-        um: 'Und.',
-        level: 'Óptimo'
-      });
-      renderInventory(initialInventory);
-      alert('Lote ' + sku + ' añadido al inventario central.');
-    }
-  });
+      // Dynamic Products Store
+      let products = [
+        { id: 1, name: "Excavadora sobre Orugas CAT 320 / 336", division: "Maquinaria Pesada", brand: "Caterpillar", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80" },
+        { id: 2, name: "Cargador Frontal CAT 950 / 966", division: "Maquinaria Pesada", brand: "Caterpillar", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" },
+        { id: 3, name: "Jumbo Electrohidráulico de Perforación", division: "Minería Trackless", brand: "Sandvik / Epiroc", specs: "1 y 2 Brazos • Cobertura: 35-65 m²", image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80" },
+        { id: 4, name: "Respiradores de Medio Rostro Serie 6200", division: "Seguridad & EPP", brand: "3M", specs: "Norma NIOSH / OSHA P100", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 5, name: "Pernos Estructurales Grado A325", division: "Ferretería & Suministros", brand: "Servitotales", specs: "Acabado Negro / Galvanizado 3/4x3", image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80" },
+        { id: 6, name: "Arnés de Seguridad Integral 4 Anillos", division: "Seguridad & EPP", brand: "Capital Safety", specs: "Certificación ANSI Z359.11", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" }
+      ];
 
-  document.getElementById('btn-add-operator')?.addEventListener('click', () => {
-    const dni = prompt('DNI del operador:');
-    const name = prompt('Nombre y apellido:');
-    const machine = prompt('Especialidad de maquinaria:');
-    if (dni && name) {
-      initialOperators.unshift({
-        dni: dni,
-        name: name,
-        machine: machine || 'Maquinaria Pesada',
-        cert: 'Certificado y Homologado SGC ISO 9001',
-        emo: 'Vigente (2027)',
-        status: 'Disponible en Base'
+      function renderAdminProducts() {
+        const grid = document.getElementById('admin-products-grid');
+        if (!grid) return;
+        grid.innerHTML = products.map(prod => `
+          <div class="rounded-3xl industrial-card overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-main)] flex flex-col justify-between group">
+            <div class="relative h-44 w-full overflow-hidden bg-slate-900">
+              <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md text-[10px] font-mono font-bold text-white border border-white/10">
+                ${prod.division}
+              </span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-1">
+                <span class="text-[10px] font-mono font-bold text-red-500 uppercase">${prod.brand}</span>
+                <h3 class="text-sm font-bold text-[var(--text-primary)] leading-tight">${prod.name}</h3>
+                <p class="text-xs text-[var(--text-secondary)] line-clamp-2">${prod.specs}</p>
+              </div>
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center gap-2">
+                <button
+                  type="button"
+                  onclick="editProductPhoto(${prod.id})"
+                  class="flex-1 py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold text-center transition"
+                >
+                  📷 Cambiar Foto
+                </button>
+                <button
+                  type="button"
+                  onclick="deleteProduct(${prod.id})"
+                  class="py-2 px-3 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white text-xs font-bold transition border border-red-500/20"
+                >
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      window.editProductPhoto = function(id: number) {
+        const prod = products.find(p => p.id === id);
+        if (!prod) return;
+        const newUrl = prompt('Ingresa la nueva URL de la imagen para ' + prod.name + ':', prod.image);
+        if (newUrl && newUrl.trim()) {
+          prod.image = newUrl.trim();
+          renderAdminProducts();
+          alert('Imagen actualizada con éxito para ' + prod.name);
+        }
+      };
+
+      window.deleteProduct = function(id: number) {
+        if (confirm('¿Deseas eliminar este producto del panel?')) {
+          products = products.filter(p => p.id !== id);
+          renderAdminProducts();
+        }
+      };
+
+      document.getElementById('btn-open-new-product-modal')?.addEventListener('click', () => {
+        const name = prompt('Nombre del producto / equipo:');
+        const division = prompt('División (Maquinaria Pesada / Seguridad & EPP / Ferretería):', 'Maquinaria Pesada');
+        const brand = prompt('Marca (ej. Caterpillar, 3M, Milwaukee):', 'Caterpillar');
+        const specs = prompt('Especificaciones técnicas:');
+        const image = prompt('URL de la fotografía del producto:', 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80');
+
+        if (name && division) {
+          products.unshift({
+            id: Date.now(),
+            name: name,
+            division: division || 'Maquinaria Pesada',
+            brand: brand || 'Servitotales',
+            specs: specs || 'Especificaciones bajo pedido.',
+            image: image || 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80'
+          });
+          renderAdminProducts();
+          alert('Producto ' + name + ' registrado exitosamente con su fotografía.');
+        }
       });
-      renderOperators(initialOperators);
-      alert('Operador ' + name + ' registrado correctamente.');
-    }
-  });
-</script>
+
+      renderAdminProducts();
+
+      // CMS Form Save
+      document.getElementById('cms-editor-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const savedMsg = document.getElementById('cms-saved-msg');
+        if (savedMsg) {
+          savedMsg.classList.remove('hidden');
+          setTimeout(() => savedMsg.classList.add('hidden'), 3500);
+        }
+      });
+
+      // Leads Rendering
+      const leads = [
+        { date: '29/08/2026', client: 'Ing. Carlos Mendoza', company: 'Consorcio Vial Junín', division: 'Maquinaria Pesada', location: 'Huancayo - Mina Yauli', phone: '+51 987 654 321', status: 'Pendiente' },
+        { date: '29/08/2026', client: 'Ing. Lucía Paredes', company: 'Minera Las Cumbres SAC', division: 'Seguridad & EPP', location: 'Arequipa - Cerro Verde', phone: '+51 965 412 879', status: 'En Evaluación' },
+        { date: '28/08/2026', client: 'Ing. Roberto Silva', company: 'Constructora del Sur EIRL', division: 'Ferretería & Suministros', location: 'Cusco - Espinar', phone: '+51 974 582 143', status: 'Cotizado' }
+      ];
+
+      const leadsBody = document.getElementById('leads-table-body');
+      if (leadsBody) {
+        leadsBody.innerHTML = leads.map(l => `
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+            <td class="p-3.5 font-mono text-[11px] text-slate-400">${l.date}</td>
+            <td class="p-3.5"><strong class="text-[var(--text-primary)] block">${l.client}</strong><span class="text-[10px] text-slate-400 font-mono">${l.company}</span></td>
+            <td class="p-3.5 font-semibold text-[var(--text-primary)]">${l.division}</td>
+            <td class="p-3.5 text-slate-400">${l.location}</td>
+            <td class="p-3.5 font-mono text-[11px] text-blue-500">${l.phone}</td>
+            <td class="p-3.5"><span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-500 border-blue-500/30">${l.status}</span></td>
+            <td class="p-3.5 text-right"><button type="button" onclick="window.open('https://wa.me/51963895085', '_blank')" class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 text-[10px] font-bold border border-emerald-500/30 hover:bg-emerald-500 hover:text-white transition">WhatsApp</button></td>
+          </tr>
+        `).join("");
+      }
+
+      // Fleet Rendering
+      const fleet = [
+        { code: 'EXC-01', model: 'Excavadora CAT 336D (36 Tn)', cat: 'Línea Amarilla', loc: 'Mina Toromocho - Junín', hrs: '4,120 hrs', status: 'En Operación' },
+        { code: 'EXC-02', model: 'Excavadora Komatsu PC350LC', cat: 'Línea Amarilla', loc: 'Patio Central Lima', hrs: '1,890 hrs', status: 'Disponible' },
+        { code: 'JMB-01', model: 'Jumbo Sandvik DD321 (2 Brazos)', cat: 'Minería Trackless', loc: 'Mina Yauli - Pasco', hrs: '2,450 hrs', status: 'En Operación' }
+      ];
+
+      const fleetBody = document.getElementById('fleet-table-body');
+      if (fleetBody) {
+        fleetBody.innerHTML = fleet.map(f => `
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+            <td class="p-3.5 font-mono font-bold text-red-500">${f.code}</td>
+            <td class="p-3.5 font-bold text-[var(--text-primary)]">${f.model}</td>
+            <td class="p-3.5 text-slate-400 font-mono text-[11px]">${f.cat}</td>
+            <td class="p-3.5 text-slate-400">${f.loc}</td>
+            <td class="p-3.5 font-mono text-[11px] text-[var(--text-primary)]">${f.hrs}</td>
+            <td class="p-3.5"><span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-500 border-blue-500/30">${f.status}</span></td>
+          </tr>
+        `).join("");
+      }
+
+      // Export CSV
+      document.getElementById('btn-export-csv')?.addEventListener('click', () => {
+        const csvContent = "data:text/csv;charset=utf-8," 
+          + "Fecha,Cliente,Empresa,Division,Ubicacion,Telefono,Estado\n"
+          + leads.map(e => `"${e.date}","${e.client}","${e.company}","${e.division}","${e.location}","${e.phone}","${e.status}"`).join("\n");
+        
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "servitotales_reporte.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    </script>
+  </body>
+</html>

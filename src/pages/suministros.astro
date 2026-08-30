@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 
 const supplyCategories = [
@@ -6,30 +6,90 @@ const supplyCategories = [
     title: "Ferretería Pesada & Elementos de Fijación",
     description: "Pernos estructurales, varillas roscadas, anclajes químicos y cables de acero.",
     items: [
-      { name: "Pernos Estructurales Grado 5, 8 y A325", specs: "Acabado Negro / Galvanizado en Caliente", type: "Fijación" },
-      { name: "Cables de Acero y Eslingas de Izaje", specs: "Alma de Acero / Textil con Certificado", type: "Maniobra" },
-      { name: "Discos de Corte y Desbaste Industrial", specs: "4.5\", 7\", 9\" para Acero e Inoxidable", type: "Abrasivos" },
-      { name: "Soldadura y Electrodos Especiales", specs: "E6011, E7018, Inox y Recubrimientos Duros", type: "Soldadura" }
+      {
+        name: "Pernos Estructurales Grado 5, 8 y A325",
+        specs: "Acabado Negro / Galvanizado en Caliente",
+        type: "Fijación",
+        image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Cables de Acero y Eslingas de Izaje",
+        specs: "Alma de Acero / Textil con Certificado",
+        type: "Maniobra",
+        image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Discos de Corte y Desbaste Industrial",
+        specs: "4.5\", 7\", 9\" para Acero e Inoxidable",
+        type: "Abrasivos",
+        image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Soldadura y Electrodos Especiales",
+        specs: "E6011, E7018, Inox y Recubrimientos Duros",
+        type: "Soldadura",
+        image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   },
   {
     title: "Mobiliario para Campamentos & Oficinas de Obra",
     description: "Lockers metálicos reforzados, camarotes modulares y escritorios técnicos.",
     items: [
-      { name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos", specs: "Plancha LAF 1/32\" con Portacandado", type: "Almacén" },
-      { name: "Camarotes Metálicos Desarmables de 1.5 Plazas", specs: "Tubo de Acero Reforzado para Campamento", type: "Dormitorio" },
-      { name: "Escritorios Gerenciales y Mesas de Reunión", specs: "Melamina 18mm con Estructura Metálica", type: "Oficina" },
-      { name: "Sillas Ergonómicas y Bancas de Vestuario", specs: "Uso Intensivo de Alto Tránsito", type: "Ergonomía" }
+      {
+        name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos",
+        specs: "Plancha LAF 1/32\" con Portacandado",
+        type: "Almacén",
+        image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Camarotes Metálicos Desarmables de 1.5 Plazas",
+        specs: "Tubo de Acero Reforzado para Campamento",
+        type: "Dormitorio",
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Escritorios Gerenciales y Mesas de Reunión",
+        specs: "Melamina 18mm con Estructura Metálica",
+        type: "Oficina",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Sillas Ergonómicas y Bancas de Vestuario",
+        specs: "Uso Intensivo de Alto Tránsito",
+        type: "Ergonomía",
+        image: "https://images.unsplash.com/photo-1580481077197-98c4d38bc60b?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   },
   {
     title: "Pinturas Epóxicas, Químicos & Aditivos",
     description: "Recubrimientos anticorrosivos de alto rendimiento para estructuras y tanques.",
     items: [
-      { name: "Pinturas Epóxicas y Poliuretano de Alto Sólidos", specs: "Resistencia Química y a la Abrasión", type: "Recubrimientos" },
-      { name: "Grout y Morteros de Nivelación sin Contracción", specs: "Para Anclaje de Maquinaria Pesada", type: "Construcción" },
-      { name: "Desmoldantes y Curadores de Concreto", specs: "Bidón 5 Gal / Cilindro 55 Gal", type: "Químicos" },
-      { name: "Señalética Vial y Fotoluminiscente SST", specs: "Cumplimiento NTP 399.010-1", type: "Señalización" }
+      {
+        name: "Pinturas Epóxicas y Poliuretano de Alto Sólidos",
+        specs: "Resistencia Química y a la Abrasión",
+        type: "Recubrimientos",
+        image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Grout y Morteros de Nivelación sin Contracción",
+        specs: "Para Anclaje de Maquinaria Pesada",
+        type: "Construcción",
+        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Desmoldantes y Curadores de Concreto",
+        specs: "Bidón 5 Gal / Cilindro 55 Gal",
+        type: "Químicos",
+        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Señalética Vial y Fotoluminiscente SST",
+        specs: "Cumplimiento NTP 399.010-1",
+        type: "Señalización",
+        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   }
 ];
@@ -45,7 +105,7 @@ const supplyCategories = [
       <img
         id="sum-hero-img"
         src="/images/division-suministros.jpg"
-        alt="Ferretería industrial, suministros y mobiliario Servitotales"
+        alt="Ferretería y suministros industriales Servitotales"
         loading="eager"
         decoding="async"
         class="w-full h-full object-cover opacity-45 contrast-115 saturate-110 will-change-transform"
@@ -56,21 +116,21 @@ const supplyCategories = [
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-4" id="sum-hero-content">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
-          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-          05 // ABASTECIMIENTO INTEGRAL
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+          05 // FERRETERÍA & SUMINISTROS
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
-          Ferretería Industrial & Mobiliario de Obra
+          Ferretería Industrial, Mobiliario & Suministros
         </h1>
         <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-          Logística ágil y suministro mayorista directo para frentes de trabajo, campamentos mineros e infraestructuras civiles a nivel nacional.
+          Soluciones de aprovisionamiento continuo para campamentos mineros, talleres de maestranza y frentes de obra. Pernos de alta resistencia, abrasivos y mobiliario metálico.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Supplies Grid -->
+  <!-- Categories -->
   <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
       {supplyCategories.map((cat) => (
@@ -82,22 +142,43 @@ const supplyCategories = [
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cat.items.map((item) => (
-              <div class="item-card p-6 rounded-3xl industrial-card flex flex-col justify-between group">
-                <div class="space-y-3">
-                  <span class="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase block">{item.type}</span>
-                  <h3 class="text-base font-bold text-[var(--text-primary)] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{item.name}</h3>
-                  <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{item.specs}</p>
+              <div class="item-card rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group hover:border-blue-500 transition-all duration-300">
+                <!-- Product Image Header -->
+                <div class="relative h-44 w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md text-[10px] font-mono font-bold text-blue-400 border border-blue-500/20 uppercase tracking-wider">
+                    {item.type}
+                  </span>
                 </div>
 
-                <div class="pt-6 mt-6 border-t border-[var(--border-subtle)]">
-                  <a
-                    href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%20suministros%3A%20${encodeURIComponent(item.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-blue-600 hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
-                  >
-                    Cotizar Suministro
-                  </a>
+                <!-- Product Details -->
+                <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div class="space-y-2">
+                    <h3 class="text-sm font-bold text-[var(--text-primary)] group-hover:text-blue-500 transition-colors leading-snug">
+                      {item.name}
+                    </h3>
+                    <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                      {item.specs}
+                    </p>
+                  </div>
+
+                  <div class="pt-4 border-t border-[var(--border-subtle)]">
+                    <a
+                      href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%20suministros%20de%3A%20${encodeURIComponent(item.name)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-blue-600 hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
+                    >
+                      Solicitar Cotización
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 
 const machineryCategories = [
@@ -7,10 +7,30 @@ const machineryCategories = [
     title: "Movimiento de Tierras & Excavación",
     description: "Equipos pesados para obras civiles de gran envergadura, apertura de vías y canteras.",
     items: [
-      { name: "Excavadora sobre Orugas CAT 320 / 336", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", brand: "Caterpillar / Komatsu" },
-      { name: "Cargador Frontal CAT 950 / 966", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", brand: "Caterpillar / Volvo" },
-      { name: "Tractor sobre Orugas D6T / D8T", specs: "Hoja Semi-Universal • Ripper Multivástago", brand: "Caterpillar" },
-      { name: "Motoniveladora CAT 140M / 160M", specs: "Vertedera: 14 pies • Tracción Tándem", brand: "Caterpillar" }
+      {
+        name: "Excavadora sobre Orugas CAT 320 / 336",
+        specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³",
+        brand: "Caterpillar / Komatsu",
+        image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Cargador Frontal CAT 950 / 966",
+        specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP",
+        brand: "Caterpillar / Volvo",
+        image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Tractor sobre Orugas D6T / D8T",
+        specs: "Hoja Semi-Universal • Ripper Multivástago",
+        brand: "Caterpillar",
+        image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Motoniveladora CAT 140M / 160M",
+        specs: "Vertedera: 14 pies • Tracción Tándem",
+        brand: "Caterpillar",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   },
   {
@@ -18,10 +38,30 @@ const machineryCategories = [
     title: "Minería Subterránea Trackless",
     description: "Sistemas especializados de perforación, acarreo y sostenimiento en túneles y labores mineras.",
     items: [
-      { name: "Jumbo Electrohidráulico de Perforación", specs: "1 y 2 Brazos • Cobertura: 35-65 m²", brand: "Sandvik / Epiroc" },
-      { name: "Scooptram (LHD Subterráneo)", specs: "Capacidad: 3.5 a 7.0 yd³ • Motor Diésel / Eléctrico", brand: "Sandvik / Epiroc" },
-      { name: "Dumper Subterráneo para Mina", specs: "Capacidad de Carga: 20 a 35 Tn", brand: "Epiroc / Sandvik" },
-      { name: "Roboshot para Proyección de Shotcrete", specs: "Brazo Telescópico 10m • Compresor Integrado", brand: "Putzmeister / Normet" }
+      {
+        name: "Jumbo Electrohidráulico de Perforación",
+        specs: "1 y 2 Brazos • Cobertura: 35-65 m²",
+        brand: "Sandvik / Epiroc",
+        image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Scooptram (LHD Subterráneo)",
+        specs: "Capacidad: 3.5 a 7.0 yd³ • Motor Diésel / Eléctrico",
+        brand: "Sandvik / Epiroc",
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Dumper Subterráneo para Mina",
+        specs: "Capacidad de Carga: 20 a 35 Tn",
+        brand: "Epiroc / Sandvik",
+        image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Roboshot para Proyección de Shotcrete",
+        specs: "Brazo Telescópico 10m • Compresor Integrado",
+        brand: "Putzmeister / Normet",
+        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   },
   {
@@ -29,9 +69,24 @@ const machineryCategories = [
     title: "Elevación, Izaje & Maniobras",
     description: "Manipuladores versátiles y grúas para montaje electromecánico y logística de campamento.",
     items: [
-      { name: "Manipulador Telescópico (Telehandler)", specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn", brand: "JCB / Manitou / CAT" },
-      { name: "Camión Grúa Articulado", specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica", brand: "Palfinger / Hiab / Fassi" },
-      { name: "Manlift / Plataforma Tijera Articulada", specs: "Altura de Trabajo: 12 a 26 m", brand: "Genie / JLG" }
+      {
+        name: "Manipulador Telescópico (Telehandler)",
+        specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn",
+        brand: "JCB / Manitou / CAT",
+        image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Camión Grúa Articulado",
+        specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica",
+        brand: "Palfinger / Hiab / Fassi",
+        image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Manlift / Plataforma Tijera Articulada",
+        specs: "Altura de Trabajo: 12 a 26 m",
+        brand: "Genie / JLG",
+        image: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   },
   {
@@ -39,9 +94,24 @@ const machineryCategories = [
     title: "Maquinaria Vial & Compactación",
     description: "Equipos para conformación de terraplenes, bases granulares y pavimentación.",
     items: [
-      { name: "Rodillo Compactador Liso / Pata de Cabra", specs: "Peso Operativo: 10 - 14 Tn", brand: "Hamm / CAT / Bomag" },
-      { name: "Camión Cisterna de Agua 5,000 Galones", specs: "Bomba de Descarga y Regadera Posterior", brand: "Mercedes-Benz / Volvo" },
-      { name: "Minicargador con Accesorios", specs: "Brazo Excavador, Martillo Hidráulico, Barredora", brand: "Bobcat / CAT" }
+      {
+        name: "Rodillo Compactador Liso / Pata de Cabra",
+        specs: "Peso Operativo: 10 - 14 Tn",
+        brand: "Hamm / CAT / Bomag",
+        image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Camión Cisterna de Agua 5,000 Galones",
+        specs: "Bomba de Descarga y Regadera Posterior",
+        brand: "Mercedes-Benz / Volvo",
+        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Minicargador con Accesorios",
+        specs: "Brazo Excavador, Martillo Hidráulico, Barredora",
+        brand: "Bobcat / CAT",
+        image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   },
   {
@@ -49,9 +119,24 @@ const machineryCategories = [
     title: "Generación de Energía & Iluminación",
     description: "Grupos electrógenos insonorizados y torres autónomas para faenas 24/7.",
     items: [
-      { name: "Grupo Electrógeno Insonorizado", specs: "Potencia: 50 a 500 kVA • 60 Hz Trifásico", brand: "Cummins / Perkins / CAT" },
-      { name: "Torre de Iluminación LED Móvil", specs: "4x350W LED • Mástil Telescópico 9m", brand: "Generac / Doosan" },
-      { name: "Compresor de Aire Portátil para Obra", specs: "Caudal: 185 a 750 CFM • Presión: 100-150 PSI", brand: "Atlas Copco / Sullair" }
+      {
+        name: "Grupo Electrógeno Insonorizado",
+        specs: "Potencia: 50 a 500 kVA • 60 Hz Trifásico",
+        brand: "Cummins / Perkins / CAT",
+        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Torre de Iluminación LED Móvil",
+        specs: "4x350W LED • Mástil Telescópico 9m",
+        brand: "Generac / Doosan",
+        image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        name: "Compresor de Aire Portátil para Obra",
+        specs: "Caudal: 185 a 750 CFM • Presión: 100-150 PSI",
+        brand: "Atlas Copco / Sullair",
+        image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80"
+      }
     ]
   }
 ];
@@ -104,22 +189,43 @@ const machineryCategories = [
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cat.items.map((item) => (
-              <div class="item-card p-6 rounded-3xl industrial-card flex flex-col justify-between group">
-                <div class="space-y-3">
-                  <span class="text-[10px] font-mono font-bold text-[#DC2626] uppercase block">{item.brand}</span>
-                  <h3 class="text-base font-bold text-[var(--text-primary)] group-hover:text-[#DC2626] transition-colors">{item.name}</h3>
-                  <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{item.specs}</p>
+              <div class="item-card rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group hover:border-[#DC2626] transition-all duration-300">
+                <!-- Product Image Header -->
+                <div class="relative h-44 w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md text-[10px] font-mono font-bold text-white border border-white/10 uppercase tracking-wider">
+                    {item.brand}
+                  </span>
                 </div>
 
-                <div class="pt-6 mt-6 border-t border-[var(--border-subtle)]">
-                  <a
-                    href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20${encodeURIComponent(item.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-[#DC2626] hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
-                  >
-                    Cotizar Disponibilidad
-                  </a>
+                <!-- Product Details -->
+                <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div class="space-y-2">
+                    <h3 class="text-sm font-bold text-[var(--text-primary)] group-hover:text-[#DC2626] transition-colors leading-snug">
+                      {item.name}
+                    </h3>
+                    <p class="text-xs text-[var(--text-secondary)] leading-relaxed line-clamp-2">
+                      {item.specs}
+                    </p>
+                  </div>
+
+                  <div class="pt-4 border-t border-[var(--border-subtle)]">
+                    <a
+                      href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20${encodeURIComponent(item.name)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-[#DC2626] hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
+                    >
+                      Cotizar Disponibilidad
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

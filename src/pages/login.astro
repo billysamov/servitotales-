@@ -1,110 +1,145 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 ---
 
-<Layout
-  title="Acceso Institucional & Panel Admin | SERVITOTALES S.A.C."
-  description="Módulo de autenticación seguro para administración de flota, mesa de cotizaciones y control de suministros."
->
-  <section class="min-h-[85vh] flex items-center justify-center py-16 px-4 bg-[var(--bg-main)]">
-    <div class="w-full max-w-md p-8 sm:p-10 rounded-3xl industrial-card shadow-2xl space-y-6 relative overflow-hidden">
-      <!-- Top Decorative Accent -->
-      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#DC2626] via-amber-500 to-blue-600"></div>
-
-      <div class="text-center space-y-2">
-        <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-[#DC2626] flex items-center justify-center mx-auto mb-4 border border-red-500/20 shadow-inner">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
+<!doctype html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Acceso al Panel de Administración | SERVITOTALES S.A.C.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'dark';
+      })();
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-[var(--bg-main)] text-[var(--text-primary)] antialiased min-h-screen flex flex-col justify-between selection:bg-[#DC2626] selection:text-white font-sans">
+    
+    <!-- Clean Minimal Standalone Admin Nav -->
+    <header class="w-full px-6 py-4 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-red-600 text-white font-black flex items-center justify-center text-lg shadow-md">
+          ST
         </div>
-        <span class="text-[10px] font-mono font-bold text-red-500 tracking-widest uppercase block">SGC ISO 9001:2015 CONTROL</span>
-        <h1 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Panel de Control</h1>
-        <p class="text-xs text-[var(--text-secondary)]">Ingresa tus credenciales para administrar flota, cotizaciones e inventario.</p>
+        <div class="flex flex-col">
+          <span class="text-base font-black tracking-wider text-[var(--text-primary)] font-heading leading-tight">
+            SERVI<span class="text-[#DC2626]">TOTALES</span> <span class="text-xs font-mono font-normal text-slate-400">ADMIN</span>
+          </span>
+          <span class="text-[9px] font-mono font-bold text-amber-500">SGC ISO 9001:2015 SISTEMA PRIVADO</span>
+        </div>
       </div>
 
-      <!-- Demo Quick Access Hint Box -->
-      <div class="p-3.5 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-600 dark:text-blue-400 space-y-1">
-        <div class="flex items-center gap-2 font-bold">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Credenciales Administrativas Demo:</span>
+      <a href="/" class="px-4 py-2 rounded-xl text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] transition flex items-center gap-1.5 border border-[var(--border-subtle)]">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        <span>Volver a la Web</span>
+      </a>
+    </header>
+
+    <!-- Standalone Login Card -->
+    <main class="flex-1 flex items-center justify-center p-4">
+      <div class="w-full max-w-md p-8 sm:p-10 rounded-3xl industrial-card shadow-2xl space-y-6 relative overflow-hidden bg-[var(--bg-surface)] border border-[var(--border-strong)]">
+        <div class="text-center space-y-2">
+          <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-[#DC2626] flex items-center justify-center mx-auto mb-3 border border-red-500/20 shadow-inner">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Iniciar Sesión</h1>
+          <p class="text-xs text-[var(--text-secondary)]">Gestor de Contenidos, Productos y Telemetría Operativa.</p>
         </div>
-        <div class="font-mono text-[11px] pl-6 text-[var(--text-secondary)]">
-          <div>Usuario: <strong class="text-[var(--text-primary)]">admin@servitotales.com</strong></div>
-          <div>Clave: <strong class="text-[var(--text-primary)]">admin2026</strong></div>
+
+        <div class="p-3.5 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-600 dark:text-blue-400 space-y-1">
+          <div class="flex items-center gap-2 font-bold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Credenciales Administrativas Demo:</span>
+          </div>
+          <div class="font-mono text-[11px] pl-6 text-[var(--text-secondary)]">
+            <div>Usuario: <strong class="text-[var(--text-primary)]">admin@servitotales.com</strong></div>
+            <div>Clave: <strong class="text-[var(--text-primary)]">admin2026</strong></div>
+          </div>
         </div>
+
+        <form id="admin-login-form" class="space-y-4">
+          <div>
+            <label for="admin-email" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider mb-2">Usuario Corporativo</label>
+            <input
+              type="email"
+              id="admin-email"
+              name="email"
+              required
+              value="admin@servitotales.com"
+              placeholder="admin@servitotales.com"
+              class="w-full px-4 py-3.5 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626] transition"
+            />
+          </div>
+
+          <div>
+            <label for="admin-password" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider mb-2">Contraseña de Seguridad</label>
+            <input
+              type="password"
+              id="admin-password"
+              name="password"
+              required
+              value="admin2026"
+              placeholder="••••••••"
+              class="w-full px-4 py-3.5 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626] transition"
+            />
+          </div>
+
+          <div id="login-error" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-xs font-bold text-red-500 text-center">
+            Credenciales incorrectas.
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-4 text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-2xl shadow-lg shadow-red-950/30 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer flex items-center justify-center gap-2"
+          >
+            <span>Acceder al Panel de Control</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </button>
+        </form>
       </div>
+    </main>
 
-      <form id="admin-login-form" class="space-y-4">
-        <div>
-          <label for="admin-email" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider mb-2">Usuario Corporativo</label>
-          <input
-            type="email"
-            id="admin-email"
-            name="email"
-            required
-            value="admin@servitotales.com"
-            placeholder="admin@servitotales.com"
-            class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626] transition"
-          />
-        </div>
+    <!-- Clean Admin Footer -->
+    <footer class="w-full py-4 px-6 border-t border-[var(--border-subtle)] text-center text-xs text-slate-500 font-mono">
+      Servicios Totales del Perú S.A.C. • Panel de Control v2.4 • ISO 9001:2015
+    </footer>
 
-        <div>
-          <label for="admin-password" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider mb-2">Contraseña de Seguridad</label>
-          <input
-            type="password"
-            id="admin-password"
-            name="password"
-            required
-            value="admin2026"
-            placeholder="••••••••"
-            class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626] transition"
-          />
-        </div>
+    <script>
+      const form = document.getElementById('admin-login-form');
+      const errorBox = document.getElementById('login-error');
 
-        <div id="login-error" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-xs font-bold text-red-500 text-center">
-          Credenciales incorrectas. Verifica el usuario y la contraseña.
-        </div>
+      if (localStorage.getItem('servitotales_admin_auth') === 'true') {
+        window.location.href = '/admin';
+      }
 
-        <button
-          type="submit"
-          class="w-full py-3.5 text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-2xl shadow-lg shadow-red-950/30 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer flex items-center justify-center gap-2"
-        >
-          <span>Acceder al Panel de Control</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </button>
-      </form>
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = (document.getElementById('admin-email') as HTMLInputElement).value.trim();
+        const password = (document.getElementById('admin-password') as HTMLInputElement).value.trim();
 
-      <div class="pt-4 border-t border-[var(--border-subtle)] text-center">
-        <a href="/" class="text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] font-bold transition inline-flex items-center gap-1">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-          <span>Volver al Portal Público</span>
-        </a>
-      </div>
-    </div>
-  </section>
-</Layout>
-
-<script>
-  const form = document.getElementById('admin-login-form');
-  const errorBox = document.getElementById('login-error');
-
-  // If already logged in, redirect to /admin
-  if (localStorage.getItem('servitotales_admin_auth') === 'true') {
-    window.location.href = '/admin';
-  }
-
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = (document.getElementById('admin-email') as HTMLInputElement).value.trim();
-    const password = (document.getElementById('admin-password') as HTMLInputElement).value.trim();
-
-    if ((email === 'admin@servitotales.com' && password === 'admin2026') || (email && password.length >= 4)) {
-      localStorage.setItem('servitotales_admin_auth', 'true');
-      localStorage.setItem('servitotales_admin_user', email);
-      localStorage.setItem('servitotales_admin_session_time', new Date().toISOString());
-      window.location.href = '/admin';
-    } else {
-      if (errorBox) errorBox.classList.remove('hidden');
-    }
-  });
-</script>
+        if ((email === 'admin@servitotales.com' && password === 'admin2026') || (email && password.length >= 4)) {
+          localStorage.setItem('servitotales_admin_auth', 'true');
+          localStorage.setItem('servitotales_admin_user', email);
+          window.location.href = '/admin';
+        } else {
+          if (errorBox) errorBox.classList.remove('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

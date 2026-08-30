@@ -1,10 +1,92 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
+
+const sgcLines = [
+  {
+    num: "01",
+    title: "Proveedor de Herramientas y Equipos",
+    items: [
+      "Herramientas Manuales: Llaves, herramientas de corte, golpe, sujeción y medición de precisión industrial.",
+      "Herramientas Eléctricas y Neumáticas: Taladros, amoladoras, rotomartillos, llaves de impacto y compresores."
+    ]
+  },
+  {
+    num: "02",
+    title: "Equipos de Protección Personal (EPP)",
+    items: [
+      "Protección Craneal: Cascos de seguridad (Clase A, B, C), barbiquejo y gorras antichoque.",
+      "Protección Ocular y Facial: Lentes de seguridad (transparentes, oscuros, antiparras), caretas para esmerilar y caretas para soldar.",
+      "Protección Auditiva: Tapones auditivos reutilizables/desechables y orejeras de copa para casco o cintillo.",
+      "Protección Respiratoria: Mascarillas quirúrgicas, respiradores media cara y Full Face con filtros P100 para partículas y vapores.",
+      "Protección de Extremidades: Guantes de nitrilo, látex, poliuretano, cuero/badana, anticorte, dieléctricos y calzado con puntera composite.",
+      "Protección Anticaídas: Arneses de cuerpo entero (líneas de vida, estrobos con absorbente de impacto) y bloques retráctiles."
+    ]
+  },
+  {
+    num: "03",
+    title: "Indumentaria de Trabajo Industrial",
+    items: [
+      "Ropa de Trabajo Convencional: Pantalones, camisas, polos de algodón con cinta reflectante y chalecos de alta visibilidad (tipo ingeniero).",
+      "Ropa de Protección Especializada: Overoles (mamelucos) térmicos, impermeables para lluvia, trajes Tyvek para protección química y prendas ignífugas.",
+      "Indumentaria de Cuero: Casacas, mandiles, escarpines y mangas de cuero para trabajos de soldadura."
+    ]
+  },
+  {
+    num: "04",
+    title: "Venta y Alquiler de Maquinaria, Vehículos y Equipos",
+    items: [
+      "Movimiento de Tierras y Excavación: Excavadoras de orugas, retroexcavadoras, bulldozers (tractores de orugas) y minicargadores.",
+      "Elevación y Carga: Elevadores de tijera, montacargas, manlifts articulados/telescópicos, manipuladores telescópicos y grúas móviles.",
+      "Maquinaria Vial y de Compactación: Motoniveladoras, rodillos compactadores (lisos, pata de cabra, neumáticos) y pavimentadoras.",
+      "Vehículos de Transporte y Obras: Camiones volquete convencionales y camiones articulados de alta capacidad.",
+      "Limpieza Industrial: Aspiradoras industriales de polvo y líquido, fregadoras de pisos automáticas, barredoras e hidrolavadoras de alta presión.",
+      "Generación Eléctrica: Grupos electrógenos diésel portátiles y estacionarios, torres de iluminación y tableros de transferencia.",
+      "Minería Cielo Abierto y Subterránea Trackless: Jumbos electrohidráulicos, cargadores Scooptrams, dumpers mineros y empernadores de roca."
+    ]
+  },
+  {
+    num: "05",
+    title: "Herramientas e Insumos de Ferretería",
+    items: [
+      "Materiales de Fijación y Sujeción: Tornillos, pernos de alta resistencia A325, tuercas, arandelas, remaches, clavos y abrazaderas.",
+      "Abrasivos y Corte: Discos de corte y desbaste (metal, inox, concreto), lijas, brocas, limas y hojas de sierra.",
+      "Adhesivos y Químicos: Siliconas neutras y acéticas, espuma de poliuretano, pegamentos epóxicos, resinas y cintas aislantes.",
+      "Pinturas y Acabados: Pinturas látex, esmaltes sintéticos, pintura epóxica para pisos industriales y bases anticorrosivas.",
+      "Cerrajería, Electricidad y Fontanería: Candados de alta seguridad, cables de acero, cables eléctricos vulcanizados y tubos PVC/CPVC."
+    ]
+  },
+  {
+    num: "06",
+    title: "Insumos y Materiales de Oficina",
+    items: [
+      "Papelería y Útiles de Escritorio: Papel bond (A4, A3), archivadores lomo ancho, carpetas manilas y sobres.",
+      "Artículos de Escritura y Sujeción: Bolígrafos, resaltadores, marcadores de pizarra, engrapadoras, perforadores y cúters.",
+      "Insumos Tecnológicos y Consumibles: Cartuchos de tinta y tóners para impresoras, memorias USB, discos duros y teclados."
+    ]
+  },
+  {
+    num: "07",
+    title: "Mobiliario de Oficina & Campamento",
+    items: [
+      "Sillería y Asientos Ergonómicos: Sillas gerenciales con soporte lumbar, sillas operativas con ruedas y bancas tándem.",
+      "Estaciones de Trabajo y Escritorios: Escritorios gerenciales, mesas operativas individuales/compartidas y mesas de reuniones.",
+      "Sistemas de Almacenamiento & Soporte: Archivadores metálicos, armarios documentales con llave, cajoneras y lockers metálicos reforzados."
+    ]
+  },
+  {
+    num: "08",
+    title: "Suministros Especiales & Maquinaria Bajo Demanda",
+    items: [
+      "Suministros Corporativos Especiales: Provisión bajo demanda de insumos industriales, técnicos, químicos, tecnológicos y repuestos críticos.",
+      "Maquinaria y Vehículos Especiales bajo Demanda: Comercialización y alquiler de equipos complementarios de línea amarilla y soporte logístico."
+    ]
+  }
+];
 ---
 
 <Layout
-  title="Nosotros & Sistema de Gestión ISO 9001:2015 | SERVITOTALES S.A.C."
-  description="Conoce la trayectoria, pilares de calidad ISO 9001:2015, misión, visión y alcance técnico de SERVITOTALES S.A.C. a nivel nacional."
+  title="Nosotros, SGC ISO 9001:2015 & Brochure Oficial | SERVITOTALES S.A.C."
+  description="Conoce la trayectoria, pilares de calidad ISO 9001:2015, misión oficial, visión 2030 y descarga el brochure corporativo oficial de SERVITOTALES S.A.C."
 >
   <!-- Atmospheric Hero Section with Dedicated Image -->
   <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
@@ -21,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl space-y-4" id="nosotros-hero">
+      <div class="max-w-3xl space-y-5" id="nosotros-hero">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
           <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
           02 // NOSOTROS & SGC ISO 9001:2015
@@ -30,53 +112,142 @@ import Layout from '../layouts/Layout.astro';
           Liderazgo, Idoneidad Técnica y Compromiso con el País
         </h1>
         <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal" id="nosotros-desc">
-          Servicios Totales del Perú S.A.C. es un socio estratégico integral para los sectores más exigentes de minería, construcción e industria en todo el territorio nacional.
+          Somos un socio estratégico clave para los sectores de construcción, minería, vial, industria y comercio a nivel nacional. Operamos bajo un riguroso Sistema de Gestión de la Calidad (SGC) respaldado por la certificación internacional ISO 9001:2015.
         </p>
+
+        <!-- Direct Download Buttons in Hero -->
+        <div class="pt-3 flex flex-wrap items-center gap-3">
+          <a
+            href="/docs/Brochure-Corporativo-Servitotales.pdf"
+            download="Brochure-Corporativo-Servitotales.pdf"
+            target="_blank"
+            class="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2 hover:-translate-y-0.5 cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span>Descargar Brochure Corporativo (PDF)</span>
+          </a>
+
+          <a
+            href="#matriz-operaciones"
+            class="px-6 py-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider border border-slate-700 transition backdrop-blur-md"
+          >
+            <span>Ver Matriz de Operaciones</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ISO 9001 Spotlight -->
-  <section class="py-20 lg:py-28 border-b border-[var(--border-subtle)]">
+  <!-- Datos Institucionales & RUC Spotlight -->
+  <section class="py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-5 rounded-2xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-1">
+          <span class="text-[10px] font-mono font-bold text-slate-400 uppercase block">Razón Social Oficial</span>
+          <strong class="text-sm font-bold text-[var(--text-primary)] block">Servicios Totales del Perú S.A.C.</strong>
+          <span class="text-xs font-mono text-red-500 font-bold">RUC: 20600889584</span>
+        </div>
+
+        <div class="p-5 rounded-2xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-1">
+          <span class="text-[10px] font-mono font-bold text-slate-400 uppercase block">Gerencia General</span>
+          <strong class="text-sm font-bold text-[var(--text-primary)] block">María Ramos Fernández</strong>
+          <span class="text-xs text-[var(--text-secondary)]">Representación Legal y Técnica</span>
+        </div>
+
+        <div class="p-5 rounded-2xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-1">
+          <span class="text-[10px] font-mono font-bold text-slate-400 uppercase block">Sede y Dirección Legal</span>
+          <strong class="text-xs font-bold text-[var(--text-primary)] block">Av. Dominicos Mza. D Lote 12</strong>
+          <span class="text-xs text-[var(--text-secondary)]">Asc. Los Nardos, Callao, Lima [Perú]</span>
+        </div>
+
+        <div class="p-5 rounded-2xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-1">
+          <span class="text-[10px] font-mono font-bold text-slate-400 uppercase block">Certificación de Calidad</span>
+          <strong class="text-sm font-bold text-amber-500 block">SGC ISO 9001:2015</strong>
+          <span class="text-xs text-emerald-500 font-bold">● Homologación Vigente</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión Oficial & Visión al 2030 -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Misión -->
+        <div class="p-8 sm:p-12 rounded-3xl industrial-card border-l-4 border-[#DC2626] space-y-4 gsap-card bg-[var(--bg-surface)]">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-[#DC2626] uppercase">// NUESTRO PROPÓSITO INSTITUCIONAL</span>
+            <div class="w-8 h-8 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Misión Oficial</h2>
+          <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+            Proveer soluciones integrales de alta confiabilidad en suministros industriales, equipos de protección y gestión de maquinaria pesada, asegurando la continuidad operativa y el éxito de nuestros clientes corporativos mediante estándares internacionales de calidad, seguridad y oportunidad.
+          </p>
+        </div>
+
+        <!-- Visión 2030 -->
+        <div class="p-8 sm:p-12 rounded-3xl industrial-card border-l-4 border-blue-600 space-y-4 gsap-card bg-[var(--bg-surface)]">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">// HORIZONTE ESTRATÉGICO AL 2030</span>
+            <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </div>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Visión al 2030</h2>
+          <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+            Consolidarnos al 2030 como la empresa líder a nivel nacional en abastecimiento industrial y soluciones de equipamiento pesado para los sectores productivos y extractivos del país, siendo reconocidos por nuestra excelencia operativa, mejora continua y estricto cumplimiento normativo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ISO 9001 Alcance & Declaración Oficial -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-6 space-y-6 gsap-fade-up">
           <div class="flex items-center gap-2 text-amber-500 font-mono text-xs font-bold">
             <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-            <span>CALIDAD CERTIFICADA INTERNACIONAL</span>
+            <span>NORMA INTERNACIONAL SGC</span>
           </div>
           <h2 class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading leading-tight">
-            Sistema de Gestión de la Calidad ISO 9001:2015
+            Alcance del Sistema de Gestión de la Calidad (SGC)
           </h2>
           <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-            Nuestro estándar de gestión asegura que cada proceso —desde la recepción de un requerimiento de maquinaria hasta la inspección técnica de EPP y la entrega en obra— cumpla con rigurosos protocolos de trazabilidad, seguridad y mantenimiento preventivo.
+            Nuestro SGC abarca la comercialización y servicio de alquiler de flota pesada, equipos para minería subterránea trackless, implementos de protección personal e indumentaria, insumos de ferretería pesada y mobiliario técnico.
           </p>
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">✓</div>
-              <p class="text-xs sm:text-sm text-[var(--text-primary)] font-semibold">Trazabilidad documental y certificados de calibración al día.</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">✓</div>
-              <p class="text-xs sm:text-sm text-[var(--text-primary)] font-semibold">Mantenimiento riguroso con repuestos originales y técnicos homologados.</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">✓</div>
-              <p class="text-xs sm:text-sm text-[var(--text-primary)] font-semibold">Auditorías periódicas de satisfacción y mejora continua.</p>
-            </div>
+          
+          <div class="p-6 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] space-y-3">
+            <h3 class="text-xs font-mono font-bold text-amber-500 uppercase">Declaración Oficial del Alcance:</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed italic">
+              "El Sistema de Gestión de la Calidad de la organización comprende la comercialización (venta) de herramientas manuales, eléctricas y neumáticas; equipos de protección personal (EPP); indumentaria de trabajo industrial; herramientas e insumos de ferretería; insumos, materiales y mobiliario de oficina; así como cualquier otro tipo de suministro corporativo, material o insumo industrial requerido bajo demanda por el cliente. Asimismo, incluye la comercialización (venta) y el servicio de alquiler (con o sin operador) de maquinaria pesada, equipos y vehículos para los sectores de construcción, minería, vial, industria y comercio..."
+            </p>
           </div>
         </div>
 
         <div class="lg:col-span-6 gsap-fade-up">
-          <div class="p-8 sm:p-10 rounded-3xl industrial-card bg-gradient-to-br from-[var(--bg-surface)] to-[var(--bg-main)] shadow-xl space-y-6">
-            <div class="text-5xl font-black text-amber-500 font-heading">ISO 9001:2015</div>
-            <h3 class="text-xl font-bold text-[var(--text-primary)]">Alcance del Sistema de Gestión</h3>
-            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-              "Comercialización, distribución y alquiler de maquinaria pesada, equipos para minería subterránea y de superficie, equipos de protección personal (EPP), insumos de ferretería y suministros industriales para los sectores público y privado."
+          <div class="p-8 sm:p-10 rounded-3xl industrial-card bg-gradient-to-br from-slate-900 to-[#0A1224] text-white shadow-2xl space-y-6 border border-slate-800">
+            <div class="flex items-center justify-between">
+              <span class="text-4xl font-black text-amber-400 font-heading">ISO 9001:2015</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold border border-emerald-500/30">VIGENTE</span>
+            </div>
+            
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Garantizamos el mantenimiento preventivo/correctivo de equipos, la idoneidad técnica de los operadores y la conformidad de todos los requisitos técnicos en obra a nivel nacional.
             </p>
-            <div class="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-mono text-[var(--text-muted)]">
-              <span>ESTÁNDAR: SGC ISO 9001</span>
-              <span class="text-emerald-500 font-bold">● VIGENTE</span>
+
+            <div class="pt-4 border-t border-slate-800 space-y-3">
+              <a
+                href="/docs/Brochure-Corporativo-Servitotales.pdf"
+                download="Brochure-Corporativo-Servitotales.pdf"
+                target="_blank"
+                class="w-full py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider text-center block transition shadow-md"
+              >
+                Descargar Documento Oficial SGC (PDF)
+              </a>
             </div>
           </div>
         </div>
@@ -84,25 +255,36 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Misión & Visión -->
-  <section class="py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-8 sm:p-12 rounded-3xl industrial-card space-y-4 gsap-card">
-          <span class="text-xs font-mono font-bold text-[#DC2626] uppercase">// NUESTRO PROPÓSITO</span>
-          <h3 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Misión</h3>
-          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
-            Proveer soluciones integrales de alta ingeniería, suministro de maquinaria de última generación, indumentaria de seguridad certificada y suministros industriales, garantizando la continuidad operativa y superando las expectativas de calidad de nuestros clientes en todo el territorio peruano.
-          </p>
-        </div>
+  <!-- Matriz Completa de Operación (8 Líneas de Productos y Servicios) -->
+  <section id="matriz-operaciones" class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-widest">// DETALLE DE PRODUCTOS Y SERVICIOS INCLUIDOS</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading">
+          Matriz de Operación & Homologación Técnica
+        </h2>
+        <p class="text-sm text-[var(--text-secondary)]">
+          Para cumplir con la exhaustividad que exige la norma ISO 9001:2015, nuestros procesos cubren 8 líneas específicas de abastecimiento y servicios:
+        </p>
+      </div>
 
-        <div class="p-8 sm:p-12 rounded-3xl industrial-card space-y-4 gsap-card">
-          <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">// HORIZONTE 2030</span>
-          <h3 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Visión</h3>
-          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
-            Consolidarnos como la corporación líder e indiscutible en el abastecimiento estratégico de proyectos mineros, viales y de construcción en el Perú, reconocidos por nuestra solidez operativa, innovación logística, estricto apego a normas de seguridad y compromiso con el desarrollo sostenible.
-          </p>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {sgcLines.map((line) => (
+          <div class="p-6 sm:p-8 rounded-3xl industrial-card bg-[var(--bg-surface)] border border-[var(--border-subtle)] space-y-4 hover:border-slate-600 transition">
+            <div class="flex items-center gap-3">
+              <span class="text-lg font-mono font-black text-[#DC2626]">{line.num}</span>
+              <h3 class="text-base font-bold text-[var(--text-primary)] font-heading leading-tight">{line.title}</h3>
+            </div>
+            <ul class="space-y-2 pt-2 border-t border-[var(--border-subtle)]">
+              {line.items.map((item) => (
+                <li class="text-xs text-[var(--text-secondary)] flex items-start gap-2 leading-relaxed">
+                  <span class="text-emerald-500 font-bold shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </section>

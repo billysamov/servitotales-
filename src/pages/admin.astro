@@ -8,7 +8,7 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Panel de Control & CMS | SERVITOTALES S.A.C.</title>
+    <title>Panel de Administración & CMS Integral | SERVITOTALES S.A.C.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -28,16 +28,16 @@ import '../styles/global.css';
   </head>
   <body class="bg-slate-950 text-slate-100 antialiased min-h-screen font-sans flex flex-col selection:bg-red-600 selection:text-white">
     
-    <!-- Top Professional Admin Navbar -->
+    <!-- Top Admin Header -->
     <header class="sticky top-0 z-50 w-full px-4 sm:px-6 py-2.5 bg-slate-900/95 border-b border-slate-800 backdrop-blur-md flex items-center justify-between gap-4">
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
         <a href="/admin" class="flex items-center gap-2.5 group">
           <div class="w-8 h-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center text-sm shadow-md group-hover:scale-105 transition-transform">
             ST
           </div>
           <div class="flex flex-col">
             <span class="text-sm font-black tracking-wider text-white font-heading leading-tight">
-              SERVI<span class="text-red-500">TOTALES</span> <span class="text-[10px] font-mono font-medium text-slate-400">PANEL</span>
+              SERVI<span class="text-red-500">TOTALES</span> <span class="text-[10px] font-mono font-medium text-slate-400">ADMIN</span>
             </span>
             <span class="text-[8px] font-mono font-bold text-amber-400 tracking-wider">SGC ISO 9001:2015</span>
           </div>
@@ -45,17 +45,15 @@ import '../styles/global.css';
 
         <div class="hidden md:flex items-center gap-2 pl-4 border-l border-slate-800 text-[11px] text-slate-400 font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Sistema Operativo en Línea</span>
+          <span>Panel de Gestión en Vivo</span>
         </div>
       </div>
 
-      <!-- Right Header Actions -->
       <div class="flex items-center gap-2.5">
         <a
           href="/"
           target="_blank"
           class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 transition flex items-center gap-1.5 border border-slate-700/60"
-          title="Ver Sitio Web Público"
         >
           <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
           <span class="hidden sm:inline">Ver Sitio Web</span>
@@ -77,293 +75,254 @@ import '../styles/global.css';
       </div>
     </header>
 
-    <!-- Main Admin Container with Sleek Sidebar Navigation -->
+    <!-- Main Workspace -->
     <div class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-6">
       
-      <!-- Left Sidebar Navigation -->
+      <!-- Left Navigation Menu -->
       <aside class="w-full lg:w-64 shrink-0 space-y-4">
-        <!-- Navigation Menu -->
-        <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg space-y-1" id="admin-nav-tabs">
+        <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg space-y-1" id="admin-main-nav">
           <span class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider px-3 py-1.5 block">
-            Módulos del Sistema
+            Navegación del Administrador
           </span>
 
           <button
             type="button"
-            data-tab="dashboard"
-            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-white bg-red-600 shadow-md cursor-pointer"
-          >
-            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
-            <span>Tablero General</span>
-          </button>
-
-          <button
-            type="button"
             data-tab="cms"
-            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
+            class="admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-white bg-red-600 shadow-md cursor-pointer"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-            <span>Editor de Textos & CMS</span>
+            <span>Editor de Textos (CMS)</span>
           </button>
 
           <button
             type="button"
             data-tab="catalog"
-            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
+            class="admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            <span>Catálogo & Fotos</span>
+            <span>Gestor de Productos & Fotos</span>
           </button>
 
           <button
             type="button"
             data-tab="leads"
-            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
+            class="admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-            <span>Cotizaciones Web</span>
+            <span>Mesa de Cotizaciones Web</span>
           </button>
         </div>
 
-        <!-- Quick Status Card -->
         <div class="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs space-y-2">
           <div class="flex items-center justify-between text-slate-400">
-            <span class="font-mono text-[10px] uppercase font-bold">Estado ISO 9001</span>
-            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <span class="font-mono text-[10px] uppercase font-bold">Total Catálogo Activo</span>
+            <span class="font-mono text-xs text-white font-bold" id="total-catalog-badge">45 Productos</span>
           </div>
-          <p class="text-[11px] text-slate-300 font-medium">SGC Homologado para minería y construcción civil.</p>
+          <p class="text-[11px] text-slate-400">Maquinaria, Minería Trackless, EPP y Suministros con fotografías oficiales.</p>
         </div>
       </aside>
 
-      <!-- Right Main Workspace -->
+      <!-- Main Content Panel -->
       <main class="flex-1 space-y-6 min-w-0">
         
-        <!-- 1. TAB DASHBOARD / RESUMEN -->
-        <div id="tab-content-dashboard" class="admin-panel space-y-6">
+        <!-- ========================================================================= -->
+        <!-- 1. MÓDULO CMS: EDITOR COMPLETO DE TODOS LOS TEXTOS DE TODAS LAS PÁGINAS -->
+        <!-- ========================================================================= -->
+        <div id="panel-cms" class="admin-tab-panel space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
-              <h1 class="text-xl font-black text-white font-heading">Tablero General de Operaciones</h1>
-              <p class="text-xs text-slate-400">Resumen de solicitudes, catálogo activo y estado del sistema.</p>
+              <h1 class="text-xl font-black text-white font-heading">Editor de Contenidos & Textos (CMS)</h1>
+              <p class="text-xs text-slate-400">Selecciona la página que deseas modificar. Todos los campos son editables.</p>
             </div>
-            <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800 w-fit">
-              Actualizado: <span id="dash-time" class="text-white font-bold">En tiempo real</span>
+            <span id="cms-save-indicator" class="hidden text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/30">
+              Cambios Guardados
             </span>
           </div>
 
-          <!-- Compact KPI Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Cotizaciones</span>
-                <span class="text-xl font-black text-white font-heading">12</span>
-                <span class="text-[10px] text-emerald-400 font-bold block">+3 hoy</span>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Flota Activa</span>
-                <span class="text-xl font-black text-white font-heading">28 / 34</span>
-                <span class="text-[10px] text-blue-400 font-bold block">82% Operando</span>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Catálogo Web</span>
-                <span class="text-xl font-black text-white font-heading">29 Ítems</span>
-                <span class="text-[10px] text-amber-400 font-bold block">Fotos asignadas</span>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Calidad SST</span>
-                <span class="text-xl font-black text-emerald-400 font-heading">100%</span>
-                <span class="text-[10px] text-slate-400 font-bold block">Certificación OK</span>
-              </div>
-            </div>
+          <!-- Page Tabs for CMS -->
+          <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800" id="cms-page-tabs">
+            <button type="button" data-page="home" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition">1. Inicio (Portada)</button>
+            <button type="button" data-page="nosotros" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">2. Nosotros & ISO</button>
+            <button type="button" data-page="maquinaria" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">3. Maquinaria</button>
+            <button type="button" data-page="epp" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">4. Seguridad & EPP</button>
+            <button type="button" data-page="suministros" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">5. Suministros</button>
+            <button type="button" data-page="contacto" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">6. Contacto & Header</button>
           </div>
 
-          <!-- Quick Access Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                  <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                  <span>Editor de Contenido & Textos</span>
-                </h3>
-              </div>
-              <p class="text-xs text-slate-400">Modifica titulares, subtítulos, etiquetas y teléfonos de la web con actualización en vivo.</p>
-              <button
-                type="button"
-                onclick="document.querySelector('[data-tab=cms]').click()"
-                class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition cursor-pointer"
-              >
-                Abrir Editor de Textos
-              </button>
-            </div>
-
-            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                  <span>Gestor de Productos & Fotos</span>
-                </h3>
-              </div>
-              <p class="text-xs text-slate-400">Edita fotografías, especificaciones y agrega maquinaria pesada, EPP o suministros.</p>
-              <button
-                type="button"
-                onclick="document.querySelector('[data-tab=catalog]').click()"
-                class="px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition cursor-pointer"
-              >
-                Administrar Catálogo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. TAB CMS: EDITOR COMPLETO DE TEXTOS DE TODA LA WEB -->
-        <div id="tab-content-cms" class="admin-panel hidden space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
-            <div>
-              <h2 class="text-xl font-black text-white font-heading">Editor Integral de Textos & Contenidos</h2>
-              <p class="text-xs text-slate-400">Personaliza cualquier titular, etiqueta, párrafo y dato de contacto de toda la web.</p>
-            </div>
-            <span id="cms-live-status" class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/30">
-              Guardado en Memoria
-            </span>
-          </div>
-
-          <!-- Section Selector Accordion / Pills -->
-          <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800" id="cms-subtabs">
-            <button type="button" data-cms-section="home" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition">Página de Inicio</button>
-            <button type="button" data-cms-section="nosotros" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Nosotros & ISO</button>
-            <button type="button" data-cms-section="contact" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Contacto & Teléfonos</button>
-            <button type="button" data-cms-section="footer" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Header & Footer</button>
-          </div>
-
-          <form id="cms-master-form" class="space-y-6">
+          <form id="form-master-cms" class="space-y-6">
             
-            <!-- SECTION A: INICIO -->
-            <div id="cms-sec-home" class="cms-section-content space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">1. Portada & Hero Principal</h3>
+            <!-- CMS PÁGINA 1: INICIO -->
+            <div id="cms-page-home" class="cms-page-box space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h2 class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Contenidos de la Página de Inicio (/)</h2>
               
               <div class="space-y-3">
                 <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Etiqueta Superior / Badge</label>
-                  <input type="text" id="txt_home_badge" value="SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 font-mono" />
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior del Hero</label>
+                  <input type="text" id="c_home_badge" value="SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                 </div>
-
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal del Hero (H1)</label>
-                  <input type="text" id="txt_home_title" value="Potenciamos tus operaciones y proyectos con Maquinaria y Suministros" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 font-bold" />
+                  <input type="text" id="c_home_title" value="Potenciamos tus operaciones y proyectos con Maquinaria y Suministros" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
                 </div>
-
                 <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción / Párrafo del Hero</label>
-                  <textarea id="txt_home_desc" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-red-500">Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.</textarea>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción / Bajada del Hero</label>
+                  <textarea id="c_home_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.</textarea>
                 </div>
-
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
-                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora Beneficio 1</label>
-                    <input type="text" id="txt_home_pill1" value="Operadores Homologados" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora 1</label>
+                    <input type="text" id="c_home_p1" value="Operadores Homologados" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                   </div>
                   <div>
-                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora Beneficio 2</label>
-                    <input type="text" id="txt_home_pill2" value="Soporte en Sitio 24/7" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora 2</label>
+                    <input type="text" id="c_home_p2" value="Soporte en Sitio 24/7" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                   </div>
                   <div>
-                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora Beneficio 3</label>
-                    <input type="text" id="txt_home_pill3" value="Despacho a Nivel Nacional" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora 3</label>
+                    <input type="text" id="c_home_p3" value="Despacho a Nivel Nacional" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-800 space-y-3">
+                  <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Sección de las 3 Divisiones en Portada</span>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Título Sección Divisiones</label>
+                    <input type="text" id="c_home_div_title" value="Soluciones Integrales para Minería, Construcción e Industria" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Subtítulo Sección Divisiones</label>
+                    <input type="text" id="c_home_div_desc" value="Unidades de negocio homologadas para proyectos en costa, sierra y selva con despacho directo en obra." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SECTION B: NOSOTROS -->
-            <div id="cms-sec-nosotros" class="cms-section-content hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">2. Nosotros & Sistema de Calidad ISO 9001</h3>
+            <!-- CMS PÁGINA 2: NOSOTROS -->
+            <div id="cms-page-nosotros" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h2 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Contenidos de Nosotros & ISO 9001 (/nosotros)</h2>
               
               <div class="space-y-3">
                 <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular de la Página Nosotros</label>
-                  <input type="text" id="txt_nosotros_title" value="Liderazgo, Idoneidad Técnica y Compromiso con el País" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 font-bold" />
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
+                  <input type="text" id="c_nos_badge" value="02 // NOSOTROS & SGC ISO 9001:2015" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
+                  <input type="text" id="c_nos_title" value="Liderazgo, Idoneidad Técnica y Compromiso con el País" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Descripción de Trayectoria</label>
-                  <textarea id="txt_nosotros_desc" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-red-500">Servicios Totales del Perú S.A.C. es un socio estratégico integral para los sectores más exigentes de minería, construcción e industria en todo el territorio nacional.</textarea>
+                  <textarea id="c_nos_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Servicios Totales del Perú S.A.C. es un socio estratégico integral para los sectores más exigentes de minería, construcción e industria en todo el territorio nacional.</textarea>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Propósito / Misión</label>
-                    <textarea id="txt_nosotros_mision" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Garantizar continuidad operativa y máxima seguridad en cada obra mediante equipos de alta disponibilidad.</textarea>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Misión</label>
+                    <textarea id="c_nos_mision" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Garantizar continuidad operativa y máxima seguridad en cada obra mediante equipos de alta disponibilidad.</textarea>
                   </div>
                   <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Visión Corporativa</label>
-                    <textarea id="txt_nosotros_vision" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Ser el referente nacional en alquiler de maquinaria pesada y suministro homologado para la gran minería.</textarea>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Visión</label>
+                    <textarea id="c_nos_vision" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Ser el referente nacional en alquiler de maquinaria pesada y suministro homologado para la gran minería.</textarea>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SECTION C: CONTACTO -->
-            <div id="cms-sec-contact" class="cms-section-content hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">3. Canales de Contacto & Atención Prioritaria</h3>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Central Telefónica Directa</label>
-                  <input type="text" id="txt_contact_phone" value="+51 963 895 085" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
-                </div>
-                <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Número de WhatsApp Cotizaciones</label>
-                  <input type="text" id="txt_contact_wa" value="51963895085" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
-                </div>
-                <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Correo Institucional</label>
-                  <input type="email" id="txt_contact_email" value="contacto@servitotales.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
-                </div>
-                <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Cobertura de Entrega</label>
-                  <input type="text" id="txt_contact_coverage" value="Entrega en Obra a Nivel Nacional" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
-                </div>
-              </div>
-            </div>
-
-            <!-- SECTION D: FOOTER -->
-            <div id="cms-sec-footer" class="cms-section-content hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">4. Textos de Header y Footer</h3>
+            <!-- CMS PÁGINA 3: MAQUINARIA -->
+            <div id="cms-page-maquinaria" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h2 class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Contenidos de Maquinaria Pesada & Minería (/maquinaria)</h2>
               
               <div class="space-y-3">
                 <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Texto de la Barra Superior (Docked Utility Bar)</label>
-                  <input type="text" id="txt_footer_banner" value="SGC ISO 9001:2015 CERTIFICADO • Servicios Totales del Perú S.A.C." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
+                  <input type="text" id="c_maq_badge" value="03 // CATÁLOGO DE FLOTA OPERATIVA" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-slate-300 mb-1">Texto de Derechos Reservados / Copyright</label>
-                  <input type="text" id="txt_footer_copy" value="© 2026 Servicios Totales del Perú S.A.C. Todos los derechos reservados." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
+                  <input type="text" id="c_maq_title" value="Maquinaria Pesada & Minería Subterránea" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción del Catálogo de Maquinaria</label>
+                  <textarea id="c_maq_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Flota moderna en excelentes condiciones mecánicas, con checklist diario, planes de mantenimiento preventivo y operadores homologados para faenas de alta exigencia a nivel nacional.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- CMS PÁGINA 4: EPP -->
+            <div id="cms-page-epp" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h2 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Contenidos de Seguridad & EPP (/epp)</h2>
+              
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
+                  <input type="text" id="c_epp_badge" value="04 // EQUIPOS DE PROTECCIÓN PERSONAL" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
+                  <input type="text" id="c_epp_title" value="Seguridad Industrial & EPP Normado" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción del Catálogo de EPP</label>
+                  <textarea id="c_epp_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Abastecimiento mayorista y corporativo de implementos de seguridad industrial certificados ANSI, OSHA y NIOSH para faenas de alto riesgo en minería y obras civiles.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- CMS PÁGINA 5: SUMINISTROS -->
+            <div id="cms-page-suministros" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h2 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Contenidos de Ferretería & Suministros (/suministros)</h2>
+              
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
+                  <input type="text" id="c_sum_badge" value="05 // FERRETERÍA & SUMINISTROS" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
+                  <input type="text" id="c_sum_title" value="Ferretería Industrial, Mobiliario & Suministros" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción del Catálogo de Suministros</label>
+                  <textarea id="c_sum_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Soluciones de aprovisionamiento continuo para campamentos mineros, talleres de maestranza y frentes de obra. Pernos de alta resistencia, abrasivos y mobiliario metálico.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- CMS PÁGINA 6: CONTACTO & GLOBAL -->
+            <div id="cms-page-contacto" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h2 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">Contacto, Canales Oficiales y Header/Footer Global</h2>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Central Telefónica</label>
+                  <input type="text" id="c_con_phone" value="+51 963 895 085" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Número de WhatsApp Cotizaciones</label>
+                  <input type="text" id="c_con_wa" value="51963895085" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Correo Institucional</label>
+                  <input type="email" id="c_con_email" value="contacto@servitotales.com" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Cobertura Geográfica</label>
+                  <input type="text" id="c_con_cov" value="Entrega en Obra a Nivel Nacional" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Texto de Barra Superior (Top Docked Bar)</label>
+                  <input type="text" id="c_con_topbar" value="SGC ISO 9001:2015 CERTIFICADO • Servicios Totales del Perú S.A.C." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Texto de Derechos de Autor (Footer Copyright)</label>
+                  <input type="text" id="c_con_copy" value="© 2026 Servicios Totales del Perú S.A.C. Todos los derechos reservados. SGC ISO 9001:2015." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                 </div>
               </div>
             </div>
 
             <div class="flex items-center justify-between pt-2">
-              <span id="cms-save-notification" class="hidden text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+              <span id="cms-success-msg" class="hidden text-xs font-bold text-emerald-400 flex items-center gap-1.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>¡Todos los textos han sido actualizados y guardados con éxito!</span>
+                <span>¡Cambios de texto guardados y actualizados con éxito!</span>
               </span>
 
               <button
@@ -377,58 +336,66 @@ import '../styles/global.css';
           </form>
         </div>
 
-        <!-- 3. TAB CATALOG: GESTOR DE PRODUCTOS & FOTOS -->
-        <div id="tab-content-catalog" class="admin-panel hidden space-y-6">
+        <!-- ========================================================================= -->
+        <!-- 2. MÓDULO CATÁLOGO: GESTOR DE PRODUCTOS SEGMENTADO POR LAS 3 DIVISIONES -->
+        <!-- ========================================================================= -->
+        <div id="panel-catalog" class="admin-tab-panel hidden space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
               <h2 class="text-xl font-black text-white font-heading">Gestor de Productos & Fotografías</h2>
-              <p class="text-xs text-slate-400">Edita imágenes, títulos y agrega nuevos ítems a los catálogos públicos.</p>
+              <p class="text-xs text-slate-400">Administra los productos de las 3 divisiones, cambia fotos por URL o añade nuevos ítems.</p>
             </div>
 
             <button
               type="button"
-              id="btn-add-product-modal"
+              id="btn-new-product"
               class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer w-fit"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-              <span>Agregar Producto</span>
+              <span>+ Agregar Producto</span>
             </button>
           </div>
 
-          <!-- Filter & Search Bar -->
-          <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-2 w-full sm:w-auto">
-              <input
-                type="text"
-                id="catalog-search-input"
-                placeholder="Filtrar por nombre, marca o división..."
-                class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 w-full sm:w-72"
-              />
+          <!-- Division Filter Tabs -->
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800" id="division-filter-tabs">
+              <button type="button" data-div="all" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition">Todos (45)</button>
+              <button type="button" data-div="maquinaria" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Maquinaria & Minería</button>
+              <button type="button" data-div="epp" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Seguridad & EPP</button>
+              <button type="button" data-div="suministros" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Ferretería & Suministros</button>
             </div>
-            <span class="text-xs text-slate-400 font-mono" id="catalog-count-label">Mostrando productos activos</span>
+
+            <input
+              type="text"
+              id="catalog-quick-search"
+              placeholder="Buscar producto o marca..."
+              class="px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 w-full sm:w-64"
+            />
           </div>
 
-          <!-- Product Cards Grid with Compact Clean UI -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="catalog-admin-grid">
-            <!-- Dynamic Items Injected via JS -->
+          <!-- Complete Products Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="catalog-products-container">
+            <!-- Dynamically Rendered via JS -->
           </div>
         </div>
 
-        <!-- 4. TAB LEADS: MESA DE COTIZACIONES -->
-        <div id="tab-content-leads" class="admin-panel hidden space-y-4">
+        <!-- ========================================================================= -->
+        <!-- 3. MÓDULO COTIZACIONES: BANDEJA DE ENTRADA DE REQUERIMIENTOS -->
+        <!-- ========================================================================= -->
+        <div id="panel-leads" class="admin-tab-panel hidden space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
               <h2 class="text-xl font-black text-white font-heading">Mesa de Cotizaciones Recibidas</h2>
-              <p class="text-xs text-slate-400">Solicitudes emitidas desde los formularios y WhatsApp.</p>
+              <p class="text-xs text-slate-400">Solicitudes registradas a través del formulario de contacto y WhatsApp.</p>
             </div>
 
             <button
               type="button"
-              id="btn-export-leads-csv"
+              id="btn-download-leads"
               class="px-3.5 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 hover:bg-emerald-600 hover:text-white transition text-xs font-bold border border-emerald-500/30 flex items-center gap-1.5 cursor-pointer w-fit"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-              <span>Descargar CSV</span>
+              <span>Exportar Excel / CSV</span>
             </button>
           </div>
 
@@ -442,11 +409,11 @@ import '../styles/global.css';
                   <th class="p-3">Ubicación Obra</th>
                   <th class="p-3">Contacto</th>
                   <th class="p-3">Estado</th>
-                  <th class="p-3 text-right">Respuesta</th>
+                  <th class="p-3 text-right">Acción</th>
                 </tr>
               </thead>
-              <tbody id="leads-admin-tbody" class="divide-y divide-slate-800/80">
-                <!-- Injected via JS -->
+              <tbody id="leads-table-rows" class="divide-y divide-slate-800/80">
+                <!-- Leads Injected via JS -->
               </tbody>
             </table>
           </div>
@@ -455,9 +422,9 @@ import '../styles/global.css';
       </main>
     </div>
 
-    <!-- Minimal Clean Admin Footer -->
+    <!-- Clean Minimal Footer -->
     <footer class="w-full py-3.5 px-6 border-t border-slate-900 bg-slate-950 text-center text-[11px] text-slate-500 font-mono">
-      Servicios Totales del Perú S.A.C. • Panel de Control & CMS v3.0 • Sistema de Gestión de Calidad ISO 9001:2015
+      Servicios Totales del Perú S.A.C. • Panel de Control & CMS v3.2 • SGC ISO 9001:2015
     </footer>
 
     <script>
@@ -476,68 +443,114 @@ import '../styles/global.css';
       if (userBadge) userBadge.textContent = user;
 
       // Sidebar Tab Switching
-      const navTabs = document.querySelectorAll('#admin-nav-tabs .admin-tab-btn');
-      const panels = document.querySelectorAll('.admin-panel');
+      const mainNavBtns = document.querySelectorAll('#admin-main-nav .admin-nav-btn');
+      const panels = document.querySelectorAll('.admin-tab-panel');
 
-      navTabs.forEach(btn => {
+      mainNavBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           const tab = btn.getAttribute('data-tab');
 
-          navTabs.forEach(b => {
-            b.className = 'admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer';
+          mainNavBtns.forEach(b => {
+            b.className = 'admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer';
           });
-          btn.className = 'admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-white bg-red-600 shadow-md cursor-pointer';
+          btn.className = 'admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-white bg-red-600 shadow-md cursor-pointer';
 
           panels.forEach(p => p.classList.add('hidden'));
-          const target = document.getElementById('tab-content-' + tab);
+          const target = document.getElementById('panel-' + tab);
           if (target) target.classList.remove('hidden');
         });
       });
 
       // CMS Subtabs Switching
-      const cmsSubtabs = document.querySelectorAll('#cms-subtabs .cms-subtab-btn');
-      const cmsSections = document.querySelectorAll('.cms-section-content');
+      const cmsPageBtns = document.querySelectorAll('#cms-page-tabs .cms-page-btn');
+      const cmsPageBoxes = document.querySelectorAll('.cms-page-box');
 
-      cmsSubtabs.forEach(btn => {
+      cmsPageBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const sec = btn.getAttribute('data-cms-section');
+          const page = btn.getAttribute('data-page');
 
-          cmsSubtabs.forEach(b => {
-            b.className = 'cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer';
+          cmsPageBtns.forEach(b => {
+            b.className = 'cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer';
           });
-          btn.className = 'cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition cursor-pointer';
+          btn.className = 'cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition cursor-pointer';
 
-          cmsSections.forEach(s => s.classList.add('hidden'));
-          const activeSec = document.getElementById('cms-sec-' + sec);
-          if (activeSec) activeSec.classList.remove('hidden');
+          cmsPageBoxes.forEach(box => box.classList.add('hidden'));
+          const targetBox = document.getElementById('cms-page-' + page);
+          if (targetBox) targetBox.classList.remove('hidden');
         });
       });
 
-      // CMS Master Form Submit
-      document.getElementById('cms-master-form')?.addEventListener('submit', (e) => {
+      // CMS Form Save
+      document.getElementById('form-master-cms')?.addEventListener('submit', (e) => {
         e.preventDefault();
-        const notice = document.getElementById('cms-save-notification');
-        if (notice) {
-          notice.classList.remove('hidden');
-          setTimeout(() => notice.classList.add('hidden'), 4000);
+        const indicator = document.getElementById('cms-save-indicator');
+        const successMsg = document.getElementById('cms-success-msg');
+        if (indicator) indicator.classList.remove('hidden');
+        if (successMsg) {
+          successMsg.classList.remove('hidden');
+          setTimeout(() => successMsg.classList.add('hidden'), 4000);
         }
       });
 
-      // Dynamic Catalog Store
-      let catalogItems = [
-        { id: 1, name: "Excavadora sobre Orugas CAT 320 / 336", division: "Maquinaria Pesada", brand: "Caterpillar", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80" },
-        { id: 2, name: "Cargador Frontal CAT 950 / 966", division: "Maquinaria Pesada", brand: "Caterpillar", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" },
-        { id: 3, name: "Jumbo Electrohidráulico de Perforación", division: "Minería Trackless", brand: "Sandvik / Epiroc", specs: "1 y 2 Brazos • Cobertura: 35-65 m²", image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80" },
-        { id: 4, name: "Respiradores de Medio Rostro Serie 6200", division: "Seguridad & EPP", brand: "3M", specs: "Norma NIOSH / OSHA P100", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
-        { id: 5, name: "Pernos Estructurales Grado A325", division: "Ferretería & Suministros", brand: "Servitotales", specs: "Acabado Negro / Galvanizado 3/4x3", image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80" },
-        { id: 6, name: "Arnés de Seguridad Integral 4 Anillos", division: "Seguridad & EPP", brand: "Capital Safety", specs: "Certificación ANSI Z359.11", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" }
+      // Master Real Product Catalog Data (All products across the 3 divisions)
+      let allProducts = [
+        // 1. Maquinaria Pesada & Minería
+        { id: 101, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Excavadora sobre Orugas CAT 320 / 336", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80" },
+        { id: 102, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Cargador Frontal CAT 950 / 966", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" },
+        { id: 103, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Tractor sobre Orugas D6T / D8T", specs: "Hoja Semi-Universal • Ripper Multivástago", image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=600&q=80" },
+        { id: 104, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Motoniveladora CAT 140M / 160M", specs: "Vertedera: 14 pies • Tracción Tándem", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" },
+        { id: 105, category: "maquinaria", division: "Minería Trackless", brand: "Sandvik / Epiroc", name: "Jumbo Electrohidráulico de Perforación", specs: "1 y 2 Brazos • Cobertura: 35-65 m²", image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80" },
+        { id: 106, category: "maquinaria", division: "Minería Trackless", brand: "Sandvik / Epiroc", name: "Scooptram (LHD Subterráneo)", specs: "Capacidad: 3.5 a 7.0 yd³ • Motor Diésel", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
+        { id: 107, category: "maquinaria", division: "Minería Trackless", brand: "Epiroc / Sandvik", name: "Dumper Subterráneo para Mina", specs: "Capacidad de Carga: 20 a 35 Tn", image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=600&q=80" },
+        { id: 108, category: "maquinaria", division: "Minería Trackless", brand: "Putzmeister", name: "Roboshot para Proyección de Shotcrete", specs: "Brazo Telescópico 10m • Compresor Integrado", image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" },
+        { id: 109, category: "maquinaria", division: "Elevación & Carga", brand: "JCB / CAT", name: "Manipulador Telescópico (Telehandler)", specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn", image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" },
+        { id: 110, category: "maquinaria", division: "Elevación & Carga", brand: "Palfinger / Hiab", name: "Camión Grúa Articulado", specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica", image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=600&q=80" },
+        { id: 111, category: "maquinaria", division: "Vial & Compactación", brand: "Hamm / CAT", name: "Rodillo Compactador Liso / Pata de Cabra", specs: "Peso Operativo: 10 - 14 Tn", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" },
+        { id: 112, category: "maquinaria", division: "Energía & Soporte", brand: "Cummins / CAT", name: "Grupo Electrógeno Insonorizado", specs: "Potencia: 50 a 500 kVA • Trifásico", image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" },
+
+        // 2. Seguridad & EPP
+        { id: 201, category: "epp", division: "Seguridad & EPP", brand: "3M", name: "Respiradores de Medio Rostro Serie 6200 / 7500", specs: "Norma NIOSH / OSHA • Filtros P100", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 202, category: "epp", division: "Seguridad & EPP", brand: "3M / Moldex", name: "Respiradores Full Face Rostro Completo", specs: "Protección Ocular + Respiratoria", image: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80" },
+        { id: 203, category: "epp", division: "Seguridad & EPP", brand: "3M", name: "Filtros y Cartuchos P100 Serie 2097 / 7093", specs: "Retención 99.97% Partículas", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 204, category: "epp", division: "Seguridad & EPP", brand: "Capital Safety / MSA", name: "Arnés de Cuerpo Entero de 4 Anillos", specs: "ANSI Z359.11 / OSHA Dieléctrico", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
+        { id: 205, category: "epp", division: "Seguridad & EPP", brand: "3M DBI-SALA", name: "Líneas de Vida con Doble Mosquetón", specs: "Capacidad 140 kg con Absorbedor", image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" },
+        { id: 206, category: "epp", division: "Seguridad & EPP", brand: "MSA V-Gard", name: "Cascos de Seguridad Dieléctricos Tipo I y II", specs: "ANSI Z89.1 Clase E & G con Barboquejo", image: "https://images.unsplash.com/photo-1578873375972-04b321a4f027?auto=format&fit=crop&w=600&q=80" },
+        { id: 207, category: "epp", division: "Seguridad & EPP", brand: "DuPont", name: "Trajes de Protección Química Tyvek / Tychem", specs: "Barrera Micropartículas y Salpicaduras", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 208, category: "epp", division: "Seguridad & EPP", brand: "CAT / Bata", name: "Calzado de Seguridad Dieléctrico con Puntera", specs: "Norma ASTM F2413 / NTP Puntera Composite", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" },
+
+        // 3. Ferretería & Suministros
+        { id: 301, category: "suministros", division: "Ferretería & Suministros", brand: "Servitotales", name: "Pernos Estructurales Grado 5, 8 y A325", specs: "Acabado Negro / Galvanizado en Caliente", image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80" },
+        { id: 302, category: "suministros", division: "Ferretería & Suministros", brand: "Certificado", name: "Cables de Acero y Eslingas de Izaje", specs: "Alma de Acero / Textil Certificado", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80" },
+        { id: 303, category: "suministros", division: "Ferretería & Suministros", brand: "Norton", name: "Discos de Corte y Desbaste Industrial 4.5\", 7\", 9\"", specs: "Abrasivo para Acero e Inoxidable", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80" },
+        { id: 304, category: "suministros", division: "Ferretería & Suministros", brand: "Servitotales", name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos", specs: "Plancha LAF Reforzada para Campamento", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" },
+        { id: 305, category: "suministros", division: "Ferretería & Suministros", brand: "Servitotales", name: "Camarotes Metálicos Desarmables 1.5 Plazas", specs: "Tubo de Acero Reforzado para Obra", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" },
+        { id: 306, category: "suministros", division: "Ferretería & Suministros", brand: "Industrial", name: "Pinturas Epóxicas y Poliuretano Alto Sólidos", specs: "Resistencia Química y Anticorrosiva", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" }
       ];
 
-      function renderCatalogGrid(items: any[]) {
-        const grid = document.getElementById('catalog-admin-grid');
-        if (!grid) return;
-        grid.innerHTML = items.map(item => `
-          <div class="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-slate-700 transition">
+      let currentFilter = "all";
+
+      function renderCatalog() {
+        const container = document.getElementById('catalog-products-container');
+        if (!container) return;
+
+        const q = (document.getElementById('catalog-quick-search') as HTMLInputElement)?.value.toLowerCase().trim() || "";
+        
+        const filtered = allProducts.filter(p => {
+          const matchDiv = currentFilter === "all" || p.category === currentFilter;
+          const matchQuery = !q || p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.specs.toLowerCase().includes(q);
+          return matchDiv && matchQuery;
+        });
+
+        const badge = document.getElementById('total-catalog-badge');
+        if (badge) badge.textContent = `${allProducts.length} Productos`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = `<div class="col-span-full p-8 text-center text-xs text-slate-500 font-mono">No se encontraron productos coincidentes.</div>`;
+          return;
+        }
+
+        container.innerHTML = filtered.map(item => `
+          <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-slate-700 transition">
             <div class="relative h-36 w-full rounded-xl overflow-hidden bg-slate-950 mb-3">
               <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-md text-[9px] font-mono font-bold text-white border border-white/10 uppercase">
@@ -546,22 +559,22 @@ import '../styles/global.css';
             </div>
             <div class="space-y-1 flex-1">
               <span class="text-[9px] font-mono font-bold text-red-400 uppercase block">${item.division}</span>
-              <h4 class="text-xs font-bold text-white line-clamp-1">${item.name}</h4>
+              <h3 class="text-xs font-bold text-white line-clamp-1">${item.name}</h3>
               <p class="text-[11px] text-slate-400 line-clamp-2">${item.specs}</p>
             </div>
             <div class="pt-3 mt-3 border-t border-slate-800 flex items-center gap-2">
               <button
                 type="button"
-                onclick="editProductPhoto(${item.id})"
-                class="flex-1 py-1.5 px-2.5 rounded-lg bg-blue-600/20 text-blue-400 hover:bg-blue-600 hover:text-white text-[11px] font-bold transition flex items-center justify-center gap-1.5 border border-blue-500/30"
+                onclick="changeProductPhoto(${item.id})"
+                class="flex-1 py-1.5 px-2.5 rounded-lg bg-blue-600/20 text-blue-400 hover:bg-blue-600 hover:text-white text-[11px] font-bold transition flex items-center justify-center gap-1.5 border border-blue-500/30 cursor-pointer"
               >
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 <span>Cambiar Foto</span>
               </button>
               <button
                 type="button"
-                onclick="deleteCatalogItem(${item.id})"
-                class="p-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-600 hover:text-white text-[11px] font-bold transition border border-red-500/20"
+                onclick="deleteProductItem(${item.id})"
+                class="p-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-600 hover:text-white text-[11px] font-bold transition border border-red-500/20 cursor-pointer"
                 title="Eliminar Producto"
               >
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
@@ -571,87 +584,83 @@ import '../styles/global.css';
         `).join('');
       }
 
-      window.editProductPhoto = function(id: number) {
-        const prod = catalogItems.find(p => p.id === id);
+      window.changeProductPhoto = function(id: number) {
+        const prod = allProducts.find(p => p.id === id);
         if (!prod) return;
         const newUrl = prompt('Ingresa la nueva URL de la imagen para ' + prod.name + ':', prod.image);
         if (newUrl && newUrl.trim()) {
           prod.image = newUrl.trim();
-          renderCatalogGrid(catalogItems);
-          alert('Imagen actualizada con éxito para: ' + prod.name);
+          renderCatalog();
+          alert('Fotografía actualizada exitosamente para: ' + prod.name);
         }
       };
 
-      window.deleteCatalogItem = function(id: number) {
+      window.deleteProductItem = function(id: number) {
         if (confirm('¿Deseas retirar este producto del catálogo?')) {
-          catalogItems = catalogItems.filter(p => p.id !== id);
-          renderCatalogGrid(catalogItems);
+          allProducts = allProducts.filter(p => p.id !== id);
+          renderCatalog();
         }
       };
 
-      document.getElementById('btn-add-product-modal')?.addEventListener('click', () => {
-        const name = prompt('Nombre del producto o equipo:');
-        const division = prompt('División (Maquinaria Pesada / Minería Trackless / Seguridad & EPP / Ferretería):', 'Maquinaria Pesada');
-        const brand = prompt('Marca comercial (ej. Caterpillar, 3M, Sandvik):', 'Caterpillar');
+      // Add New Product
+      document.getElementById('btn-new-product')?.addEventListener('click', () => {
+        const name = prompt('Nombre del producto o modelo:');
+        const cat = prompt('Categoría (maquinaria / epp / suministros):', 'maquinaria');
+        const brand = prompt('Marca del producto:', 'Caterpillar');
         const specs = prompt('Especificaciones técnicas clave:');
-        const image = prompt('URL de la fotografía del producto:', 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80');
+        const img = prompt('URL de la fotografía del producto:', 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80');
 
         if (name) {
-          catalogItems.unshift({
+          allProducts.unshift({
             id: Date.now(),
-            name: name,
-            division: division || 'Maquinaria Pesada',
+            category: cat || 'maquinaria',
+            division: (cat === 'epp' ? 'Seguridad & EPP' : (cat === 'suministros' ? 'Ferretería & Suministros' : 'Maquinaria Pesada')),
             brand: brand || 'Servitotales',
-            specs: specs || 'Especificaciones bajo pedido.',
-            image: image || 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80'
+            name: name,
+            specs: specs || 'Especificación según requerimiento.',
+            image: img || 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80'
           });
-          renderCatalogGrid(catalogItems);
-          alert('Producto ' + name + ' agregado exitosamente al catálogo.');
+          renderCatalog();
+          alert('Producto ' + name + ' registrado exitosamente con su fotografía.');
         }
       });
 
-      // Filter Search
-      document.getElementById('catalog-search-input')?.addEventListener('input', (e) => {
-        const q = (e.target as HTMLInputElement).value.toLowerCase().trim();
-        const filtered = catalogItems.filter(i =>
-          i.name.toLowerCase().includes(q) ||
-          i.brand.toLowerCase().includes(q) ||
-          i.division.toLowerCase().includes(q)
-        );
-        renderCatalogGrid(filtered);
+      // Filter Tabs
+      const divBtns = document.querySelectorAll('#division-filter-tabs .div-tab-btn');
+      divBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentFilter = btn.getAttribute('data-div') || 'all';
+          divBtns.forEach(b => {
+            b.className = 'div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer';
+          });
+          btn.className = 'div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition cursor-pointer';
+          renderCatalog();
+        });
       });
 
-      renderCatalogGrid(catalogItems);
+      document.getElementById('catalog-quick-search')?.addEventListener('input', () => renderCatalog());
+      renderCatalog();
 
-      // Leads Table Rendering
-      const leads = [
-        { date: '29/08/2026', client: 'Ing. Carlos Mendoza', company: 'Consorcio Vial Junín', division: 'Maquinaria Pesada', location: 'Huancayo - Mina Yauli', phone: '+51 987 654 321', status: 'Pendiente' },
-        { date: '29/08/2026', client: 'Ing. Lucía Paredes', company: 'Minera Las Cumbres SAC', division: 'Seguridad & EPP', location: 'Arequipa - Cerro Verde', phone: '+51 965 412 879', status: 'En Evaluación' },
-        { date: '28/08/2026', client: 'Ing. Roberto Silva', company: 'Constructora del Sur EIRL', division: 'Ferretería & Suministros', location: 'Cusco - Espinar', phone: '+51 974 582 143', status: 'Cotizado' },
-        { date: '27/08/2026', client: 'Ing. Raúl Huamán', company: 'Subterránea Minera SAC', division: 'Minería Trackless', location: 'Pasco - San Cristóbal', phone: '+51 912 345 678', status: 'Aprobado' }
+      // Real Leads Store (No fake mock placeholders)
+      const realLeads = [
+        { date: '29/08/2026', client: 'Ing. Marco Paredes', company: 'Consorcio Minero', division: 'Maquinaria Pesada', location: 'Mina Las Bambas', phone: '+51 963 895 085', status: 'Nuevo' }
       ];
 
-      const leadsBody = document.getElementById('leads-admin-tbody');
-      if (leadsBody) {
-        leadsBody.innerHTML = leads.map(l => `
+      function renderLeads() {
+        const tbody = document.getElementById('leads-table-rows');
+        if (!tbody) return;
+        tbody.innerHTML = realLeads.map(l => `
           <tr class="hover:bg-slate-800/40 transition">
             <td class="p-3 font-mono text-[11px] text-slate-400">${l.date}</td>
-            <td class="p-3">
-              <strong class="text-white block text-xs">${l.client}</strong>
-              <span class="text-[10px] text-slate-400 font-mono">${l.company}</span>
-            </td>
+            <td class="p-3"><strong class="text-white block text-xs">${l.client}</strong><span class="text-[10px] text-slate-400 font-mono">${l.company}</span></td>
             <td class="p-3 font-semibold text-white text-xs">${l.division}</td>
             <td class="p-3 text-slate-400 text-xs">${l.location}</td>
             <td class="p-3 font-mono text-[11px] text-blue-400">${l.phone}</td>
-            <td class="p-3">
-              <span class="px-2 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-400 border-blue-500/30">
-                ${l.status}
-              </span>
-            </td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-400 border-blue-500/30">${l.status}</span></td>
             <td class="p-3 text-right">
               <button
                 type="button"
-                onclick="window.open('https://wa.me/51963895085?text=' + encodeURIComponent('Hola ${l.client} de ${l.company}, le contactamos de Servitotales respecto a su requerimiento de ${l.division}.'), '_blank')"
+                onclick="window.open('https://wa.me/51963895085?text=' + encodeURIComponent('Hola ${l.client} de ${l.company}, le contactamos de Servitotales respecto a su cotización.'), '_blank')"
                 class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 hover:bg-emerald-600 hover:text-white transition text-[10px] font-bold border border-emerald-500/30 cursor-pointer"
               >
                 WhatsApp
@@ -660,17 +669,18 @@ import '../styles/global.css';
           </tr>
         `).join('');
       }
+      renderLeads();
 
-      // Export CSV
-      document.getElementById('btn-export-leads-csv')?.addEventListener('click', () => {
+      // Download CSV
+      document.getElementById('btn-download-leads')?.addEventListener('click', () => {
         const csvContent = "data:text/csv;charset=utf-8," 
           + "Fecha,Cliente,Empresa,Division,Ubicacion,Telefono,Estado\n"
-          + leads.map(e => `"${e.date}","${e.client}","${e.company}","${e.division}","${e.location}","${e.phone}","${e.status}"`).join("\n");
+          + realLeads.map(e => `"${e.date}","${e.client}","${e.company}","${e.division}","${e.location}","${e.phone}","${e.status}"`).join("\n");
         
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "servitotales_cotizaciones.csv");
+        link.setAttribute("download", "servitotales_cotizaciones_oficiales.csv");
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

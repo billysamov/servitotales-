@@ -8,10 +8,10 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Panel de Administración & CMS | SERVITOTALES S.A.C.</title>
+    <title>Panel de Control & CMS | SERVITOTALES S.A.C.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <script is:inline>
       const theme = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -26,336 +26,438 @@ import '../styles/global.css';
       }
     </script>
   </head>
-  <body class="bg-[var(--bg-main)] text-[var(--text-primary)] antialiased min-h-screen selection:bg-[#DC2626] selection:text-white font-sans flex flex-col">
+  <body class="bg-slate-950 text-slate-100 antialiased min-h-screen font-sans flex flex-col selection:bg-red-600 selection:text-white">
     
-    <!-- Standalone Admin Top Navigation Bar (NO PUBLIC NAVBAR) -->
-    <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-3.5 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] backdrop-blur-md flex items-center justify-between gap-4">
+    <!-- Top Professional Admin Navbar -->
+    <header class="sticky top-0 z-50 w-full px-4 sm:px-6 py-2.5 bg-slate-900/95 border-b border-slate-800 backdrop-blur-md flex items-center justify-between gap-4">
       <div class="flex items-center gap-4">
-        <a href="/admin" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#DC2626] to-[#991B1B] text-white font-black flex items-center justify-center text-lg shadow-md">
+        <a href="/admin" class="flex items-center gap-2.5 group">
+          <div class="w-8 h-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center text-sm shadow-md group-hover:scale-105 transition-transform">
             ST
           </div>
           <div class="flex flex-col">
-            <span class="text-base font-black tracking-wider text-[var(--text-primary)] font-heading leading-tight">
-              SERVI<span class="text-[#DC2626]">TOTALES</span>
+            <span class="text-sm font-black tracking-wider text-white font-heading leading-tight">
+              SERVI<span class="text-red-500">TOTALES</span> <span class="text-[10px] font-mono font-medium text-slate-400">PANEL</span>
             </span>
-            <span class="text-[9px] font-mono font-bold text-amber-500 uppercase tracking-widest">
-              PANEL DE CONTROL & CMS
-            </span>
+            <span class="text-[8px] font-mono font-bold text-amber-400 tracking-wider">SGC ISO 9001:2015</span>
           </div>
         </a>
 
-        <div class="hidden md:flex items-center gap-2 pl-4 border-l border-[var(--border-subtle)] text-xs text-[var(--text-secondary)] font-mono">
+        <div class="hidden md:flex items-center gap-2 pl-4 border-l border-slate-800 text-[11px] text-slate-400 font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>SGC ISO 9001:2015 ACTIVO</span>
+          <span>Sistema Operativo en Línea</span>
         </div>
       </div>
 
-      <div class="flex items-center gap-3">
-        <!-- View Public Site Button -->
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-2.5">
         <a
           href="/"
           target="_blank"
-          class="px-3 py-2 rounded-xl text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-main)] transition flex items-center gap-1.5 border border-[var(--border-subtle)]"
+          class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 transition flex items-center gap-1.5 border border-slate-700/60"
           title="Ver Sitio Web Público"
         >
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
           <span class="hidden sm:inline">Ver Sitio Web</span>
         </a>
 
-        <!-- Admin User Badge -->
-        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border-subtle)] text-xs">
-          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-          <span class="font-mono text-[11px] font-bold text-[var(--text-primary)]" id="admin-user-display">admin@servitotales.com</span>
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-lg bg-slate-800/60 border border-slate-700/50 text-xs">
+          <div class="w-2 h-2 rounded-full bg-blue-400"></div>
+          <span class="font-mono text-[11px] text-slate-300 font-medium" id="admin-user-badge">admin@servitotales.com</span>
         </div>
 
-        <!-- Logout Button -->
         <button
           type="button"
           id="btn-admin-logout"
-          class="px-3.5 py-2 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition text-xs font-bold border border-red-500/20 flex items-center gap-1.5 cursor-pointer"
+          class="px-3 py-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-600 hover:text-white transition text-xs font-semibold border border-red-500/20 flex items-center gap-1.5 cursor-pointer"
         >
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-          <span>Salir</span>
+          <span class="hidden sm:inline">Cerrar Sesión</span>
         </button>
       </div>
     </header>
 
-    <!-- Admin Workspace -->
-    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+    <!-- Main Admin Container with Sleek Sidebar Navigation -->
+    <div class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-6">
       
-      <!-- Top Overview Metrics -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-blue-500 bg-[var(--bg-surface)]">
-          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Cotizaciones Web</span>
-          <span class="text-3xl font-black text-[var(--text-primary)] font-heading" id="metric-leads">12</span>
-          <span class="text-[11px] text-emerald-500 font-bold block mt-1">+3 solicitudes hoy</span>
-        </div>
-
-        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-[#DC2626] bg-[var(--bg-surface)]">
-          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Flota en Operación</span>
-          <span class="text-3xl font-black text-[var(--text-primary)] font-heading">28 / 34</span>
-          <span class="text-[11px] text-blue-500 font-bold block mt-1">82% Flota Activa</span>
-        </div>
-
-        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-amber-500 bg-[var(--bg-surface)]">
-          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">Productos & Lotes</span>
-          <span class="text-3xl font-black text-[var(--text-primary)] font-heading" id="metric-products">29</span>
-          <span class="text-[11px] text-amber-500 font-bold block mt-1">Con fotos asignadas</span>
-        </div>
-
-        <div class="p-5 rounded-3xl industrial-card shadow-md border-l-4 border-emerald-500 bg-[var(--bg-surface)]">
-          <span class="text-xs font-mono font-bold text-slate-400 uppercase block">SGC ISO 9001:2015</span>
-          <span class="text-3xl font-black text-emerald-500 font-heading">100%</span>
-          <span class="text-[11px] text-emerald-500 font-bold block mt-1">Auditoría al día</span>
-        </div>
-      </div>
-
-      <!-- Main Tabbed Panel Box -->
-      <div class="p-6 sm:p-8 rounded-3xl industrial-card shadow-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] space-y-6">
-        
-        <!-- Navigation Tabs -->
-        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-4">
-          <div class="flex flex-wrap items-center gap-2" id="admin-main-tabs">
-            <button
-              type="button"
-              data-tab="cms"
-              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[#DC2626] text-white shadow-md"
-            >
-              📝 Editor de Textos & CMS
-            </button>
-            <button
-              type="button"
-              data-tab="products"
-              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-            >
-              🖼️ Gestor de Productos & Fotos
-            </button>
-            <button
-              type="button"
-              data-tab="leads"
-              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-            >
-              📋 Mesa de Cotizaciones
-            </button>
-            <button
-              type="button"
-              data-tab="fleet"
-              class="tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-            >
-              🚜 Flota de Maquinaria
-            </button>
-          </div>
+      <!-- Left Sidebar Navigation -->
+      <aside class="w-full lg:w-64 shrink-0 space-y-4">
+        <!-- Navigation Menu -->
+        <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg space-y-1" id="admin-nav-tabs">
+          <span class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider px-3 py-1.5 block">
+            Módulos del Sistema
+          </span>
 
           <button
             type="button"
-            id="btn-export-csv"
-            class="px-4 py-2 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold hover:bg-emerald-500 hover:text-white transition flex items-center gap-1.5 border border-emerald-500/30 cursor-pointer"
+            data-tab="dashboard"
+            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-white bg-red-600 shadow-md cursor-pointer"
           >
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-            <span>Exportar Reporte CSV</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+            <span>Tablero General</span>
+          </button>
+
+          <button
+            type="button"
+            data-tab="cms"
+            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+            <span>Editor de Textos & CMS</span>
+          </button>
+
+          <button
+            type="button"
+            data-tab="catalog"
+            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <span>Catálogo & Fotos</span>
+          </button>
+
+          <button
+            type="button"
+            data-tab="leads"
+            class="admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>Cotizaciones Web</span>
           </button>
         </div>
 
-        <!-- 1. TAB CMS: EDITOR DE CONTENIDO Y TEXTOS DEL SITIO -->
-        <div id="tab-cms" class="tab-panel space-y-6">
-          <div class="flex items-center justify-between border-b border-[var(--border-subtle)] pb-3">
+        <!-- Quick Status Card -->
+        <div class="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs space-y-2">
+          <div class="flex items-center justify-between text-slate-400">
+            <span class="font-mono text-[10px] uppercase font-bold">Estado ISO 9001</span>
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          </div>
+          <p class="text-[11px] text-slate-300 font-medium">SGC Homologado para minería y construcción civil.</p>
+        </div>
+      </aside>
+
+      <!-- Right Main Workspace -->
+      <main class="flex-1 space-y-6 min-w-0">
+        
+        <!-- 1. TAB DASHBOARD / RESUMEN -->
+        <div id="tab-content-dashboard" class="admin-panel space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
-              <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
-                Gestor de Textos y Contenidos de la Web (CMS)
-              </h2>
-              <p class="text-xs text-[var(--text-secondary)]">
-                Modifica los textos principales del portal, teléfonos, correos y consignas de marca.
-              </p>
+              <h1 class="text-xl font-black text-white font-heading">Tablero General de Operaciones</h1>
+              <p class="text-xs text-slate-400">Resumen de solicitudes, catálogo activo y estado del sistema.</p>
             </div>
-            <span class="text-xs font-mono font-bold text-amber-500">Auto-Guardado Local</span>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800 w-fit">
+              Actualizado: <span id="dash-time" class="text-white font-bold">En tiempo real</span>
+            </span>
           </div>
 
-          <form id="cms-editor-form" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Hero Headline -->
-              <div class="md:col-span-2 space-y-2">
-                <label for="cms_hero_title" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
-                  Titular Principal del Hero (Portada) *
-                </label>
-                <input
-                  type="text"
-                  id="cms_hero_title"
-                  value="Potenciamos tus operaciones y proyectos con Maquinaria y Suministros"
-                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626] font-bold"
-                />
+          <!-- Compact KPI Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
               </div>
-
-              <!-- Hero Subtitle -->
-              <div class="md:col-span-2 space-y-2">
-                <label for="cms_hero_desc" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
-                  Descripción / Bajada del Hero *
-                </label>
-                <textarea
-                  id="cms_hero_desc"
-                  rows="2"
-                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
-                >Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.</textarea>
-              </div>
-
-              <!-- Phone & WhatsApp -->
-              <div class="space-y-2">
-                <label for="cms_phone" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
-                  Teléfono / WhatsApp Oficial *
-                </label>
-                <input
-                  type="text"
-                  id="cms_phone"
-                  value="+51 963 895 085"
-                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
-                />
-              </div>
-
-              <!-- Corporate Email -->
-              <div class="space-y-2">
-                <label for="cms_email" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
-                  Correo Institucional *
-                </label>
-                <input
-                  type="email"
-                  id="cms_email"
-                  value="contacto@servitotales.com"
-                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
-                />
-              </div>
-
-              <!-- ISO 9001 Badge Text -->
-              <div class="space-y-2">
-                <label for="cms_iso" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
-                  Texto del Sello de Calidad *
-                </label>
-                <input
-                  type="text"
-                  id="cms_iso"
-                  value="SGC ISO 9001:2015 CERTIFICADO"
-                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
-                />
-              </div>
-
-              <!-- Location / Coverage -->
-              <div class="space-y-2">
-                <label for="cms_coverage" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
-                  Cobertura y Alcance *
-                </label>
-                <input
-                  type="text"
-                  id="cms_coverage"
-                  value="Entrega en Obra a Nivel Nacional"
-                  class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]"
-                />
+              <div>
+                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Cotizaciones</span>
+                <span class="text-xl font-black text-white font-heading">12</span>
+                <span class="text-[10px] text-emerald-400 font-bold block">+3 hoy</span>
               </div>
             </div>
 
-            <div class="flex items-center justify-between pt-4 border-t border-[var(--border-subtle)]">
-              <span id="cms-saved-msg" class="hidden text-xs font-bold text-emerald-500">
-                ✅ Cambios de texto guardados exitosamente.
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Flota Activa</span>
+                <span class="text-xl font-black text-white font-heading">28 / 34</span>
+                <span class="text-[10px] text-blue-400 font-bold block">82% Operando</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Catálogo Web</span>
+                <span class="text-xl font-black text-white font-heading">29 Ítems</span>
+                <span class="text-[10px] text-amber-400 font-bold block">Fotos asignadas</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono uppercase text-slate-400 block font-bold">Calidad SST</span>
+                <span class="text-xl font-black text-emerald-400 font-heading">100%</span>
+                <span class="text-[10px] text-slate-400 font-bold block">Certificación OK</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Access Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                  <span>Editor de Contenido & Textos</span>
+                </h3>
+              </div>
+              <p class="text-xs text-slate-400">Modifica titulares, subtítulos, etiquetas y teléfonos de la web con actualización en vivo.</p>
+              <button
+                type="button"
+                onclick="document.querySelector('[data-tab=cms]').click()"
+                class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition cursor-pointer"
+              >
+                Abrir Editor de Textos
+              </button>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  <span>Gestor de Productos & Fotos</span>
+                </h3>
+              </div>
+              <p class="text-xs text-slate-400">Edita fotografías, especificaciones y agrega maquinaria pesada, EPP o suministros.</p>
+              <button
+                type="button"
+                onclick="document.querySelector('[data-tab=catalog]').click()"
+                class="px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition cursor-pointer"
+              >
+                Administrar Catálogo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TAB CMS: EDITOR COMPLETO DE TEXTOS DE TODA LA WEB -->
+        <div id="tab-content-cms" class="admin-panel hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+            <div>
+              <h2 class="text-xl font-black text-white font-heading">Editor Integral de Textos & Contenidos</h2>
+              <p class="text-xs text-slate-400">Personaliza cualquier titular, etiqueta, párrafo y dato de contacto de toda la web.</p>
+            </div>
+            <span id="cms-live-status" class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/30">
+              Guardado en Memoria
+            </span>
+          </div>
+
+          <!-- Section Selector Accordion / Pills -->
+          <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800" id="cms-subtabs">
+            <button type="button" data-cms-section="home" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition">Página de Inicio</button>
+            <button type="button" data-cms-section="nosotros" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Nosotros & ISO</button>
+            <button type="button" data-cms-section="contact" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Contacto & Teléfonos</button>
+            <button type="button" data-cms-section="footer" class="cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Header & Footer</button>
+          </div>
+
+          <form id="cms-master-form" class="space-y-6">
+            
+            <!-- SECTION A: INICIO -->
+            <div id="cms-sec-home" class="cms-section-content space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">1. Portada & Hero Principal</h3>
+              
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Etiqueta Superior / Badge</label>
+                  <input type="text" id="txt_home_badge" value="SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 font-mono" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal del Hero (H1)</label>
+                  <input type="text" id="txt_home_title" value="Potenciamos tus operaciones y proyectos con Maquinaria y Suministros" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 font-bold" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción / Párrafo del Hero</label>
+                  <textarea id="txt_home_desc" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-red-500">Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.</textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora Beneficio 1</label>
+                    <input type="text" id="txt_home_pill1" value="Operadores Homologados" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  </div>
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora Beneficio 2</label>
+                    <input type="text" id="txt_home_pill2" value="Soporte en Sitio 24/7" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  </div>
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Píldora Beneficio 3</label>
+                    <input type="text" id="txt_home_pill3" value="Despacho a Nivel Nacional" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION B: NOSOTROS -->
+            <div id="cms-sec-nosotros" class="cms-section-content hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">2. Nosotros & Sistema de Calidad ISO 9001</h3>
+              
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Titular de la Página Nosotros</label>
+                  <input type="text" id="txt_nosotros_title" value="Liderazgo, Idoneidad Técnica y Compromiso con el País" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 font-bold" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Descripción de Trayectoria</label>
+                  <textarea id="txt_nosotros_desc" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-red-500">Servicios Totales del Perú S.A.C. es un socio estratégico integral para los sectores más exigentes de minería, construcción e industria en todo el territorio nacional.</textarea>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Propósito / Misión</label>
+                    <textarea id="txt_nosotros_mision" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Garantizar continuidad operativa y máxima seguridad en cada obra mediante equipos de alta disponibilidad.</textarea>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Visión Corporativa</label>
+                    <textarea id="txt_nosotros_vision" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Ser el referente nacional en alquiler de maquinaria pesada y suministro homologado para la gran minería.</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION C: CONTACTO -->
+            <div id="cms-sec-contact" class="cms-section-content hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">3. Canales de Contacto & Atención Prioritaria</h3>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Central Telefónica Directa</label>
+                  <input type="text" id="txt_contact_phone" value="+51 963 895 085" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Número de WhatsApp Cotizaciones</label>
+                  <input type="text" id="txt_contact_wa" value="51963895085" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Correo Institucional</label>
+                  <input type="email" id="txt_contact_email" value="contacto@servitotales.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Cobertura de Entrega</label>
+                  <input type="text" id="txt_contact_coverage" value="Entrega en Obra a Nivel Nacional" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION D: FOOTER -->
+            <div id="cms-sec-footer" class="cms-section-content hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">4. Textos de Header y Footer</h3>
+              
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Texto de la Barra Superior (Docked Utility Bar)</label>
+                  <input type="text" id="txt_footer_banner" value="SGC ISO 9001:2015 CERTIFICADO • Servicios Totales del Perú S.A.C." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Texto de Derechos Reservados / Copyright</label>
+                  <input type="text" id="txt_footer_copy" value="© 2026 Servicios Totales del Perú S.A.C. Todos los derechos reservados." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2">
+              <span id="cms-save-notification" class="hidden text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>¡Todos los textos han sido actualizados y guardados con éxito!</span>
               </span>
 
               <button
                 type="submit"
-                class="px-8 py-3.5 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-wider shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer ml-auto"
+                class="px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition shadow ml-auto cursor-pointer flex items-center gap-2"
               >
-                Guardar Cambios de Texto
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                <span>Guardar Cambios de Texto</span>
               </button>
             </div>
           </form>
         </div>
 
-        <!-- 2. TAB PRODUCTS: GESTOR DE PRODUCTOS Y FOTOS -->
-        <div id="tab-products" class="tab-panel hidden space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-3">
+        <!-- 3. TAB CATALOG: GESTOR DE PRODUCTOS & FOTOS -->
+        <div id="tab-content-catalog" class="admin-panel hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
-              <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
-                Catálogo de Productos & Fotografías
-              </h2>
-              <p class="text-xs text-[var(--text-secondary)]">
-                Agrega nuevos productos, modifica especificaciones y asigna imágenes personalizadas.
-              </p>
+              <h2 class="text-xl font-black text-white font-heading">Gestor de Productos & Fotografías</h2>
+              <p class="text-xs text-slate-400">Edita imágenes, títulos y agrega nuevos ítems a los catálogos públicos.</p>
             </div>
 
             <button
               type="button"
-              id="btn-open-new-product-modal"
-              class="px-4 py-2.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow transition flex items-center gap-1.5 cursor-pointer"
+              id="btn-add-product-modal"
+              class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer w-fit"
             >
-              <span>+ Agregar Nuevo Producto</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+              <span>Agregar Producto</span>
             </button>
           </div>
 
-          <!-- Product Cards Grid with Photos -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="admin-products-grid">
-            <!-- Dynamic Products Injected via JS -->
+          <!-- Filter & Search Bar -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+              <input
+                type="text"
+                id="catalog-search-input"
+                placeholder="Filtrar por nombre, marca o división..."
+                class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500 w-full sm:w-72"
+              />
+            </div>
+            <span class="text-xs text-slate-400 font-mono" id="catalog-count-label">Mostrando productos activos</span>
+          </div>
+
+          <!-- Product Cards Grid with Compact Clean UI -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="catalog-admin-grid">
+            <!-- Dynamic Items Injected via JS -->
           </div>
         </div>
 
-        <!-- 3. TAB LEADS: MESA DE COTIZACIONES -->
-        <div id="tab-leads" class="tab-panel hidden space-y-4">
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
-              Solicitudes Recientes de Cotización Técnica
-            </h2>
-            <span class="text-xs text-[var(--text-secondary)]">Tiempo real</span>
+        <!-- 4. TAB LEADS: MESA DE COTIZACIONES -->
+        <div id="tab-content-leads" class="admin-panel hidden space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+            <div>
+              <h2 class="text-xl font-black text-white font-heading">Mesa de Cotizaciones Recibidas</h2>
+              <p class="text-xs text-slate-400">Solicitudes emitidas desde los formularios y WhatsApp.</p>
+            </div>
+
+            <button
+              type="button"
+              id="btn-export-leads-csv"
+              class="px-3.5 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 hover:bg-emerald-600 hover:text-white transition text-xs font-bold border border-emerald-500/30 flex items-center gap-1.5 cursor-pointer w-fit"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>Descargar CSV</span>
+            </button>
           </div>
 
-          <div class="overflow-x-auto rounded-2xl border border-[var(--border-subtle)]">
-            <table class="w-full text-left text-xs text-[var(--text-secondary)]">
-              <thead class="bg-[var(--bg-main)] text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
+          <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-950 text-[10px] uppercase font-mono font-bold text-slate-400 border-b border-slate-800">
                 <tr>
-                  <th class="p-3.5">Fecha</th>
-                  <th class="p-3.5">Cliente / Empresa</th>
-                  <th class="p-3.5">División</th>
-                  <th class="p-3.5">Ubicación Obra</th>
-                  <th class="p-3.5">Contacto</th>
-                  <th class="p-3.5">Estado</th>
-                  <th class="p-3.5 text-right">Respuesta</th>
+                  <th class="p-3">Fecha</th>
+                  <th class="p-3">Cliente / Empresa</th>
+                  <th class="p-3">División</th>
+                  <th class="p-3">Ubicación Obra</th>
+                  <th class="p-3">Contacto</th>
+                  <th class="p-3">Estado</th>
+                  <th class="p-3 text-right">Respuesta</th>
                 </tr>
               </thead>
-              <tbody id="leads-table-body" class="divide-y divide-[var(--border-subtle)] bg-[var(--bg-surface)]">
+              <tbody id="leads-admin-tbody" class="divide-y divide-slate-800/80">
                 <!-- Injected via JS -->
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 4. TAB FLEET: FLOTA DE MAQUINARIA -->
-        <div id="tab-fleet" class="tab-panel hidden space-y-4">
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-black text-[var(--text-primary)] font-heading">
-              Control de Flota y Telemetría
-            </h2>
-            <span class="text-xs text-[var(--text-secondary)]">Monitoreo de equipos pesados y trackless</span>
-          </div>
+      </main>
+    </div>
 
-          <div class="overflow-x-auto rounded-2xl border border-[var(--border-subtle)]">
-            <table class="w-full text-left text-xs text-[var(--text-secondary)]">
-              <thead class="bg-[var(--bg-main)] text-[11px] uppercase font-mono font-bold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
-                <tr>
-                  <th class="p-3.5">Cód. Equipo</th>
-                  <th class="p-3.5">Modelo / Tipo</th>
-                  <th class="p-3.5">Categoría</th>
-                  <th class="p-3.5">Ubicación Mina</th>
-                  <th class="p-3.5">Horómetro</th>
-                  <th class="p-3.5">Estado</th>
-                </tr>
-              </thead>
-              <tbody id="fleet-table-body" class="divide-y divide-[var(--border-subtle)] bg-[var(--bg-surface)]">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </main>
-
-    <!-- Clean Standalone Admin Footer -->
-    <footer class="w-full py-4 px-6 border-t border-[var(--border-subtle)] text-center text-xs text-slate-500 font-mono">
-      Servicios Totales del Perú S.A.C. • Panel de Control & CMS v2.4 • Sistema de Gestión de Calidad ISO 9001:2015
+    <!-- Minimal Clean Admin Footer -->
+    <footer class="w-full py-3.5 px-6 border-t border-slate-900 bg-slate-950 text-center text-[11px] text-slate-500 font-mono">
+      Servicios Totales del Perú S.A.C. • Panel de Control & CMS v3.0 • Sistema de Gestión de Calidad ISO 9001:2015
     </footer>
 
     <script>
@@ -369,27 +471,60 @@ import '../styles/global.css';
         window.location.href = '/login';
       });
 
-      // Tab Switching
-      const tabBtns = document.querySelectorAll('#admin-main-tabs .tab-btn');
-      const tabPanels = document.querySelectorAll('.tab-panel');
+      const user = localStorage.getItem('servitotales_admin_user') || 'admin@servitotales.com';
+      const userBadge = document.getElementById('admin-user-badge');
+      if (userBadge) userBadge.textContent = user;
 
-      tabBtns.forEach(btn => {
+      // Sidebar Tab Switching
+      const navTabs = document.querySelectorAll('#admin-nav-tabs .admin-tab-btn');
+      const panels = document.querySelectorAll('.admin-panel');
+
+      navTabs.forEach(btn => {
         btn.addEventListener('click', () => {
           const tab = btn.getAttribute('data-tab');
 
-          tabBtns.forEach(b => {
-            b.className = 'tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[var(--bg-main)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]';
+          navTabs.forEach(b => {
+            b.className = 'admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer';
           });
-          btn.className = 'tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer bg-[#DC2626] text-white shadow-md';
+          btn.className = 'admin-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-white bg-red-600 shadow-md cursor-pointer';
 
-          tabPanels.forEach(p => p.classList.add('hidden'));
-          const activePanel = document.getElementById('tab-' + tab);
-          if (activePanel) activePanel.classList.remove('hidden');
+          panels.forEach(p => p.classList.add('hidden'));
+          const target = document.getElementById('tab-content-' + tab);
+          if (target) target.classList.remove('hidden');
         });
       });
 
-      // Dynamic Products Store
-      let products = [
+      // CMS Subtabs Switching
+      const cmsSubtabs = document.querySelectorAll('#cms-subtabs .cms-subtab-btn');
+      const cmsSections = document.querySelectorAll('.cms-section-content');
+
+      cmsSubtabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const sec = btn.getAttribute('data-cms-section');
+
+          cmsSubtabs.forEach(b => {
+            b.className = 'cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer';
+          });
+          btn.className = 'cms-subtab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition cursor-pointer';
+
+          cmsSections.forEach(s => s.classList.add('hidden'));
+          const activeSec = document.getElementById('cms-sec-' + sec);
+          if (activeSec) activeSec.classList.remove('hidden');
+        });
+      });
+
+      // CMS Master Form Submit
+      document.getElementById('cms-master-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const notice = document.getElementById('cms-save-notification');
+        if (notice) {
+          notice.classList.remove('hidden');
+          setTimeout(() => notice.classList.add('hidden'), 4000);
+        }
+      });
+
+      // Dynamic Catalog Store
+      let catalogItems = [
         { id: 1, name: "Excavadora sobre Orugas CAT 320 / 336", division: "Maquinaria Pesada", brand: "Caterpillar", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80" },
         { id: 2, name: "Cargador Frontal CAT 950 / 966", division: "Maquinaria Pesada", brand: "Caterpillar", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" },
         { id: 3, name: "Jumbo Electrohidráulico de Perforación", division: "Minería Trackless", brand: "Sandvik / Epiroc", specs: "1 y 2 Brazos • Cobertura: 35-65 m²", image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80" },
@@ -398,72 +533,71 @@ import '../styles/global.css';
         { id: 6, name: "Arnés de Seguridad Integral 4 Anillos", division: "Seguridad & EPP", brand: "Capital Safety", specs: "Certificación ANSI Z359.11", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" }
       ];
 
-      function renderAdminProducts() {
-        const grid = document.getElementById('admin-products-grid');
+      function renderCatalogGrid(items: any[]) {
+        const grid = document.getElementById('catalog-admin-grid');
         if (!grid) return;
-        grid.innerHTML = products.map(prod => `
-          <div class="rounded-3xl industrial-card overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-main)] flex flex-col justify-between group">
-            <div class="relative h-44 w-full overflow-hidden bg-slate-900">
-              <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md text-[10px] font-mono font-bold text-white border border-white/10">
-                ${prod.division}
+        grid.innerHTML = items.map(item => `
+          <div class="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-slate-700 transition">
+            <div class="relative h-36 w-full rounded-xl overflow-hidden bg-slate-950 mb-3">
+              <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-md text-[9px] font-mono font-bold text-white border border-white/10 uppercase">
+                ${item.brand}
               </span>
             </div>
-            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-              <div class="space-y-1">
-                <span class="text-[10px] font-mono font-bold text-red-500 uppercase">${prod.brand}</span>
-                <h3 class="text-sm font-bold text-[var(--text-primary)] leading-tight">${prod.name}</h3>
-                <p class="text-xs text-[var(--text-secondary)] line-clamp-2">${prod.specs}</p>
-              </div>
-              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center gap-2">
-                <button
-                  type="button"
-                  onclick="editProductPhoto(${prod.id})"
-                  class="flex-1 py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold text-center transition"
-                >
-                  📷 Cambiar Foto
-                </button>
-                <button
-                  type="button"
-                  onclick="deleteProduct(${prod.id})"
-                  class="py-2 px-3 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white text-xs font-bold transition border border-red-500/20"
-                >
-                  🗑️
-                </button>
-              </div>
+            <div class="space-y-1 flex-1">
+              <span class="text-[9px] font-mono font-bold text-red-400 uppercase block">${item.division}</span>
+              <h4 class="text-xs font-bold text-white line-clamp-1">${item.name}</h4>
+              <p class="text-[11px] text-slate-400 line-clamp-2">${item.specs}</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-slate-800 flex items-center gap-2">
+              <button
+                type="button"
+                onclick="editProductPhoto(${item.id})"
+                class="flex-1 py-1.5 px-2.5 rounded-lg bg-blue-600/20 text-blue-400 hover:bg-blue-600 hover:text-white text-[11px] font-bold transition flex items-center justify-center gap-1.5 border border-blue-500/30"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>Cambiar Foto</span>
+              </button>
+              <button
+                type="button"
+                onclick="deleteCatalogItem(${item.id})"
+                class="p-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-600 hover:text-white text-[11px] font-bold transition border border-red-500/20"
+                title="Eliminar Producto"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+              </button>
             </div>
           </div>
-        `).join("");
+        `).join('');
       }
 
       window.editProductPhoto = function(id: number) {
-        const prod = products.find(p => p.id === id);
+        const prod = catalogItems.find(p => p.id === id);
         if (!prod) return;
         const newUrl = prompt('Ingresa la nueva URL de la imagen para ' + prod.name + ':', prod.image);
         if (newUrl && newUrl.trim()) {
           prod.image = newUrl.trim();
-          renderAdminProducts();
-          alert('Imagen actualizada con éxito para ' + prod.name);
+          renderCatalogGrid(catalogItems);
+          alert('Imagen actualizada con éxito para: ' + prod.name);
         }
       };
 
-      window.deleteProduct = function(id: number) {
-        if (confirm('¿Deseas eliminar este producto del panel?')) {
-          products = products.filter(p => p.id !== id);
-          renderAdminProducts();
+      window.deleteCatalogItem = function(id: number) {
+        if (confirm('¿Deseas retirar este producto del catálogo?')) {
+          catalogItems = catalogItems.filter(p => p.id !== id);
+          renderCatalogGrid(catalogItems);
         }
       };
 
-      document.getElementById('btn-open-new-product-modal')?.addEventListener('click', () => {
-        const name = prompt('Nombre del producto / equipo:');
-        const division = prompt('División (Maquinaria Pesada / Seguridad & EPP / Ferretería):', 'Maquinaria Pesada');
-        const brand = prompt('Marca (ej. Caterpillar, 3M, Milwaukee):', 'Caterpillar');
-        const specs = prompt('Especificaciones técnicas:');
+      document.getElementById('btn-add-product-modal')?.addEventListener('click', () => {
+        const name = prompt('Nombre del producto o equipo:');
+        const division = prompt('División (Maquinaria Pesada / Minería Trackless / Seguridad & EPP / Ferretería):', 'Maquinaria Pesada');
+        const brand = prompt('Marca comercial (ej. Caterpillar, 3M, Sandvik):', 'Caterpillar');
+        const specs = prompt('Especificaciones técnicas clave:');
         const image = prompt('URL de la fotografía del producto:', 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80');
 
-        if (name && division) {
-          products.unshift({
+        if (name) {
+          catalogItems.unshift({
             id: Date.now(),
             name: name,
             division: division || 'Maquinaria Pesada',
@@ -471,68 +605,64 @@ import '../styles/global.css';
             specs: specs || 'Especificaciones bajo pedido.',
             image: image || 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80'
           });
-          renderAdminProducts();
-          alert('Producto ' + name + ' registrado exitosamente con su fotografía.');
+          renderCatalogGrid(catalogItems);
+          alert('Producto ' + name + ' agregado exitosamente al catálogo.');
         }
       });
 
-      renderAdminProducts();
-
-      // CMS Form Save
-      document.getElementById('cms-editor-form')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const savedMsg = document.getElementById('cms-saved-msg');
-        if (savedMsg) {
-          savedMsg.classList.remove('hidden');
-          setTimeout(() => savedMsg.classList.add('hidden'), 3500);
-        }
+      // Filter Search
+      document.getElementById('catalog-search-input')?.addEventListener('input', (e) => {
+        const q = (e.target as HTMLInputElement).value.toLowerCase().trim();
+        const filtered = catalogItems.filter(i =>
+          i.name.toLowerCase().includes(q) ||
+          i.brand.toLowerCase().includes(q) ||
+          i.division.toLowerCase().includes(q)
+        );
+        renderCatalogGrid(filtered);
       });
 
-      // Leads Rendering
+      renderCatalogGrid(catalogItems);
+
+      // Leads Table Rendering
       const leads = [
         { date: '29/08/2026', client: 'Ing. Carlos Mendoza', company: 'Consorcio Vial Junín', division: 'Maquinaria Pesada', location: 'Huancayo - Mina Yauli', phone: '+51 987 654 321', status: 'Pendiente' },
         { date: '29/08/2026', client: 'Ing. Lucía Paredes', company: 'Minera Las Cumbres SAC', division: 'Seguridad & EPP', location: 'Arequipa - Cerro Verde', phone: '+51 965 412 879', status: 'En Evaluación' },
-        { date: '28/08/2026', client: 'Ing. Roberto Silva', company: 'Constructora del Sur EIRL', division: 'Ferretería & Suministros', location: 'Cusco - Espinar', phone: '+51 974 582 143', status: 'Cotizado' }
+        { date: '28/08/2026', client: 'Ing. Roberto Silva', company: 'Constructora del Sur EIRL', division: 'Ferretería & Suministros', location: 'Cusco - Espinar', phone: '+51 974 582 143', status: 'Cotizado' },
+        { date: '27/08/2026', client: 'Ing. Raúl Huamán', company: 'Subterránea Minera SAC', division: 'Minería Trackless', location: 'Pasco - San Cristóbal', phone: '+51 912 345 678', status: 'Aprobado' }
       ];
 
-      const leadsBody = document.getElementById('leads-table-body');
+      const leadsBody = document.getElementById('leads-admin-tbody');
       if (leadsBody) {
         leadsBody.innerHTML = leads.map(l => `
-          <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
-            <td class="p-3.5 font-mono text-[11px] text-slate-400">${l.date}</td>
-            <td class="p-3.5"><strong class="text-[var(--text-primary)] block">${l.client}</strong><span class="text-[10px] text-slate-400 font-mono">${l.company}</span></td>
-            <td class="p-3.5 font-semibold text-[var(--text-primary)]">${l.division}</td>
-            <td class="p-3.5 text-slate-400">${l.location}</td>
-            <td class="p-3.5 font-mono text-[11px] text-blue-500">${l.phone}</td>
-            <td class="p-3.5"><span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-500 border-blue-500/30">${l.status}</span></td>
-            <td class="p-3.5 text-right"><button type="button" onclick="window.open('https://wa.me/51963895085', '_blank')" class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 text-[10px] font-bold border border-emerald-500/30 hover:bg-emerald-500 hover:text-white transition">WhatsApp</button></td>
+          <tr class="hover:bg-slate-800/40 transition">
+            <td class="p-3 font-mono text-[11px] text-slate-400">${l.date}</td>
+            <td class="p-3">
+              <strong class="text-white block text-xs">${l.client}</strong>
+              <span class="text-[10px] text-slate-400 font-mono">${l.company}</span>
+            </td>
+            <td class="p-3 font-semibold text-white text-xs">${l.division}</td>
+            <td class="p-3 text-slate-400 text-xs">${l.location}</td>
+            <td class="p-3 font-mono text-[11px] text-blue-400">${l.phone}</td>
+            <td class="p-3">
+              <span class="px-2 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-400 border-blue-500/30">
+                ${l.status}
+              </span>
+            </td>
+            <td class="p-3 text-right">
+              <button
+                type="button"
+                onclick="window.open('https://wa.me/51963895085?text=' + encodeURIComponent('Hola ${l.client} de ${l.company}, le contactamos de Servitotales respecto a su requerimiento de ${l.division}.'), '_blank')"
+                class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 hover:bg-emerald-600 hover:text-white transition text-[10px] font-bold border border-emerald-500/30 cursor-pointer"
+              >
+                WhatsApp
+              </button>
+            </td>
           </tr>
-        `).join("");
-      }
-
-      // Fleet Rendering
-      const fleet = [
-        { code: 'EXC-01', model: 'Excavadora CAT 336D (36 Tn)', cat: 'Línea Amarilla', loc: 'Mina Toromocho - Junín', hrs: '4,120 hrs', status: 'En Operación' },
-        { code: 'EXC-02', model: 'Excavadora Komatsu PC350LC', cat: 'Línea Amarilla', loc: 'Patio Central Lima', hrs: '1,890 hrs', status: 'Disponible' },
-        { code: 'JMB-01', model: 'Jumbo Sandvik DD321 (2 Brazos)', cat: 'Minería Trackless', loc: 'Mina Yauli - Pasco', hrs: '2,450 hrs', status: 'En Operación' }
-      ];
-
-      const fleetBody = document.getElementById('fleet-table-body');
-      if (fleetBody) {
-        fleetBody.innerHTML = fleet.map(f => `
-          <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
-            <td class="p-3.5 font-mono font-bold text-red-500">${f.code}</td>
-            <td class="p-3.5 font-bold text-[var(--text-primary)]">${f.model}</td>
-            <td class="p-3.5 text-slate-400 font-mono text-[11px]">${f.cat}</td>
-            <td class="p-3.5 text-slate-400">${f.loc}</td>
-            <td class="p-3.5 font-mono text-[11px] text-[var(--text-primary)]">${f.hrs}</td>
-            <td class="p-3.5"><span class="px-2.5 py-0.5 rounded-full border text-[10px] font-bold bg-blue-500/10 text-blue-500 border-blue-500/30">${f.status}</span></td>
-          </tr>
-        `).join("");
+        `).join('');
       }
 
       // Export CSV
-      document.getElementById('btn-export-csv')?.addEventListener('click', () => {
+      document.getElementById('btn-export-leads-csv')?.addEventListener('click', () => {
         const csvContent = "data:text/csv;charset=utf-8," 
           + "Fecha,Cliente,Empresa,Division,Ubicacion,Telefono,Estado\n"
           + leads.map(e => `"${e.date}","${e.client}","${e.company}","${e.division}","${e.location}","${e.phone}","${e.status}"`).join("\n");
@@ -540,7 +670,7 @@ import '../styles/global.css';
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "servitotales_reporte.csv");
+        link.setAttribute("download", "servitotales_cotizaciones.csv");
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

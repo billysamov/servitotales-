@@ -10,13 +10,8 @@ const isActive = (path: string) => {
 
 const isCatalogActive = pathname.startsWith('/maquinaria') || pathname.startsWith('/epp') || pathname.startsWith('/suministros');
 
+// ORDER AS REQUESTED: 1. EPP e Indumentaria, 2. Ferretería & Suministros, 3. Maquinaria Pesada & Minería
 const catalogSubItems = [
-  {
-    href: '/maquinaria',
-    title: 'Maquinaria Pesada & Minería',
-    desc: 'Excavadoras, cargadores y minería subterránea trackless',
-    iconColor: 'bg-red-500/10 text-[#DC2626] border-red-500/20'
-  },
   {
     href: '/epp',
     title: 'EPP e Indumentaria Industrial',
@@ -28,6 +23,12 @@ const catalogSubItems = [
     title: 'Ferretería & Suministros',
     desc: 'Pernos estructurales, abrasivos, lockers y mobiliario',
     iconColor: 'bg-blue-500/10 text-blue-500 border-blue-500/20'
+  },
+  {
+    href: '/maquinaria',
+    title: 'Maquinaria Pesada & Minería',
+    desc: 'Excavadoras, cargadores y minería subterránea trackless',
+    iconColor: 'bg-red-500/10 text-[#DC2626] border-red-500/20'
   }
 ];
 ---
@@ -99,13 +100,13 @@ const catalogSubItems = [
             SERVI<span class="text-[#DC2626]">TOTALES</span>
           </span>
           <span class="text-[8px] sm:text-[9px] tracking-widest uppercase font-bold text-blue-400 whitespace-nowrap">
-            Maquinaria • Minería • EPP • Suministros
+            EPP • Suministros • Maquinaria • Minería
           </span>
         </div>
       </a>
 
-      <!-- Center: Main Navigation Menu -->
-      <nav id="nav-links-container" class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-6 xl:gap-9 text-xs font-bold uppercase tracking-wider text-slate-300">
+      <!-- Center: Main Navigation Menu (ORDER: Inicio | Nosotros | Catálogo & Divisiones | Compromiso Social | Contacto) -->
+      <nav id="nav-links-container" class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-5 xl:gap-8 text-xs font-bold uppercase tracking-wider text-slate-300">
         <!-- 1. Inicio -->
         <a
           href="/"
@@ -155,7 +156,7 @@ const catalogSubItems = [
             )}
           </button>
 
-          <!-- Dropdown Mega Menu -->
+          <!-- Dropdown Mega Menu (ORDER: EPP -> Suministros -> Maquinaria) -->
           <div class="absolute top-full left-1/2 -translate-x-1/2 w-80 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
             <div class="p-3 rounded-2xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-slate-700 shadow-2xl space-y-1.5">
               {catalogSubItems.map((sub) => (
@@ -184,7 +185,22 @@ const catalogSubItems = [
           </div>
         </div>
 
-        <!-- 4. Contacto -->
+        <!-- 4. Compromiso Social (NUEVA PÁGINA) -->
+        <a
+          href="/compromiso-social"
+          class={`py-2 relative whitespace-nowrap transition-colors ${
+            isActive('/compromiso-social')
+              ? 'text-[#DC2626] font-black'
+              : 'nav-link-item hover:text-[#DC2626]'
+          }`}
+        >
+          <span>Compromiso Social</span>
+          {isActive('/compromiso-social') && (
+            <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
+          )}
+        </a>
+
+        <!-- 5. Contacto -->
         <a
           href="/contacto"
           class={`py-2 relative whitespace-nowrap transition-colors ${
@@ -232,12 +248,9 @@ const catalogSubItems = [
     <a href="/" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Inicio</a>
     <a href="/nosotros" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/nosotros') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Nosotros & ISO 9001</a>
     
+    <!-- Divisiones reordenadas: EPP -> Suministros -> Maquinaria -->
     <div class="py-2 px-3 space-y-2 bg-slate-50 dark:bg-[#0F1E3A] rounded-xl border border-slate-200 dark:border-slate-800">
       <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Divisiones y Catálogos:</span>
-      <a href="/maquinaria" class="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-[#DC2626] py-1.5 transition-colors">
-        <svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-        <span>Maquinaria Pesada & Minería</span>
-      </a>
       <a href="/epp" class="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 py-1.5 transition-colors">
         <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
         <span>Seguridad Industrial & EPP</span>
@@ -246,8 +259,13 @@ const catalogSubItems = [
         <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
         <span>Ferretería & Suministros</span>
       </a>
+      <a href="/maquinaria" class="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-[#DC2626] py-1.5 transition-colors">
+        <svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+        <span>Maquinaria Pesada & Minería</span>
+      </a>
     </div>
 
+    <a href="/compromiso-social" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/compromiso-social') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Compromiso Social</a>
     <a href="/contacto" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/contacto') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Contacto</a>
 
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">

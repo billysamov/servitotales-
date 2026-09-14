@@ -1,0 +1,427 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const brochurePages = [
+  { page: 1, src: '/images/docs/brochure-page-1.webp', title: 'Portada y Presentación Corporativa' },
+  { page: 2, src: '/images/docs/brochure-page-2.webp', title: 'Equipos de Protección Personal (EPP)' },
+  { page: 3, src: '/images/docs/brochure-page-3.webp', title: 'Ferretería y Suministros Industriales' },
+  { page: 4, src: '/images/docs/brochure-page-4.webp', title: 'Maquinaria Pesada y Servicios Técnicos' }
+];
+---
+
+<Layout
+  title="Brochure Oficial de Soluciones y Suministros | SERVITOTALES S.A.C."
+  description="Explora el brochure corporativo oficial de Servicios Totales del Perú S.A.C. Catálogo de EPP, ferretería pesada, suministros industriales y maquinaria."
+>
+  <section class="py-8 sm:py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-main)] text-[var(--text-primary)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Header Bar -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[var(--border-subtle)]">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-500 font-mono text-[11px] font-bold uppercase tracking-wider">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>CATÁLOGO DIGITAL INSTITUCIONAL</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-black text-[var(--text-primary)] font-heading leading-tight">
+            Brochure Oficial de Soluciones y Servicios
+          </h1>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)]">
+            Servicios Totales del Perú S.A.C. • RUC: 20600889584 • Certificado ISO 9001:2015
+          </p>
+        </div>
+
+        <!-- Action & Navigation Controls -->
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- View mode toggle (Página a página / Cuadrícula) -->
+          <div class="flex items-center p-1 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-sm">
+            <button
+              type="button"
+              id="btn-mode-single"
+              class="px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 bg-[#DC2626] text-white shadow-sm cursor-pointer"
+              title="Vista por páginas"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>Visor</span>
+            </button>
+            <button
+              type="button"
+              id="btn-mode-grid"
+              class="px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] cursor-pointer"
+              title="Ver todas las páginas"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+              <span>Cuadrícula</span>
+            </button>
+          </div>
+
+          <a
+            href="https://wa.me/51963895085?text=Hola%20Servitotales%2C%20estoy%20revisando%20su%20Brochure%20Oficial%20y%20deseo%20solicitar%20una%20cotizaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition shadow-md flex items-center gap-1.5"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <a
+            href="/contacto"
+            class="px-5 py-2.5 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white text-xs font-bold transition shadow-md"
+          >
+            Cotización
+          </a>
+        </div>
+      </div>
+
+      <!-- SINGLE PAGE INTERACTIVE VIEWER -->
+      <div id="single-view-container" class="space-y-6">
+        <!-- Main Viewer Stage -->
+        <div class="w-full rounded-3xl overflow-hidden border border-[var(--border-subtle)] shadow-2xl bg-gradient-to-b from-[#0A1224] to-[#050B16] p-4 sm:p-8 lg:p-10 flex flex-col items-center justify-center relative">
+          
+          <!-- Top Tool Bar -->
+          <div class="w-full max-w-4xl flex items-center justify-between gap-4 pb-4 mb-2 border-b border-slate-800 text-slate-300 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="font-mono font-bold text-amber-400" id="current-page-label">Página 1 de 4</span>
+              <span class="text-slate-600">•</span>
+              <span class="text-slate-300 font-medium hidden sm:inline" id="current-page-title">Portada y Presentación Corporativa</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                id="btn-brochure-zoom"
+                class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white transition flex items-center gap-1.5 cursor-pointer"
+                title="Ampliar a pantalla completa"
+              >
+                <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                <span>Ampliar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Page Stage with Prev/Next Buttons -->
+          <div class="relative w-full max-w-3xl flex items-center justify-center py-2">
+            <!-- Prev Page Button (Desktop & Tablet) -->
+            <button
+              type="button"
+              id="btn-prev-page"
+              class="hidden sm:flex absolute -left-4 lg:-left-12 z-20 w-11 h-11 rounded-full bg-slate-900/90 hover:bg-[#DC2626] text-white border border-slate-700 items-center justify-center transition shadow-xl cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed backdrop-blur-md"
+              title="Página Anterior"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+
+            <!-- Page Image Card -->
+            <div class="w-full bg-white rounded-2xl p-2 sm:p-3 shadow-2xl shadow-black/70 border border-slate-700/50 relative">
+              <img
+                id="brochure-current-img"
+                src="/images/docs/brochure-page-1.webp"
+                alt="Brochure Corporativo - Página 1"
+                class="w-full h-auto rounded-xl object-contain shadow-inner cursor-zoom-in transition-all duration-300"
+                loading="eager"
+                width="1655"
+                height="2340"
+              />
+            </div>
+
+            <!-- Next Page Button (Desktop & Tablet) -->
+            <button
+              type="button"
+              id="btn-next-page"
+              class="hidden sm:flex absolute -right-4 lg:-right-12 z-20 w-11 h-11 rounded-full bg-slate-900/90 hover:bg-[#DC2626] text-white border border-slate-700 items-center justify-center transition shadow-xl cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed backdrop-blur-md"
+              title="Página Siguiente"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Mobile Compact Navigation Bar (<sm screens) -->
+          <div class="flex sm:hidden items-center justify-between gap-3 w-full pt-2">
+            <button
+              type="button"
+              id="btn-prev-mobile"
+              class="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 active:bg-[#DC2626] transition disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+              <span>Anterior</span>
+            </button>
+
+            <span class="text-xs font-mono font-bold text-amber-400 px-2 shrink-0" id="mobile-page-indicator">
+              1 / 4
+            </span>
+
+            <button
+              type="button"
+              id="btn-next-mobile"
+              class="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 active:bg-[#DC2626] transition disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <span>Siguiente</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Bottom Thumbnail Bar -->
+          <div class="w-full max-w-3xl mt-6 pt-4 border-t border-slate-800/80">
+            <p class="text-center text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-3">
+              Seleccionar página del catálogo
+            </p>
+            <div class="grid grid-cols-4 gap-2 sm:gap-4">
+              {brochurePages.map((p) => (
+                <button
+                  type="button"
+                  data-page={p.page}
+                  class={`thumb-btn text-left p-1.5 sm:p-2 rounded-xl border transition-all cursor-pointer group ${p.page === 1 ? 'border-[#DC2626] bg-red-950/30 shadow-md ring-2 ring-[#DC2626]/40' : 'border-slate-800 bg-slate-900/50 hover:border-slate-600'}`}
+                >
+                  <div class="aspect-[1/1.4] w-full rounded-lg overflow-hidden bg-white mb-1.5 border border-slate-700/50">
+                    <img
+                      src={p.src}
+                      alt={`Miniatura página ${p.page}`}
+                      class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="text-[10px] sm:text-xs font-bold text-center text-slate-200">
+                    Pág. {p.page}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID VIEW CONTAINER (Hidden by default) -->
+      <div id="grid-view-container" class="hidden space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {brochurePages.map((p) => (
+            <div class="rounded-3xl p-4 sm:p-6 bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-xl space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-amber-400 font-mono text-xs font-bold">
+                  Página {p.page} de 4
+                </span>
+                <button
+                  type="button"
+                  data-zoom-src={p.src}
+                  class="btn-grid-zoom text-xs text-[var(--text-secondary)] hover:text-[#DC2626] font-bold flex items-center gap-1 cursor-pointer"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+              <div class="bg-white rounded-2xl p-2 sm:p-3 border border-slate-300 shadow-md">
+                <img
+                  src={p.src}
+                  alt={`Brochure página ${p.page}`}
+                  class="w-full h-auto rounded-xl object-contain cursor-zoom-in"
+                  data-zoom-src={p.src}
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-xs sm:text-sm font-semibold text-center text-[var(--text-primary)]">
+                {p.title}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick Action CTA Strip -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-[#0A1224] to-slate-900 border border-slate-800 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-1 text-center sm:text-left">
+          <h3 class="text-base sm:text-lg font-bold text-white">¿Requieres cotizar algún producto o servicio del brochure?</h3>
+          <p class="text-xs sm:text-sm text-slate-400">Atención técnica inmediata para empresas mineras, constructoras e industriales.</p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="https://wa.me/51963895085?text=Hola%20Servitotales%2C%20estoy%20viendo%20su%20Brochure%20y%20deseo%20una%20cotizaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs transition shadow-lg flex items-center gap-2"
+          >
+            <span>WhatsApp Directo</span>
+          </a>
+          <a
+            href="/contacto"
+            class="px-5 py-3 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-xs transition shadow-lg"
+          >
+            Formulario Web
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Lightbox Zoom Modal -->
+    <div
+      id="brochure-modal"
+      class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+    >
+      <div class="relative max-w-5xl max-h-[92vh] overflow-auto rounded-2xl bg-white p-2 sm:p-4 shadow-2xl cursor-default">
+        <button
+          type="button"
+          id="btn-close-brochure-modal"
+          class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-red-600 transition shadow-lg cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img
+          id="brochure-modal-img"
+          src="/images/docs/brochure-page-1.webp"
+          alt="Brochure Oficial - Vista Ampliada"
+          class="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function initBrochureViewer() {
+    const pages = [
+      { page: 1, src: '/images/docs/brochure-page-1.webp', title: 'Portada y Presentación Corporativa' },
+      { page: 2, src: '/images/docs/brochure-page-2.webp', title: 'Equipos de Protección Personal (EPP)' },
+      { page: 3, src: '/images/docs/brochure-page-3.webp', title: 'Ferretería y Suministros Industriales' },
+      { page: 4, src: '/images/docs/brochure-page-4.webp', title: 'Maquinaria Pesada y Servicios Técnicos' }
+    ];
+
+    let currentPage = 1;
+
+    const currentImg = document.getElementById('brochure-current-img') as HTMLImageElement | null;
+    const pageLabel = document.getElementById('current-page-label');
+    const pageTitle = document.getElementById('current-page-title');
+    const btnPrev = document.getElementById('btn-prev-page') as HTMLButtonElement | null;
+    const btnNext = document.getElementById('btn-next-page') as HTMLButtonElement | null;
+    const btnPrevMobile = document.getElementById('btn-prev-mobile') as HTMLButtonElement | null;
+    const btnNextMobile = document.getElementById('btn-next-mobile') as HTMLButtonElement | null;
+    const mobilePageIndicator = document.getElementById('mobile-page-indicator');
+    const thumbButtons = document.querySelectorAll('.thumb-btn');
+
+    const singleContainer = document.getElementById('single-view-container');
+    const gridContainer = document.getElementById('grid-view-container');
+    const btnModeSingle = document.getElementById('btn-mode-single');
+    const btnModeGrid = document.getElementById('btn-mode-grid');
+
+    const modal = document.getElementById('brochure-modal');
+    const modalImg = document.getElementById('brochure-modal-img') as HTMLImageElement | null;
+    const btnZoom = document.getElementById('btn-brochure-zoom');
+    const btnCloseModal = document.getElementById('btn-close-brochure-modal');
+    const gridZoomButtons = document.querySelectorAll('.btn-grid-zoom, [data-zoom-src]');
+
+    function updatePage(pageIndex: number) {
+      if (pageIndex < 1) pageIndex = 1;
+      if (pageIndex > pages.length) pageIndex = pages.length;
+      currentPage = pageIndex;
+
+      const pageData = pages[currentPage - 1];
+
+      if (currentImg) {
+        currentImg.style.opacity = '0.4';
+        currentImg.src = pageData.src;
+        currentImg.alt = `Brochure Corporativo - Página ${currentPage}`;
+        setTimeout(() => {
+          if (currentImg) currentImg.style.opacity = '1';
+        }, 120);
+      }
+
+      if (pageLabel) pageLabel.textContent = `Página ${currentPage} de ${pages.length}`;
+      if (pageTitle) pageTitle.textContent = pageData.title;
+      if (mobilePageIndicator) mobilePageIndicator.textContent = `${currentPage} / ${pages.length}`;
+
+      if (btnPrev) btnPrev.disabled = currentPage === 1;
+      if (btnNext) btnNext.disabled = currentPage === pages.length;
+      if (btnPrevMobile) btnPrevMobile.disabled = currentPage === 1;
+      if (btnNextMobile) btnNextMobile.disabled = currentPage === pages.length;
+
+      // Update thumbnail active states
+      thumbButtons.forEach((btn) => {
+        const p = Number(btn.getAttribute('data-page'));
+        if (p === currentPage) {
+          btn.className = 'thumb-btn text-left p-1.5 sm:p-2 rounded-xl border transition-all cursor-pointer group border-[#DC2626] bg-red-950/30 shadow-md ring-2 ring-[#DC2626]/40';
+        } else {
+          btn.className = 'thumb-btn text-left p-1.5 sm:p-2 rounded-xl border transition-all cursor-pointer group border-slate-800 bg-slate-900/50 hover:border-slate-600';
+        }
+      });
+    }
+
+    btnPrev?.addEventListener('click', () => updatePage(currentPage - 1));
+    btnNext?.addEventListener('click', () => updatePage(currentPage + 1));
+    btnPrevMobile?.addEventListener('click', () => updatePage(currentPage - 1));
+    btnNextMobile?.addEventListener('click', () => updatePage(currentPage + 1));
+
+    thumbButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const p = Number(btn.getAttribute('data-page'));
+        if (p) updatePage(p);
+      });
+    });
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (modal && !modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeModal();
+        return;
+      }
+      if (e.key === 'ArrowLeft') updatePage(currentPage - 1);
+      if (e.key === 'ArrowRight') updatePage(currentPage + 1);
+    });
+
+    // Toggle Modes (Single vs Grid)
+    btnModeSingle?.addEventListener('click', () => {
+      singleContainer?.classList.remove('hidden');
+      gridContainer?.classList.add('hidden');
+      btnModeSingle.className = 'px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 bg-[#DC2626] text-white shadow-sm cursor-pointer';
+      if (btnModeGrid) btnModeGrid.className = 'px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] cursor-pointer';
+    });
+
+    btnModeGrid?.addEventListener('click', () => {
+      gridContainer?.classList.remove('hidden');
+      singleContainer?.classList.add('hidden');
+      btnModeGrid.className = 'px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 bg-[#DC2626] text-white shadow-sm cursor-pointer';
+      if (btnModeSingle) btnModeSingle.className = 'px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] cursor-pointer';
+    });
+
+    // Modal Zoom
+    function openModal(imageSrc?: string) {
+      const src = imageSrc || pages[currentPage - 1].src;
+      if (modalImg) modalImg.src = src;
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    currentImg?.addEventListener('click', () => openModal());
+    btnZoom?.addEventListener('click', () => openModal());
+    btnCloseModal?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    gridZoomButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const src = target.getAttribute('data-zoom-src');
+        if (src) openModal(src);
+      });
+    });
+
+    // Initial page load
+    updatePage(1);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBrochureViewer);
+  } else {
+    initBrochureViewer();
+  }
+</script>

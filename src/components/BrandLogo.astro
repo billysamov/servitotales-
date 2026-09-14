@@ -1,0 +1,108 @@
+---
+interface Props {
+  variant?: 'full' | 'symbol' | 'badge';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  showSubtitle?: boolean;
+  subtitle?: string;
+  class?: string;
+  isLink?: boolean;
+  href?: string;
+}
+
+const {
+  variant = 'full',
+  size = 'md',
+  showSubtitle = true,
+  subtitle = 'EPP • Suministros • Maquinaria • Minería',
+  class: customClass = '',
+  isLink = true,
+  href = '/'
+} = Astro.props;
+
+// Size mappings
+const sizeConfig = {
+  sm: {
+    icon: 'w-7 h-7',
+    iconBox: 'p-1.5 rounded-lg',
+    title: 'text-base sm:text-lg',
+    sub: 'text-[7px] tracking-wider',
+    gap: 'gap-2'
+  },
+  md: {
+    icon: 'w-10 h-10',
+    iconBox: 'p-1.5 rounded-xl',
+    title: 'text-xl sm:text-2xl',
+    sub: 'text-[8px] sm:text-[9px] tracking-widest',
+    gap: 'gap-2.5 sm:gap-3'
+  },
+  lg: {
+    icon: 'w-12 h-12',
+    iconBox: 'p-2 rounded-xl',
+    title: 'text-2xl sm:text-3xl',
+    sub: 'text-[9px] sm:text-[10px] tracking-widest',
+    gap: 'gap-3 sm:gap-3.5'
+  },
+  xl: {
+    icon: 'w-16 h-16',
+    iconBox: 'p-2.5 rounded-2xl',
+    title: 'text-3xl sm:text-4xl',
+    sub: 'text-[10px] sm:text-xs tracking-widest',
+    gap: 'gap-4'
+  }
+};
+
+const currentSize = sizeConfig[size] || sizeConfig.md;
+const Tag = isLink ? 'a' : 'div';
+const linkProps = isLink ? { href } : {};
+---
+
+<Tag
+  {...linkProps}
+  class={`inline-flex items-center ${currentSize.gap} group shrink-0 select-none ${customClass}`}
+>
+  <!-- S-Symbol Vector Icon -->
+  <div
+    class={`${currentSize.icon} ${currentSize.iconBox} bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200`}
+  >
+    <svg
+      viewBox="0 0 199 214"
+      class="w-full h-full drop-shadow-sm"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- Red Upper Flow Arrow (Forms top of S) -->
+      <path
+        d="M 84,4 L 88,4 L 89,5 L 101,5 L 102,6 L 112,7 L 116,9 L 119,9 L 120,10 L 125,11 L 130,14 L 132,14 L 138,17 L 138,31 L 122,30 L 121,29 L 98,30 L 97,31 L 94,31 L 93,32 L 90,32 L 89,33 L 86,33 L 85,34 L 80,35 L 67,42 L 55,53 L 49,63 L 49,65 L 47,69 L 47,72 L 46,73 L 46,89 L 47,90 L 47,92 L 51,99 L 58,106 L 70,113 L 72,113 L 79,116 L 87,117 L 88,118 L 95,118 L 96,117 L 96,107 L 100,108 L 108,114 L 114,120 L 115,120 L 126,131 L 127,131 L 130,134 L 130,136 L 112,150 L 97,159 L 96,158 L 96,149 L 95,148 L 93,148 L 92,149 L 83,149 L 82,150 L 66,150 L 65,149 L 56,149 L 55,148 L 51,148 L 43,145 L 40,145 L 24,136 L 15,126 L 9,115 L 9,113 L 7,109 L 7,106 L 6,105 L 6,102 L 5,101 L 5,96 L 4,95 L 4,73 L 5,72 L 5,66 L 6,65 L 6,62 L 7,61 L 7,58 L 8,57 L 10,49 L 17,36 L 30,22 L 39,16 L 49,11 L 51,11 L 58,8 L 65,7 L 66,6 L 71,6 L 72,5 L 83,5 Z"
+        fill="#E51E2B"
+        class="transition-colors"
+        fill-rule="evenodd"
+      />
+      <!-- Blue Lower Flow Arrow (Forms bottom of S) -->
+      <path
+        d="M 160,42 L 161,42 L 170,51 L 181,66 L 189,83 L 189,85 L 191,89 L 191,92 L 193,96 L 193,100 L 194,101 L 194,107 L 195,108 L 195,135 L 194,136 L 194,142 L 193,143 L 193,146 L 192,147 L 191,153 L 189,156 L 189,158 L 186,164 L 179,174 L 168,184 L 158,189 L 156,191 L 154,191 L 151,193 L 148,193 L 144,195 L 141,195 L 136,197 L 131,197 L 130,198 L 123,198 L 122,199 L 87,199 L 86,198 L 77,198 L 76,197 L 64,196 L 63,195 L 59,195 L 58,194 L 55,194 L 54,193 L 51,193 L 46,191 L 45,192 L 45,206 L 46,207 L 46,209 L 44,210 L 33,200 L 32,200 L 21,189 L 10,174 L 25,160 L 42,149 L 44,149 L 45,150 L 45,170 L 49,172 L 56,173 L 60,175 L 69,176 L 70,177 L 86,178 L 87,179 L 117,179 L 118,178 L 130,177 L 131,176 L 134,176 L 135,175 L 143,173 L 156,165 L 161,160 L 166,153 L 166,151 L 169,145 L 170,136 L 169,135 L 168,127 L 166,123 L 162,117 L 153,108 L 146,103 L 135,97 L 133,97 L 128,94 L 126,94 L 123,92 L 116,90 L 102,83 L 98,80 L 92,74 L 90,69 L 90,64 L 92,59 L 99,52 L 111,47 L 123,46 L 124,45 L 133,45 L 134,46 L 137,46 L 137,51 L 136,52 L 136,56 L 137,57 L 159,43 Z"
+        fill="#0066B2"
+        class="transition-colors dark:fill-[#38BDF8]"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+
+  {variant !== 'symbol' && (
+    <div class="flex flex-col">
+      <!-- Horizontal Typography Brand -->
+      <span
+        class={`${currentSize.title} font-black tracking-wider leading-none font-heading text-[#0066B2] dark:text-white transition-colors`}
+      >
+        SERVI<span class="text-[#E51E2B] dark:text-[#EF4444]">TOTALES</span>
+      </span>
+
+      {showSubtitle && (
+        <span
+          class={`${currentSize.sub} uppercase font-bold text-slate-500 dark:text-sky-400/90 whitespace-nowrap mt-1 leading-none font-mono`}
+        >
+          {subtitle}
+        </span>
+      )}
+    </div>
+  )}
+</Tag>

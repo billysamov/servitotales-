@@ -1,100 +1,83 @@
 ---
+import BrandLogo from './BrandLogo.astro';
 ---
 <footer class="bg-[#050A14] text-slate-400 text-sm border-t border-slate-800/80 pt-16 pb-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 pb-12 border-b border-slate-800/80">
       <!-- Company Branding & Official Name -->
-      <div class="lg:col-span-2 space-y-4">
-        <a href="/" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-[#07172C] p-2 flex items-center justify-center border border-blue-500/40">
-            <svg viewBox="0 0 40 40" class="w-full h-full" fill="none">
-              <circle cx="20" cy="20" r="18" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="80 30"></circle>
-              <path d="M12 25C12 20 16 18 20 16C24 14 28 14 28 10C28 7 24 6 20 6C16 6 13 8 13 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
-              <path d="M28 15C28 20 24 22 20 24C16 26 12 26 12 30C12 33 16 34 20 34C24 34 27 32 27 32" stroke="#DC2626" stroke-width="3" stroke-linecap="round"></path>
-            </svg>
-          </div>
-          <div>
-            <span class="text-2xl font-black tracking-wider text-white font-heading">
-              SERVI<span class="text-[#DC2626]">TOTALES</span>
-            </span>
-            <span class="text-[10px] text-slate-400 block font-semibold uppercase font-mono">
-              Servicios Totales del Perú S.A.C. • RUC: 20600889584
-            </span>
-          </div>
-        </a>
+      <div class="sm:col-span-2 lg:col-span-4 space-y-4">
+        <BrandLogo
+          variant="full"
+          size="md"
+          subtitle="Servicios Totales del Perú S.A.C. • RUC: 20600889584"
+          href="/"
+        />
         <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm font-normal">
           Aliado estratégico clave para los sectores de construcción, minería (cielo abierto y subterránea trackless), vial, industria y comercio a nivel nacional.
         </p>
         
-        <div class="pt-2 flex flex-col gap-2">
-          <div class="flex items-center gap-2 text-xs font-mono font-bold text-amber-400">
-            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span>SGC CERTIFICADO ISO 9001:2015</span>
-          </div>
-          
-          <!-- Brochure Direct Download Link -->
+        <div class="pt-2">
           <a
-            href="/docs/Brochure-Corporativo-Servitotales.pdf"
-            download="Brochure-Corporativo-Servitotales.pdf"
-            target="_blank"
+            href="/brochure"
             class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300 transition underline underline-offset-4"
+            title="Ver Brochure Corporativo Oficial"
           >
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            <span>Descargar Brochure Corporativo Oficial (PDF)</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Ver Brochure Oficial</span>
           </a>
         </div>
       </div>
 
       <!-- Multi-Page Site Navigation -->
-      <div>
+      <div class="lg:col-span-2">
         <h4 class="text-xs font-black uppercase tracking-widest text-slate-200 mb-4 font-heading">Mapa del Sitio</h4>
         <ul class="space-y-2 text-xs">
           <li><a href="/" class="hover:text-white transition">Inicio</a></li>
-          <li><a href="/nosotros" class="hover:text-white transition">Nosotros & SGC ISO 9001</a></li>
-          <li><a href="/epp" class="hover:text-white transition">Seguridad Industrial & EPP</a></li>
-          <li><a href="/suministros" class="hover:text-white transition">Ferretería & Suministros</a></li>
-          <li><a href="/maquinaria" class="hover:text-white transition">Maquinaria & Minería</a></li>
+          <li><a href="/nosotros" class="hover:text-white transition">Nosotros e ISO 9001</a></li>
+          <li><a href="/epp" class="hover:text-white transition">Seguridad Industrial y EPP</a></li>
+          <li><a href="/suministros" class="hover:text-white transition">Ferretería y Suministros</a></li>
+          <li><a href="/maquinaria" class="hover:text-white transition">Maquinaria y Minería</a></li>
           <li><a href="/compromiso-social" class="hover:text-white transition text-emerald-400 font-semibold">Compromiso Social</a></li>
-          <li><a href="/contacto" class="hover:text-white transition">Mesa de Cotizaciones</a></li>
+          <li><a href="/contacto" class="hover:text-white transition">Contacto</a></li>
         </ul>
       </div>
 
       <!-- Reordered Technical Lines: EPP -> Suministros -> Maquinaria -->
-      <div>
+      <div class="lg:col-span-3">
         <h4 class="text-xs font-black uppercase tracking-widest text-slate-200 mb-4 font-heading">Líneas Técnicas</h4>
         <ul class="space-y-2 text-xs text-slate-400">
           <li><a href="/epp" class="hover:text-white transition">Protección Respiratoria P100</a></li>
-          <li><a href="/epp" class="hover:text-white transition">Arneses & Seguridad en Altura</a></li>
-          <li><a href="/suministros" class="hover:text-white transition">Pernos A325 & Fijaciones</a></li>
-          <li><a href="/suministros" class="hover:text-white transition">Mobiliario de Campamento</a></li>
+          <li><a href="/epp" class="hover:text-white transition">Arneses y Seguridad en Altura</a></li>
+          <li><a href="/suministros" class="hover:text-white transition">Pernos A325 y Fijaciones</a></li>
+          <li><a href="/suministros" class="hover:text-white transition">Mobiliario de Oficina y Lockers</a></li>
           <li><a href="/maquinaria#movimiento-tierras" class="hover:text-white transition">Movimiento de Tierras</a></li>
-          <li><a href="/maquinaria#mineria-subterranea-trackless" class="hover:text-white transition">Minería Trackless (Jumbos)</a></li>
+          <li><a href="/maquinaria#mineria-especializada" class="hover:text-white transition">Minería Especializada (Jumbos)</a></li>
         </ul>
       </div>
 
-      <!-- Contact Info & Admin Portal -->
-      <div>
-        <h4 class="text-xs font-black uppercase tracking-widest text-slate-200 mb-4 font-heading">Sede & Contacto</h4>
-        <ul class="space-y-3 text-xs">
-          <li class="flex items-start gap-2">
-            <span class="text-slate-500 font-mono">SEDE:</span>
-            <span class="text-slate-300">Av. Dominicos Mza. D Lote 12 Asc. Los Nardos, Callao, Lima [Perú]</span>
+      <!-- Contact Info -->
+      <div class="lg:col-span-3">
+        <h4 class="text-xs font-black uppercase tracking-widest text-slate-200 mb-4 font-heading">Sede y Contacto</h4>
+        <ul class="space-y-3.5 text-xs">
+          <li class="space-y-1">
+            <span class="text-slate-500 font-mono text-[11px] font-bold uppercase tracking-wider block">Sede Operativa:</span>
+            <span class="text-slate-300 block leading-relaxed">Av. Dominicos Mza. D Lote 12 Asc. Los Nardos, Callao, Lima</span>
           </li>
-          <li class="flex items-center gap-2">
-            <span class="text-slate-500 font-mono">TEL:</span>
-            <a href="tel:963895085" class="text-white hover:text-blue-400 font-bold transition">+51 963 895 085</a>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-slate-500 font-mono">EMAIL:</span>
-            <a href="mailto:contacto@servitotales.com" class="text-slate-300 hover:text-white transition">contacto@servitotales.com</a>
-          </li>
-          <li class="pt-2">
-            <a href="/login" class="inline-flex items-center gap-1.5 text-[11px] font-mono text-slate-500 hover:text-slate-300 transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-              </svg>
-              <span>Panel de Control</span>
+          <li class="space-y-1">
+            <span class="text-slate-500 font-mono text-[11px] font-bold uppercase tracking-wider block">WhatsApp Directo:</span>
+            <a
+              href="https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20solicitar%20una%20cotizaci%C3%B3n."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white hover:text-emerald-400 font-bold transition inline-flex items-center gap-1.5"
+            >
+              <svg class="w-3.5 h-3.5 text-emerald-400 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>+51 963 895 085</span>
             </a>
+          </li>
+          <li class="space-y-1">
+            <span class="text-slate-500 font-mono text-[11px] font-bold uppercase tracking-wider block">Correo Electrónico:</span>
+            <a href="mailto:contacto@servitotales.com" class="text-slate-300 hover:text-white transition break-all block">contacto@servitotales.com</a>
           </li>
         </ul>
       </div>
@@ -102,7 +85,7 @@
 
     <!-- Bottom Legal Bar -->
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center sm:text-left">
-      <p>© 2026 Servicios Totales del Perú S.A.C. (RUC: 20600889584). Todos los derechos reservados. SGC ISO 9001:2015.</p>
+      <p>© 2026 Servicios Totales del Perú S.A.C. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>

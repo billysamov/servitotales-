@@ -1,29 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// ORDER AS REQUESTED: 1. EPP, 2. Ferretería, 3. Maquinaria, 4. ISO 9001
 const servicePillars = [
   {
+    order: "01",
+    badgeColor: "bg-amber-500/10 text-amber-500 border-amber-500/20",
+    title: "Seguridad Industrial y EPP Normado",
+    desc: "Equipos de protección certificados ANSI, OSHA y NIOSH: protección respiratoria P100, arneses de 4 anillos, cascos dieléctricos, trajes Tyvek y calzado industrial."
+  },
+  {
+    order: "02",
+    badgeColor: "bg-blue-500/10 text-blue-500 border-blue-500/20",
+    title: "Ferretería, Suministros y Mobiliario",
+    desc: "Herramientas de precisión, pernos estructurales A325, abrasivos, pinturas epóxicas y mobiliario de oficina (lockers, archivadores, estaciones de trabajo) para empresas y frentes de obra."
+  },
+  {
+    order: "03",
+    badgeColor: "bg-red-500/10 text-[#DC2626] border-red-500/20",
     title: "Venta y Alquiler de Maquinaria",
     desc: "Flota pesada para movimiento de tierras, elevación, compactación vial y minería subterránea trackless (Jumbos y Scooptrams) con mantenimiento 24/7 y entrega directa en obra."
   },
   {
-    title: "Seguridad Industrial & EPP Normado",
-    desc: "Equipos de protección certificados ANSI, OSHA y NIOSH: protección respiratoria P100, arneses de 4 anillos, cascos dieléctricos, trajes Tyvek y calzado industrial."
-  },
-  {
-    title: "Ferretería, Suministros & Mobiliario",
-    desc: "Herramientas de precisión, pernos estructurales A325, abrasivos, pinturas epóxicas y mobiliario reforzado (lockers, archivadores) para campamentos y frentes de obra."
-  },
-  {
-    title: "SGC Certificado ISO 9001:2015",
+    order: "04",
+    badgeColor: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
+    title: "Certificado ISO 9001:2015",
     desc: "Trazabilidad documental, protocolos de inspección pre-uso, homologación operativa y mejora continua para garantizar la más alta confiabilidad en cada proyecto."
   }
 ];
 ---
 
 <Layout
-  title="Nosotros & Sistema de Gestión ISO 9001:2015 | SERVITOTALES S.A.C."
-  description="Conoce la trayectoria, misión, visión al 2030, pilares de calidad ISO 9001:2015 y descarga el brochure corporativo oficial de SERVITOTALES S.A.C."
+  title="Nosotros y Certificación ISO 9001:2015 | SERVITOTALES S.A.C."
+  description="Conoce la trayectoria, misión, visión al 2030, pilares de calidad y el certificado oficial ISO 9001:2015 de SERVITOTALES S.A.C."
 >
   <!-- Atmospheric Hero Section with Dedicated Image -->
   <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
@@ -43,7 +52,7 @@ const servicePillars = [
       <div class="max-w-3xl space-y-5" id="nosotros-hero">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
           <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-          02 // NOSOTROS & SGC ISO 9001:2015
+          02 // NOSOTROS E ISO 9001:2015
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight" id="nosotros-title">
           Liderazgo, Idoneidad Técnica y Compromiso con el País
@@ -52,30 +61,31 @@ const servicePillars = [
           Somos un aliado estratégico clave para los sectores de construcción, minería, vial, industria y comercio a nivel nacional. Operamos bajo un riguroso Sistema de Gestión de la Calidad (SGC) respaldado por la certificación internacional ISO 9001:2015.
         </p>
 
-        <!-- Direct Download Buttons in Hero -->
+        <!-- Direct Action Buttons in Hero -->
         <div class="pt-3 flex flex-wrap items-center gap-3">
           <a
-            href="/docs/Brochure-Corporativo-Servitotales.pdf"
-            download="Brochure-Corporativo-Servitotales.pdf"
-            target="_blank"
-            class="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2 hover:-translate-y-0.5 cursor-pointer"
+            href="/brochure"
+            class="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2 hover:-translate-y-0.5 cursor-pointer"
+            title="Ver Brochure Corporativo Oficial"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            <span>Descargar Brochure Corporativo (PDF)</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Ver Brochure Oficial</span>
           </a>
 
           <a
             href="/contacto"
-            class="px-6 py-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider border border-slate-700 transition backdrop-blur-md"
+            class="px-6 py-3.5 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2 hover:-translate-y-0.5 cursor-pointer"
           >
-            <span>Contactar Asesor Técnico</span>
+            <span>Solicitar Cotización</span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quienes Somos & Presentación Institucional -->
+  <!-- ========================================================================= -->
+  <!-- 1. QUIÉNES SOMOS Y ALIADOS ESTRATÉGICOS (4 PILARES 1, 2, 3, 4) -->
+  <!-- ========================================================================= -->
   <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -92,12 +102,16 @@ const servicePillars = [
           </p>
         </div>
 
+        <!-- 4 Pillars Ordered: 1. EPP, 2. Ferretería, 3. Maquinaria, 4. ISO 9001 -->
         <div class="lg:col-span-6 gsap-fade-up">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {servicePillars.map((p) => (
               <div class="p-6 rounded-3xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-2">
-                <div class="w-8 h-8 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center font-bold text-xs">
-                  ✓
+                <div class="flex items-center justify-between">
+                  <div class={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs border ${p.badgeColor}`}>
+                    ✓
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-slate-400">Pilar {p.order}</span>
                 </div>
                 <h3 class="text-sm font-bold text-[var(--text-primary)] font-heading">{p.title}</h3>
                 <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{p.desc}</p>
@@ -109,12 +123,198 @@ const servicePillars = [
     </div>
   </section>
 
-  <!-- Misión & Visión al 2030 -->
-  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+  <!-- ========================================================================= -->
+  <!-- 2. NUEVA SECCIÓN: VISOR DE CERTIFICADO OFICIAL ISO 9001 (EN-ES) -->
+  <!-- ========================================================================= -->
+  <section id="iso-visual-section" class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-main)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <!-- Section Header with Language Selector -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="max-w-2xl space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-500 font-mono text-[11px] font-bold uppercase tracking-wider">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>ACREDITACIÓN OFICIAL DE CALIDAD INTERNACIONAL</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading leading-tight">
+            Certificado Oficial del Sistema de Gestión de la Calidad (ISO 9001:2015)
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+            Acreditación oficial emitida a favor de <strong class="text-[var(--text-primary)]">Servicios Totales del Perú S.A.C. (RUC: 20600889584)</strong>. Selecciona el idioma para visualizar el certificado oficial en el visor interactivo.
+          </p>
+        </div>
+
+        <!-- Language Selector & Controls (ES / EN) -->
+        <div class="flex flex-wrap items-center gap-3 p-1.5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-sm shrink-0">
+          <button
+            type="button"
+            id="btn-iso-es"
+            onclick="switchIsoLanguage('es')"
+            class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-[#DC2626] text-white shadow-md cursor-pointer"
+          >
+            <span>🇪🇸 Ver en Español</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-iso-en"
+            onclick="switchIsoLanguage('en')"
+            class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-800/10 dark:hover:bg-slate-800 cursor-pointer"
+          >
+            <span>🇺🇸 View in English</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-iso-zoom"
+            onclick="openIsoModal()"
+            class="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-800/10 dark:hover:bg-slate-800 transition cursor-pointer"
+            title="Ampliar certificado"
+          >
+            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- High-Fidelity Visual Certificate Display -->
+      <div class="w-full rounded-3xl overflow-hidden border border-[var(--border-subtle)] shadow-2xl bg-gradient-to-b from-[#0A1224] to-[#050B16] p-4 sm:p-8 lg:p-12 flex flex-col items-center justify-center relative group">
+        <!-- Floating badge -->
+        <div class="absolute top-4 right-4 z-10 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/60 text-[11px] font-mono text-amber-400 font-semibold shadow-lg">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          <span id="iso-lang-label">ISO 9001:2015 (Versión Oficial en Español)</span>
+        </div>
+
+        <div class="w-full max-w-3xl bg-white rounded-2xl p-2 sm:p-3 shadow-2xl shadow-black/60 border border-slate-700/40 relative">
+          <!-- Spanish Certificate Image -->
+          <img
+            id="iso-cert-es"
+            src="/images/docs/certificado-iso-es.webp"
+            alt="Certificado Oficial ISO 9001:2015 - Versión en Español"
+            onclick="openIsoModal()"
+            class="w-full h-auto rounded-xl object-contain shadow-inner cursor-zoom-in block"
+            loading="eager"
+            width="1654"
+            height="2339"
+          />
+          <!-- English Certificate Image -->
+          <img
+            id="iso-cert-en"
+            src="/images/docs/certificado-iso-en.webp"
+            alt="Official Certificate ISO 9001:2015 - English Version"
+            onclick="openIsoModal()"
+            class="w-full h-auto rounded-xl object-contain shadow-inner cursor-zoom-in hidden"
+            loading="eager"
+            width="1654"
+            height="2339"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal for Zoom -->
+    <div
+      id="iso-modal"
+      onclick="if(event.target === this) closeIsoModal()"
+      class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+    >
+      <div class="relative max-w-5xl max-h-[92vh] overflow-auto rounded-2xl bg-white p-2 sm:p-4 shadow-2xl cursor-default" onclick="event.stopPropagation()">
+        <button
+          type="button"
+          id="btn-close-modal"
+          onclick="closeIsoModal()"
+          class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-red-600 transition shadow-lg cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img
+          id="iso-modal-img-es"
+          src="/images/docs/certificado-iso-es.webp"
+          alt="Certificado Oficial ISO 9001:2015 - Vista Ampliada Español"
+          class="w-full h-auto max-h-[85vh] object-contain rounded-lg block"
+        />
+        <img
+          id="iso-modal-img-en"
+          src="/images/docs/certificado-iso-en.webp"
+          alt="Official Certificate ISO 9001:2015 - English Zoomed View"
+          class="w-full h-auto max-h-[85vh] object-contain rounded-lg hidden"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline Script to guarantee immediate, zero-delay switching -->
+  <script is:inline>
+    function switchIsoLanguage(lang) {
+      var imgEs = document.getElementById('iso-cert-es');
+      var imgEn = document.getElementById('iso-cert-en');
+      var modalEs = document.getElementById('iso-modal-img-es');
+      var modalEn = document.getElementById('iso-modal-img-en');
+      var btnEs = document.getElementById('btn-iso-es');
+      var btnEn = document.getElementById('btn-iso-en');
+      var label = document.getElementById('iso-lang-label');
+
+      if (lang === 'es') {
+        if (imgEs) { imgEs.classList.remove('hidden'); imgEs.classList.add('block'); }
+        if (imgEn) { imgEn.classList.remove('block'); imgEn.classList.add('hidden'); }
+        if (modalEs) { modalEs.classList.remove('hidden'); modalEs.classList.add('block'); }
+        if (modalEn) { modalEn.classList.remove('block'); modalEn.classList.add('hidden'); }
+        if (label) label.textContent = 'ISO 9001:2015 (Versión Oficial en Español)';
+        if (btnEs) {
+          btnEs.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-[#DC2626] text-white shadow-md cursor-pointer';
+        }
+        if (btnEn) {
+          btnEn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-800/10 dark:hover:bg-slate-800 cursor-pointer';
+        }
+      } else {
+        if (imgEn) { imgEn.classList.remove('hidden'); imgEn.classList.add('block'); }
+        if (imgEs) { imgEs.classList.remove('block'); imgEs.classList.add('hidden'); }
+        if (modalEn) { modalEn.classList.remove('hidden'); modalEn.classList.add('block'); }
+        if (modalEs) { modalEs.classList.remove('block'); modalEs.classList.add('hidden'); }
+        if (label) label.textContent = 'ISO 9001:2015 (Official English Version)';
+        if (btnEn) {
+          btnEn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-[#DC2626] text-white shadow-md cursor-pointer';
+        }
+        if (btnEs) {
+          btnEs.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-800/10 dark:hover:bg-slate-800 cursor-pointer';
+        }
+      }
+    }
+
+    function openIsoModal() {
+      var modal = document.getElementById('iso-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeIsoModal() {
+      var modal = document.getElementById('iso-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Support Escape key to close modal
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeIsoModal();
+      }
+    });
+  </script>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MISIÓN Y VISIÓN AL 2030 -->
+  <!-- ========================================================================= -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Misión -->
-        <div class="p-8 sm:p-12 rounded-3xl industrial-card border-l-4 border-[#DC2626] space-y-4 gsap-card bg-[var(--bg-surface)]">
+        <div class="p-8 sm:p-12 rounded-3xl industrial-card border-l-4 border-[#DC2626] space-y-4 gsap-card bg-[var(--bg-main)]">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-[#DC2626] uppercase">// NUESTRO PROPÓSITO</span>
             <div class="w-8 h-8 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center">
@@ -128,7 +328,7 @@ const servicePillars = [
         </div>
 
         <!-- Visión 2030 -->
-        <div class="p-8 sm:p-12 rounded-3xl industrial-card border-l-4 border-blue-600 space-y-4 gsap-card bg-[var(--bg-surface)]">
+        <div class="p-8 sm:p-12 rounded-3xl industrial-card border-l-4 border-blue-600 space-y-4 gsap-card bg-[var(--bg-main)]">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">// HORIZONTE AL 2030</span>
             <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
@@ -144,32 +344,34 @@ const servicePillars = [
     </div>
   </section>
 
-  <!-- Sistema de Calidad ISO 9001 -->
-  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+  <!-- ========================================================================= -->
+  <!-- 4. GARANTÍA & LLAMADA A LA ACCIÓN -->
+  <!-- ========================================================================= -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-main)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-12 rounded-3xl industrial-card bg-gradient-to-br from-slate-900 to-[#0A1224] text-white shadow-2xl space-y-6 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="space-y-3 max-w-2xl">
           <div class="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold">
             <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            <span>SGC ISO 9001:2015 CERTIFICADO</span>
+            <span>ISO 9001:2015 CERTIFICADO</span>
           </div>
           <h2 class="text-2xl sm:text-4xl font-black text-white font-heading">
-            Garantía Técnica y Estándar de Gestión Internacional
+            Garantía Técnica y Respaldo Operacional en Todo el Perú
           </h2>
           <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Nuestros procesos de comercialización, alquiler de maquinaria pesada, abastecimiento de EPP e insumos industriales cumplen con rigurosos controles de trazabilidad, mantenimiento preventivo y homologación operativa a nivel nacional.
+            Nuestros procesos de comercialización, abastecimiento de EPP e insumos industriales cumplen con rigurosos controles de trazabilidad, mantenimiento preventivo y homologación operativa a nivel nacional.
           </p>
         </div>
 
-        <a
-          href="/docs/Brochure-Corporativo-Servitotales.pdf"
-          download="Brochure-Corporativo-Servitotales.pdf"
-          target="_blank"
-          class="px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-xl shrink-0 flex items-center gap-2 hover:-translate-y-0.5 cursor-pointer"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          <span>Descargar Brochure Oficial (PDF)</span>
-        </a>
+        <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+          <a
+            href="/contacto"
+            class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-xs uppercase tracking-wider text-center transition shadow-xl flex items-center justify-center gap-2 hover:-translate-y-0.5 cursor-pointer"
+          >
+            <span>Cotización</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -182,46 +384,53 @@ const servicePillars = [
   gsap.registerPlugin(ScrollTrigger);
 
   function initNosotros() {
-    gsap.fromTo('#nosotros-hero > *', 
-      { opacity: 0, y: 25 }, 
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out' }
-    );
+    try {
+      const hero = document.getElementById('nosotros-hero');
+      if (hero) {
+        gsap.fromTo('#nosotros-hero > *', 
+          { opacity: 0, y: 25 }, 
+          { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out' }
+        );
+      }
 
-    document.querySelectorAll('.gsap-fade-up').forEach(elem => {
-      gsap.fromTo(elem,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: elem,
-            start: 'top 90%'
+      document.querySelectorAll('.gsap-fade-up').forEach(elem => {
+        gsap.fromTo(elem,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: elem,
+              start: 'top 90%'
+            }
           }
-        }
-      );
-    });
+        );
+      });
 
-    const cards = document.querySelectorAll('.gsap-card');
-    if (cards.length > 0) {
-      gsap.fromTo(cards,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cards[0],
-            start: 'top 90%'
+      const cards = document.querySelectorAll('.gsap-card');
+      if (cards.length > 0) {
+        gsap.fromTo(cards,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.15,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: cards[0],
+              start: 'top 90%'
+            }
           }
-        }
-      );
+        );
+      }
+
+      ScrollTrigger.refresh();
+    } catch (err) {
+      console.warn('GSAP init notice:', err);
     }
-
-    ScrollTrigger.refresh();
   }
 
   if (document.readyState === 'loading') {

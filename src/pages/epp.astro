@@ -3,122 +3,152 @@ import Layout from '../layouts/Layout.astro';
 
 const eppCategories = [
   {
-    title: "Protección Respiratoria Normada",
-    description: "Sistemas para material particulado, polvos en suspensión, vapores orgánicos y gases en mina.",
+    title: "1. Protección Craneal, Ocular y Facial",
+    description: "Cascos normados (Clase A, B, C), barbiquejos, lentes de seguridad certificados, antiparras y caretas de policarbonato para esmerilado y soldadura.",
     items: [
       {
-        name: "Respiradores de Medio Rostro Serie 6200 / 7500",
-        standard: "NIOSH / OSHA",
-        brand: "3M / MSA",
-        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Respiradores Full Face Rostro Completo",
-        standard: "Protección Ocular + Respiratoria",
-        brand: "3M / Moldex",
-        image: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Filtros y Cartuchos P100 para Minería",
-        standard: "Retención 99.97% Partículas",
-        brand: "3M 2097 / 7093",
-        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Mascarillas Descartables N95 / KN95",
-        standard: "Caja x 20 / 50 uds",
-        brand: "Certificación ANSI",
-        image: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80"
-      }
-    ]
-  },
-  {
-    title: "Protección para Trabajos en Altura",
-    description: "Equipos certificados para anclaje seguro, detención de caídas y rescate industrial.",
-    items: [
-      {
-        name: "Arnés de Cuerpo Entero de 4 Anillos",
-        standard: "ANSI Z359.11 / OSHA",
-        brand: "Capital Safety / MSA",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Líneas de Vida con Doble Mosquetón y Absorbente",
-        standard: "Capacidad 140 kg",
-        brand: "3M DBI-SALA",
-        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Líneas de Vida Retráctiles (Block Anticaídas)",
-        standard: "Longitudes: 6m, 10m, 15m",
-        brand: "Miller / 3M",
-        image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Freno para Cuerda y Puntos de Anclaje Móviles",
-        standard: "Acero Inoxidable / Forjado",
-        brand: "Petzl / MSA",
-        image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=600&q=80"
-      }
-    ]
-  },
-  {
-    title: "Protección de Cabeza, Ocular y Auditiva",
-    description: "Cascos dieléctricos, lentes antiempañantes y protectores auditivos copa/tapón.",
-    items: [
-      {
-        name: "Cascos de Seguridad Dieléctricos Tipo I y II",
-        standard: "ANSI Z89.1 Clase E & G",
+        name: "Cascos de Seguridad Dieléctricos (Clase A, B, C)",
+        standard: "ANSI Z89.1 Tipo I / II • Clase E & G",
         brand: "MSA V-Gard / 3M",
-        image: "https://images.unsplash.com/photo-1578873375972-04b321a4f027?auto=format&fit=crop&w=600&q=80"
+        image: "/images/products/epp_casco_seguridad.webp"
       },
       {
-        name: "Lentes de Seguridad con Protección UV y Antirrayas",
-        standard: "ANSI Z87.1+",
-        brand: "Nemesis / 3M",
-        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Protectores Auditivos Tipo Copa para Casco",
-        standard: "NRR 26 a 31 dB",
-        brand: "Peltor / Howard Leight",
-        image: "https://images.unsplash.com/photo-1578873375972-04b321a4f027?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Barboquejos Elásticos con Mentonera",
-        standard: "3 y 4 Puntos de Sujeción",
+        name: "Barbiquejos Reforzados y Gorras Antichoque",
+        standard: "3 y 4 Puntos de Sujeción • Mentonera Siliconada",
         brand: "Servitotales Safety",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+        image: "/images/products/epp_barbiquejo_gorras.webp"
+      },
+      {
+        name: "Lentes de Seguridad (Claros, Oscuros y Antiparras)",
+        standard: "ANSI Z87.1+ Antiempañante / Anti-UV",
+        brand: "Nemesis / 3M / Spy",
+        image: "/images/products/epp_lentes_seguridad.webp"
+      },
+      {
+        name: "Caretas de Policarbonato para Esmerilar y Soldar",
+        standard: "Protección Facial Total de Alto Impacto",
+        brand: "Jackson / 3M Speedglas",
+        image: "/images/products/epp_careta_policarbonato.webp"
       }
     ]
   },
   {
-    title: "Indumentaria Especial & Ropa Ignífuga",
-    description: "Trajes de protección química, térmicos para altura y uniformes de alta visibilidad.",
+    title: "2. Protección Auditiva y Respiratoria",
+    description: "Tapones auditivos, orejeras de copa, respiradores de media cara, full face y filtros P100 para faenas mineras y ambientes confinados.",
     items: [
       {
-        name: "Mamelucos y Uniformes con Cintas Reflectivas 3M",
-        standard: "Tela Drill / Taslan Térmico",
-        brand: "Confección Minera",
-        image: "https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?auto=format&fit=crop&w=600&q=80"
+        name: "Respiradores Media Cara Serie 6200 / 7500",
+        standard: "Certificación NIOSH / OSHA",
+        brand: "3M / MSA Advantage",
+        image: "/images/products/epp_respirador_media_cara.webp"
+      },
+      {
+        name: "Respiradores de Cara Completa (Full Face Serie 6800)",
+        standard: "Protección Ocular + Respiratoria Integrada",
+        brand: "3M / Moldex",
+        image: "/images/products/epp_respirador_full_face.webp"
+      },
+      {
+        name: "Filtros y Cartuchos P100 para Gases y Vapores",
+        standard: "Retención 99.97% Partículas • 3M 2097 / 7093",
+        brand: "3M / MSA",
+        image: "/images/products/epp_filtros_p100.webp"
+      },
+      {
+        name: "Orejeras de Copa para Casco y Tapones Auditivos",
+        standard: "NRR 26 a 33 dB • Reutilizables y Desechables",
+        brand: "Peltor / Howard Leight",
+        image: "/images/products/epp_orejeras_auditivas.webp"
+      }
+    ]
+  },
+  {
+    title: "3. Protección de Extremidades Superiores e Inferiores",
+    description: "Guantes de nitrilo, látex, poliuretano, cuero/badana, anticorte, dieléctricos y calzado industrial con puntera de acero/composite y plantilla anticlavo.",
+    items: [
+      {
+        name: "Guantes de Nitrilo, Poliuretano y Látex Industrial",
+        standard: "EN 388 Riesgos Mecánicos • Alta Sensibilidad",
+        brand: "Ansell HyFlex / Showa",
+        image: "/images/products/epp_guantes_nitrilo.webp"
+      },
+      {
+        name: "Guantes Anticorte Nivel 5 y Guantes Dieléctricos",
+        standard: "Fibras de Kevlar / HPPE • Clase 00 a 4",
+        brand: "Ansell / Salisbury",
+        image: "/images/products/epp_guantes_anticorte_cuero.webp"
+      },
+      {
+        name: "Calzado de Seguridad Dieléctrico con Puntera Composite/Acero",
+        standard: "ASTM F2413 • Resistencia 18 kV • Suela Antideslizante",
+        brand: "CAT / Bata Industrials",
+        image: "/images/products/epp_calzado_dielectrico.webp"
+      },
+      {
+        name: "Botas de Jebe con Puntera y Plantillas Anticlavo",
+        standard: "Impermeabilidad Total • Suela Antiperforación",
+        brand: "Segusa / Bata",
+        image: "/images/products/epp_botas_jebe_anticlavo.webp"
+      }
+    ]
+  },
+  {
+    title: "4. Protección Anticaídas y Trabajos en Altura",
+    description: "Arneses de cuerpo entero certificados, líneas de vida con absorbedor de impacto, líneas de restricción, conectores de anclaje y bloques retráctiles.",
+    items: [
+      {
+        name: "Arnés de Cuerpo Entero de 4 Anillos Dieléctrico / Estándar",
+        standard: "ANSI Z359.11 / OSHA 1926 • 140 kg Capacidad",
+        brand: "Capital Safety / MSA Workman",
+        image: "/images/products/epp_arnes_cuerpo_entero.webp"
+      },
+      {
+        name: "Líneas de Vida Doble con Mosquetones y Absorbente",
+        standard: "Fuerza de Impacto Reducida < 4 kN",
+        brand: "3M DBI-SALA",
+        image: "/images/products/epp_linea_vida_absorbente.webp"
+      },
+      {
+        name: "Bloques Retráctiles Anticaídas (6m, 10m y 15m)",
+        standard: "Cable de Acero Galvanizado / Cinta Dynema",
+        brand: "Miller / 3M Rebel",
+        image: "/images/products/epp_bloque_retractil.webp"
+      },
+      {
+        name: "Conectores de Anclaje, Frenos de Cuerda y Estrobos",
+        standard: "Acero Forjado 5000 lbs • NTP 399.047",
+        brand: "Petzl / MSA",
+        image: "/images/products/epp_conectores_anclaje_freno.webp"
+      }
+    ]
+  },
+  {
+    title: "5. Indumentaria de Trabajo Industrial y Especializada",
+    description: "Ropa convencional con cintas reflectantes, mamelucos térmicos, trajes Tyvek para sustancias químicas, prendas ignífugas y artículos de cuero para soldadura.",
+    items: [
+      {
+        name: "Pantalones, Camisas y Chalecos de Alta Visibilidad Tipo Ingeniero",
+        standard: "Drill 100% Algodón • Cintas Reflectivas 3M Scotchlite",
+        brand: "Confección Industrial Homologada",
+        image: "/images/products/epp_chaleco_ingeniero.webp"
+      },
+      {
+        name: "Overoles (Mamelucos) Térmicos e Impermeables para Lluvia",
+        standard: "Taslan Térmico con Acolchado para Clima Extremo",
+        brand: "Servitotales ProWear",
+        image: "/images/products/epp_overol_termico_lluvia.webp"
       },
       {
         name: "Trajes de Protección Química Tyvek / Tychem",
-        standard: "Micropartículas y Líquidos",
-        brand: "DuPont",
-        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
+        standard: "Barrera contra Polvo Fino, Químicos Líquidos y Salpicaduras",
+        brand: "DuPont Tyvek 500 / 600",
+        image: "/images/products/epp_traje_tyvek_quimico.webp"
       },
       {
-        name: "Calzado de Seguridad Dieléctrico con Puntera",
-        standard: "Norma ASTM F2413 / NTP",
-        brand: "CAT / Bata Industrials",
-        image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Guantes de Nitrilo, Cuero Cromo y Antivibración",
-        standard: "EN 388 Riesgos Mecánicos",
-        brand: "Ansell / Showa",
-        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
+        name: "Indumentaria de Cuero para Soldadura (Casacas, Mandiles, Escarpines, Mangas)",
+        standard: "Cuero Cromo de 1.2 mm • Hilo Kevlar Ignífugo",
+        brand: "Servitotales Heavy Duty",
+        image: "/images/products/epp_indumentaria_cuero_soldador.webp"
       }
     ]
   }
@@ -126,7 +156,7 @@ const eppCategories = [
 ---
 
 <Layout
-  title="Catálogo de Seguridad & EPP Normado | SERVITOTALES S.A.C."
+  title="Catálogo de Seguridad y EPP Normado | SERVITOTALES S.A.C."
   description="Equipos de protección personal normados ANSI y OSHA para minería y construcción. Respiradores 3M, arneses, cascos dieléctricos y calzado industrial por lotes."
 >
   <!-- Atmospheric Hero Header with Division Image -->
@@ -151,7 +181,7 @@ const eppCategories = [
           04 // EQUIPOS DE PROTECCIÓN PERSONAL
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
-          Seguridad Industrial & EPP Normado
+          Seguridad Industrial y EPP Normado
         </h1>
         <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
           Abastecimiento mayorista y corporativo de implementos de seguridad industrial certificados ANSI, OSHA y NIOSH para faenas de alto riesgo en minería y obras civiles.
@@ -170,7 +200,7 @@ const eppCategories = [
             <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {cat.items.map((item) => (
               <div class="item-card rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group hover:border-amber-500 transition-all duration-300">
                 <!-- Product Image Header -->

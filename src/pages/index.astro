@@ -1,81 +1,121 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const equipmentLines = [
+// Priority Supplies & EPP Quick Lines for WhatsApp
+const quickSupplyLines = [
   {
-    name: "Excavadoras sobre Orugas",
-    tag: "CAT 320/336",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Excavadoras%20sobre%20Orugas"
+    name: "Protección Respiratoria y EPP",
+    tag: "Filtros P100 / 3M",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Protecci%C3%B3n%20Respiratoria%20y%20EPP%20Normado"
   },
   {
-    name: "Cargadores & Retroexcavadoras",
-    tag: "Línea Amarilla",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Cargadores%20Frontales"
+    name: "Seguridad en Altura y Anticaídas",
+    tag: "Arneses 4 Anillos ANSI",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Arneses%20y%20Seguridad%20en%20Altura"
   },
   {
-    name: "Minería Subterránea Trackless",
-    tag: "Jumbos / Scoops",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Mineria%20Trackless"
+    name: "Pernos Estructurales y Fijación",
+    tag: "A325 / Varillas / Tuercas",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Pernos%20Estructurales%20A325"
   },
   {
-    name: "Volquetes & Camiones Grúa",
-    tag: "Acarreo Pesado",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Volquetes%20y%20Camiones"
+    name: "Herramientas y Mobiliario de Obra",
+    tag: "Herramientas / Lockers",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Herramientas%20y%20Mobiliario%20de%20Oficina%20y%20Lockers"
   }
 ];
 
 const marqueeItems = [
-  "SGC ISO 9001:2015 CERTIFICADO",
-  "ALQUILER DE MAQUINARIA PESADA",
-  "OPERADORES Y TÉCNICOS HOMOLOGADOS",
-  "ENTREGA DIRECTA EN OBRA A NIVEL NACIONAL",
   "EQUIPOS DE PROTECCIÓN PERSONAL ANSI/OSHA",
-  "MANTENIMIENTO TÉCNICO ESPECIALIZADO 24/7"
+  "FERRETERÍA PESADA Y PERNOS A325",
+  "ISO 9001:2015 CERTIFICADO",
+  "DESPACHO DIRECTO EN OBRA A NIVEL NACIONAL",
+  "MOBILIARIO DE OFICINA Y LOCKERS METÁLICOS",
+  "ALQUILER DE MAQUINARIA Y MINERÍA TRACKLESS"
 ];
 
+// ORDER: 1. EPP -> 2. Ferretería y Suministros -> 3. Maquinaria
 const divisions = [
   {
-    title: "Seguridad Industrial & EPP",
-    tag: "División Seguridad",
-    desc: "Cascos dieléctricos, respiradores con filtros P100, arneses anticaídas, trajes Tyvek y ropa ignífuga homologada ANSI/OSHA.",
+    title: "Equipos de Protección Personal (EPP)",
+    tag: "01 // SEGURIDAD Y EPP",
+    badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
+    summary: "Protección integral normada ANSI y OSHA para faenas mineras y construcción civil. Suministro mayorista con certificación de calidad.",
+    highlights: [
+      "Protección Respiratoria 3M y Filtros P100",
+      "Sistemas Anticaídas, Líneas de Vida y Arneses",
+      "Cascos Dieléctricos, Calzado y Trajes Ignífugos"
+    ],
     href: "/epp",
-    cta: "Ver Catálogo de EPP",
+    cta: "Explorar Catálogo EPP",
     img: "/images/division-epp.jpg",
     alt: "Equipos de protección personal y seguridad industrial"
   },
   {
-    title: "Ferretería & Suministros",
-    tag: "División Suministros",
-    desc: "Herramientas de alto torque, pernos estructurales A325, abrasivos, pinturas epóxicas y mobiliario reforzado para campamento.",
+    title: "Ferretería y Suministros Industriales",
+    tag: "02 // FERRETERÍA Y SUMINISTROS",
+    badgeColor: "text-blue-400 border-blue-500/30 bg-blue-500/10",
+    summary: "Abastecimiento técnico de herramientas de precisión, pernería de alta resistencia, químicos, ferretería y mobiliario de oficina.",
+    highlights: [
+      "Herramientas Manuales, Eléctricas y Neumáticas",
+      "Pernos Estructurales A325, Grado 5/8 y Abrasivos",
+      "Mobiliario de Oficina, Lockers y Papelería"
+    ],
     href: "/suministros",
-    cta: "Ver Catálogo de Suministros",
+    cta: "Explorar Catálogo Suministros",
     img: "/images/division-suministros.jpg",
     alt: "Ferretería industrial, herramientas y suministros para obras"
   },
   {
-    title: "Maquinaria Pesada & Minería",
-    tag: "División Maquinaria",
-    desc: "Excavadoras, cargadores frontales, volquetes, telehandlers y sistemas para minería subterránea trackless (Jumbos y Scooptrams).",
+    title: "Venta y Alquiler de Maquinaria y Equipos",
+    tag: "03 // MAQUINARIA Y MINERÍA",
+    badgeColor: "text-red-400 border-red-500/30 bg-red-500/10",
+    summary: "Flota pesada para movimiento de tierras, elevación y minería trackless con mantenimiento en obra y operadores calificados.",
+    highlights: [
+      "Excavadoras, Rodillos y Camiones Volquete",
+      "Manlifts, Plataformas de Tijera y Montacargas",
+      "Jumbos Mineros, Scooptrams y Generación Diésel"
+    ],
     href: "/maquinaria",
-    cta: "Ver Catálogo de Flota",
+    cta: "Explorar Catálogo Maquinaria",
     img: "/images/division-maquinaria.jpg",
-    alt: "Maquinaria pesada y excavadoras en operación"
+    alt: "Maquinaria pesada y flota minera en operación"
+  }
+];
+
+const isoPillars = [
+  {
+    title: "Trazabilidad y Fichas Técnicas",
+    desc: "Cada lote de EPP y pernos cuenta con certificación de fábrica, lote homologado y ficha técnica de cumplimiento normativo."
+  },
+  {
+    title: "Inspección Pre-Uso y Calidad",
+    desc: "Protocolos rigurosos de control antes de cada despacho a obra para garantizar cero fallas operativas."
+  },
+  {
+    title: "Disponibilidad y Despacho Inmediato",
+    desc: "Stock permanente de suministros críticos para minería y construcción con cobertura en costa, sierra y selva."
   }
 ];
 ---
 
-<Layout>
-  <!-- Hero Section: Clean, Cinematic, High-Impact & Spacious -->
+<Layout
+  title="Abastecimiento de EPP, Ferretería y Suministros Industriales | SERVITOTALES S.A.C."
+  description="Distribución de EPP normado ANSI/OSHA, ferretería pesada, pernos A325, suministros y alquiler de maquinaria con certificación ISO 9001:2015 en Perú."
+>
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION: ENFOQUE EN EPP, FERRETERÍA Y SUMINISTROS -->
+  <!-- ========================================================================= -->
   <section id="inicio" class="relative min-h-[85vh] lg:min-h-[88vh] flex flex-col justify-center pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
-    <!-- Full-Bleed Atmospheric Background Image with subtle scale animation -->
+    <!-- Atmospheric Background Image -->
     <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
       <img
         id="hero-bg-img"
         src="/images/hero-fleet.jpg"
-        alt="Flota de maquinaria pesada Servitotales en faena al atardecer"
+        alt="Suministros y operaciones industriales Servitotales S.A.C."
         loading="eager"
         decoding="async"
-        class="w-full h-full object-cover object-right lg:object-center opacity-60 contrast-115 saturate-110 will-change-transform"
+        class="w-full h-full object-cover object-right lg:object-center opacity-40 contrast-115 saturate-110 will-change-transform"
       />
       <!-- Directional Smooth Gradient Overlays -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/90 via-45% to-transparent"></div>
@@ -84,39 +124,39 @@ const divisions = [
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <!-- Left Column: Focused, Clean & Direct -->
+        <!-- Left Column: Focused on EPP, Supplies & Hardware -->
         <div class="lg:col-span-7 space-y-6">
           <!-- ISO Badge -->
           <div id="hero-badge" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/15 border border-red-500/30 text-red-400 font-mono text-[11px] font-bold tracking-wider uppercase">
             <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-            <span>SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN</span>
+            <span>ISO 9001:2015 • EPP Y SUMINISTROS INDUSTRIALES</span>
           </div>
 
-          <!-- Main Headline -->
-          <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-[50px] font-black tracking-tight text-white leading-[1.15] font-heading">
-            Potenciamos tus operaciones y proyectos con <br class="hidden sm:inline" />
-            <span class="text-gradient-red">Maquinaria y Suministros</span>
+          <!-- Main Headline focused on EPP & Hardware -->
+          <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-[48px] font-black tracking-tight text-white leading-[1.15] font-heading">
+            Abastecimiento de EPP, Ferretería y <br class="hidden sm:inline" />
+            <span class="text-gradient-red">Suministros Industriales</span>
           </h1>
 
-          <!-- Concise Subtitle -->
+          <!-- Subtitle -->
           <p id="hero-desc" class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl font-normal">
-            Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.
+            Distribución corporativa de implementos de seguridad normados ANSI/OSHA, herramientas de alto torque, pernos estructurales A325 y soluciones de equipamiento con despacho inmediato en faena a nivel nacional.
           </p>
 
           <!-- Core Benefits -->
           <div id="hero-pills" class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-slate-300 font-semibold pt-1">
             <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5 hover:border-slate-700 transition">
-              <span class="text-emerald-400">✓</span> Operadores Homologados
+              <span class="text-emerald-400">✓</span> EPP Certificado (3M, MSA)
             </span>
             <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5 hover:border-slate-700 transition">
-              <span class="text-blue-400">✓</span> Soporte en Sitio 24/7
+              <span class="text-blue-400">✓</span> Pernos A325 y Ferretería
             </span>
             <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5 hover:border-slate-700 transition">
-              <span class="text-amber-400">✓</span> Despacho a Nivel Nacional
+              <span class="text-amber-400">✓</span> Despacho en Obra 24/7
             </span>
           </div>
 
-          <!-- Direct CTA Buttons with Brochure Download -->
+          <!-- Direct CTA Buttons with Brochure Viewer Link -->
           <div id="hero-ctas" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4">
             <a
               href="/contacto"
@@ -127,43 +167,43 @@ const divisions = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </a>
+
             <a
-              href="/docs/Brochure-Corporativo-Servitotales.pdf"
-              download="Brochure-Corporativo-Servitotales.pdf"
-              target="_blank"
+              href="/brochure"
               class="px-6 py-4 text-xs font-black uppercase tracking-widest text-amber-400 hover:text-white bg-slate-900/90 hover:bg-amber-600/90 border border-amber-500/40 rounded-2xl transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 backdrop-blur-md cursor-pointer"
-              title="Descargar Brochure Corporativo Oficial en PDF"
+              title="Ver Brochure Corporativo Oficial"
             >
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-              <span>Brochure PDF</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+              <span>Ver Brochure Oficial</span>
             </a>
+
             <a
-              href="/maquinaria"
+              href="/epp"
               class="px-5 py-4 text-xs font-black uppercase tracking-widest text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/90 border border-slate-700/60 rounded-2xl transition-all flex items-center justify-center gap-1.5 hover:-translate-y-0.5 backdrop-blur-md"
             >
-              <span>Catálogo</span>
+              <span>Catálogo EPP</span>
             </a>
           </div>
         </div>
 
-        <!-- Right Column: Streamlined Quick-Quotation Panel -->
+        <!-- Right Column: Quick Quotation for Supplies & EPP -->
         <div class="lg:col-span-5 flex flex-col" id="hero-panel">
           <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-[#081020]/90 backdrop-blur-xl p-6 sm:p-7 space-y-4">
             <!-- Header -->
             <div class="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
                 <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-amber-400 block">Cotización Directa</span>
-                <h3 class="text-base font-black font-heading text-white">Disponibilidad de Flota</h3>
+                <h3 class="text-base font-black font-heading text-white">Disponibilidad EPP y Ferretería</h3>
               </div>
               <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>En Servicio</span>
+                <span>En Stock</span>
               </div>
             </div>
 
-            <!-- Streamlined Selector -->
+            <!-- Supply Selector Items -->
             <div class="space-y-2" id="hero-selector-items">
-              {equipmentLines.map((item) => (
+              {quickSupplyLines.map((item) => (
                 <a
                   href={item.href}
                   target="_blank"
@@ -171,7 +211,7 @@ const divisions = [
                   class="flex items-center justify-between p-3 rounded-xl bg-[#0D182E]/70 hover:bg-[#DC2626] hover:text-white border border-slate-800/90 hover:border-transparent transition-all text-xs font-bold text-slate-200 group shadow-sm"
                 >
                   <span class="flex items-center gap-2.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626] group-hover:bg-white transition-colors"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 group-hover:bg-white transition-colors"></span>
                     <span>{item.name}</span>
                   </span>
                   <div class="flex items-center gap-2">
@@ -186,8 +226,13 @@ const divisions = [
 
             <!-- Footer Contact Call -->
             <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-              <span class="text-slate-400 font-medium">Atención Técnica 24/7</span>
-              <a href="tel:963895085" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1 font-mono">
+              <span class="text-slate-400 font-medium">Atención Comercial WhatsApp</span>
+              <a
+                href="https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20solicitar%20atenci%C3%B3n%20comercial."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-mono"
+              >
                 <span>+51 963 895 085</span>
               </a>
             </div>
@@ -195,29 +240,31 @@ const divisions = [
         </div>
       </div>
 
-      <!-- Compact Performance Strip -->
+      <!-- Performance Strip -->
       <div id="hero-stats" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-800/70">
         <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left stat-card">
           <div class="text-2xl sm:text-3xl font-black text-white font-heading">ISO 9001</div>
-          <div class="text-xs text-slate-300 font-semibold mt-0.5">Certificación SGC</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Calidad Certificada</div>
         </div>
         <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left stat-card">
           <div class="text-2xl sm:text-3xl font-black text-white font-heading">100%</div>
-          <div class="text-xs text-slate-300 font-semibold mt-0.5">Cobertura Nacional</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">EPP Normado</div>
         </div>
         <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left stat-card">
           <div class="text-2xl sm:text-3xl font-black text-white font-heading">24/7</div>
-          <div class="text-xs text-slate-300 font-semibold mt-0.5">Soporte Mecánico</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Despacho en Obra</div>
         </div>
         <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left stat-card">
-          <div class="text-2xl sm:text-3xl font-black text-white font-heading">2030</div>
-          <div class="text-xs text-slate-300 font-semibold mt-0.5">Visión de Liderazgo</div>
+          <div class="text-2xl sm:text-3xl font-black text-white font-heading">Nacional</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Cobertura de Envíos</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Kinetic Marquee Ticker -->
+  <!-- ========================================================================= -->
+  <!-- 2. KINETIC MARQUEE TICKER -->
+  <!-- ========================================================================= -->
   <section class="py-4 bg-[var(--bg-surface)] border-b border-[var(--border-subtle)] overflow-hidden relative">
     <div class="marquee-track flex items-center gap-12 whitespace-nowrap">
       {[...marqueeItems, ...marqueeItems].map((item) => (
@@ -232,23 +279,25 @@ const divisions = [
     </div>
   </section>
 
-  <!-- Business Divisions Portal Grid -->
+  <!-- ========================================================================= -->
+  <!-- 3. CATÁLOGO DE SOLUCIONES (ORDER: 1. EPP -> 2. FERRETERÍA -> 3. MAQUINARIA) -->
+  <!-- ========================================================================= -->
   <section id="divisiones" class="py-20 lg:py-28 relative border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-14 space-y-3" id="divisions-header">
-        <span class="tech-label">01 // DIVISIONES OPERATIVAS & SGC ISO 9001</span>
+        <span class="tech-label">01 // CATÁLOGOS TÉCNICOS Y SOLUCIONES INTEGRALES</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--text-primary)] leading-tight font-heading">
-          Soluciones Integrales para Minería, Construcción e Industria
+          Suministros de Seguridad, Ferretería y Equipamiento Pesado
         </h2>
         <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-          Unidades de negocio homologadas para proyectos en costa, sierra y selva con despacho directo en obra.
+          Abastecimiento homologado para operaciones de minería, obras civiles e industria en todo el territorio nacional.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {divisions.map((div) => (
           <div class="division-card rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group shadow-lg hover:shadow-2xl transition-all duration-300 bg-[var(--bg-surface)] border border-[var(--border-subtle)]">
-            <!-- 100% Crisp Image Header -->
+            <!-- 100% Crisp Real Image Header -->
             <div class="relative h-56 sm:h-60 w-full overflow-hidden bg-slate-900 border-b border-[var(--border-subtle)]">
               <img
                 src={div.img}
@@ -258,30 +307,45 @@ const divisions = [
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               />
               
-              <!-- Floating Crisp Category Pill -->
+              <!-- Floating Category Pill -->
               <div class="absolute top-3.5 left-3.5 z-10">
-                <span class="inline-flex items-center px-3 py-1.5 rounded-xl text-[11px] font-mono font-bold uppercase tracking-wider bg-[#060B14]/90 text-white border border-slate-700 shadow-md backdrop-blur-md">
+                <span class={`inline-flex items-center px-3 py-1.5 rounded-xl text-[11px] font-mono font-bold uppercase tracking-wider bg-[#060B14]/90 border shadow-md backdrop-blur-md ${div.badgeColor}`}>
                   {div.tag}
                 </span>
               </div>
             </div>
 
             <!-- Card Body Content -->
-            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 class="text-xl sm:text-2xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors leading-tight">
+            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
+              <div class="space-y-4">
+                <h3 class="text-xl sm:text-2xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors leading-tight min-h-[56px] flex items-center">
                   {div.title}
                 </h3>
-                <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mt-2.5">
-                  {div.desc}
+
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed min-h-[48px]">
+                  {div.summary}
                 </p>
+
+                <div class="pt-2 border-t border-[var(--border-subtle)]/60">
+                  <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+                    Líneas Destacadas:
+                  </span>
+                  <ul class="space-y-2">
+                    {div.highlights.map((item) => (
+                      <li class="text-xs text-[var(--text-secondary)] leading-snug flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626] shrink-0"></span>
+                        <span class="font-medium text-[var(--text-primary)]">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               <!-- CTA Link -->
               <div class="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between">
                 <a
                   href={div.href}
-                  class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#DC2626] hover:translate-x-1 transition-all"
+                  class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#DC2626] hover:text-[#B91C1C] hover:translate-x-1 transition-all"
                 >
                   <span>{div.cta}</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -292,6 +356,183 @@ const divisions = [
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. SECCIÓN ISO 9001 (NEW): GARANTÍA Y HOMOLOGACIÓN TÉCNICA -->
+  <!-- ========================================================================= -->
+  <section id="iso-section" class="py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="tech-label">02 // GARANTÍA DE GESTIÓN DE LA CALIDAD</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading leading-tight">
+            Calidad Certificada bajo Estándar ISO 9001:2015
+          </h2>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Nuestro Sistema de Gestión de la Calidad (SGC) asegura la conformidad técnica de cada implemento de seguridad, perno de alta resistencia y equipo suministrado a nuestros clientes corporativos.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {isoPillars.map((pillar) => (
+            <div class="p-6 rounded-3xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-3">
+              <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-sm">
+                ✓
+              </div>
+              <h3 class="text-sm font-bold text-[var(--text-primary)] font-heading leading-snug">{pillar.title}</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{pillar.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. SECCIÓN COMPROMISO SOCIAL: PROPÓSITO, NIÑEZ & ONG CORAZONES FELICES -->
+  <!-- ========================================================================= -->
+  <section id="social-preview-section" class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-5 sm:p-8 lg:p-12 rounded-3xl industrial-card bg-gradient-to-br from-slate-900 via-[#0A182F] to-slate-900 text-white shadow-2xl border border-slate-800 flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden">
+        <div class="space-y-4 flex-1 max-w-2xl">
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/30 text-red-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+              <span>COMPROMISO SOCIAL Y PROPÓSITO</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 font-mono text-[11px] font-bold">
+              <span>Alianza con ONG Corazones Felices</span>
+            </div>
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-black text-white font-heading leading-tight">
+            Unidos por la Niñez: Sembrando para la Generación Líder del Futuro
+          </h2>
+          
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Al abastecerte con Servitotales eres parte directa de la ayuda social brindada a la niñez vulnerable a través de la ONG Corazones Felices. Integramos la excelencia técnica e ISO 9001 con un impacto humano real en el Perú.
+          </p>
+
+          <div class="flex flex-wrap gap-4 text-xs font-semibold text-slate-300 pt-1">
+            <span class="flex items-center gap-1.5 text-red-400">● Nutrición y Clubes Infantiles</span>
+            <span class="flex items-center gap-1.5 text-amber-400">● Salud Médica Preventiva</span>
+            <span class="flex items-center gap-1.5 text-emerald-400">● Cero Accidentes SST</span>
+            <span class="flex items-center gap-1.5 text-blue-400">● Desarrollo Comunitario</span>
+          </div>
+        </div>
+
+        <!-- Right: Strategic Partnership & Logos Union Display -->
+        <div class="w-full max-w-sm lg:w-[340px] xl:w-[360px] shrink-0 bg-gradient-to-b from-[#0A101D] to-[#060A14] border border-slate-700/80 rounded-3xl p-6 backdrop-blur-md shadow-2xl flex flex-col items-center gap-5 text-center relative overflow-hidden">
+          
+          <!-- Subtle ambient glow in background -->
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-44 h-44 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="space-y-1.5 relative z-10">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/35 text-amber-400 font-mono text-[10px] font-bold tracking-wider uppercase">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+              ALIANZA SOCIAL CON PROPÓSITO
+            </span>
+            <span class="text-xs text-slate-300 block font-medium">
+              Servitotales S.A.C. & ONG Corazones Felices
+            </span>
+          </div>
+
+          <!-- Connected Logos Showcase -->
+          <div class="relative flex items-center justify-center gap-3.5 w-full py-2 z-10">
+            <!-- Connecting glowing bridge line -->
+            <div class="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-red-500/60 via-amber-400 to-red-500/60 z-0"></div>
+
+            <!-- Servitotales Symbol Card -->
+            <div class="relative z-10 w-16 h-16 rounded-2xl bg-white p-2.5 flex items-center justify-center shadow-xl border-2 border-slate-200/90 shrink-0 hover:scale-105 transition-all duration-300 group" title="SERVITOTALES S.A.C.">
+              <img
+                src="/images/brand/logo-symbol.svg"
+                alt="Logo Servitotales"
+                class="w-full h-full object-contain"
+                width="64"
+                height="64"
+              />
+            </div>
+
+            <!-- Central Handshake / Alliance Badge -->
+            <div class="relative z-10 flex items-center justify-center shrink-0">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 p-[2px] shadow-[0_0_22px_rgba(245,158,11,0.45)] hover:scale-110 transition-transform cursor-pointer" title="Alianza Estratégica Social">
+                <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center">
+                  <!-- Clean Solid Handshake Vector -->
+                  <svg class="w-6 h-6 text-amber-400" viewBox="0 0 640 512" fill="currentColor">
+                    <path d="M624 208h-64.8l-68.5-68.5c-15.6-15.6-40.9-15.6-56.6 0l-45.3 45.3c-7.8 7.8-18.4 12.2-29.5 12.2-11.1 0-21.7-4.4-29.5-12.2l-45.3-45.3c-15.6-15.6-40.9-15.6-56.6 0L160.8 208H16c-8.8 0-16 7.2-16 16v80c0 8.8 7.2 16 16 16h64.8l88.5 88.5c15.6 15.6 40.9 15.6 56.6 0l48-48c7.8-7.8 18.4-12.2 29.5-12.2 11.1 0 21.7 4.4 29.5 12.2l48 48c15.6 15.6 40.9 15.6 56.6 0l88.5-88.5H624c8.8 0 16-7.2 16-16v-80c0-8.8-7.2-16-16-16zM320 288c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- ONG Corazones Felices Card -->
+            <div class="relative z-10 w-16 h-16 rounded-2xl bg-white p-2 flex items-center justify-center shadow-xl border-2 border-slate-200/90 shrink-0 hover:scale-105 transition-all duration-300 group" title="ONG Corazones Felices">
+              <img
+                src="/images/compromiso/corazones-felices-logo.png"
+                alt="Logo ONG Corazones Felices"
+                class="w-full h-full object-contain"
+                width="64"
+                height="64"
+              />
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="w-full border-t border-slate-800/90 pt-2 relative z-10">
+            <a
+              href="/compromiso-social"
+              class="w-full py-3.5 px-5 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-xs uppercase tracking-wider text-center transition shadow-lg flex items-center justify-center gap-2 hover:-translate-y-0.5 cursor-pointer"
+            >
+              <span>Ver Compromiso Social</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. SECCIÓN CONTACTO RÁPIDO / COMPACTO (NEW): "LISTO PARA EMPEZAR" -->
+  <!-- ========================================================================= -->
+  <section id="contacto-rapido" class="py-16 lg:py-20 bg-[var(--bg-surface)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 sm:p-10 rounded-3xl industrial-card bg-[var(--bg-main)] border border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-xs font-mono font-bold text-[#DC2626] uppercase tracking-widest block">
+            // ATENCIÓN INMEDIATA
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">
+            ¿Listo para solicitar tu cotización de suministros?
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)]">
+            Escríbenos directamente por WhatsApp o solicita tu cotización para atención en minutos.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+          <!-- WhatsApp Quick Action Button -->
+          <a
+            href="https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20inmediata."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase tracking-wider text-center transition shadow-md flex items-center justify-center gap-2"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Cotizar por WhatsApp</span>
+          </a>
+
+          <!-- Cotización Directa Button -->
+          <a
+            href="/contacto"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-xs uppercase tracking-wider text-center transition shadow-md"
+          >
+            Cotización
+          </a>
+        </div>
       </div>
     </div>
   </section>

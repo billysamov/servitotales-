@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import BrandLogo from './BrandLogo.astro';
 
 const pathname = Astro.url.pathname;
 const isActive = (path: string) => {
@@ -10,7 +11,7 @@ const isActive = (path: string) => {
 
 const isCatalogActive = pathname.startsWith('/maquinaria') || pathname.startsWith('/epp') || pathname.startsWith('/suministros');
 
-// ORDER AS REQUESTED: 1. EPP e Indumentaria, 2. Ferretería & Suministros, 3. Maquinaria Pesada & Minería
+// ORDER AS REQUESTED: 1. EPP e Indumentaria, 2. Ferretería y Suministros, 3. Maquinaria Pesada y Minería
 const catalogSubItems = [
   {
     href: '/epp',
@@ -20,13 +21,13 @@ const catalogSubItems = [
   },
   {
     href: '/suministros',
-    title: 'Ferretería & Suministros',
+    title: 'Ferretería y Suministros',
     desc: 'Pernos estructurales, abrasivos, lockers y mobiliario',
     iconColor: 'bg-blue-500/10 text-blue-500 border-blue-500/20'
   },
   {
     href: '/maquinaria',
-    title: 'Maquinaria Pesada & Minería',
+    title: 'Maquinaria Pesada y Minería',
     desc: 'Excavadoras, cargadores y minería subterránea trackless',
     iconColor: 'bg-red-500/10 text-[#DC2626] border-red-500/20'
   }
@@ -43,32 +44,34 @@ const catalogSubItems = [
     class="hidden md:block bg-[#050B16] text-slate-300 text-[11px] font-semibold border-b border-slate-800/80 py-1.5 px-4 sm:px-6 lg:px-8 transition-colors duration-300"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <!-- Left: ISO Stamp & RUC -->
+      <!-- Left: ISO Stamp -->
       <div class="flex items-center gap-4 sm:gap-6">
-        <div class="flex items-center gap-2 text-amber-400">
+        <a href="/nosotros#iso-viewer" class="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition">
           <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-          <span class="font-bold tracking-wider whitespace-nowrap">SGC ISO 9001:2015 CERTIFICADO</span>
-        </div>
-        <span class="text-slate-700">|</span>
-        <span class="text-slate-400 font-medium truncate">RUC: 20600889584 • Servicios Totales del Perú S.A.C.</span>
+          <span class="font-bold tracking-wider whitespace-nowrap">ISO 9001:2015 CERTIFICADO</span>
+        </a>
       </div>
 
       <!-- Right: Direct Phone, Email & Brochure Download -->
       <div class="flex items-center gap-4 sm:gap-6 shrink-0">
         <a
-          href="/docs/Brochure-Corporativo-Servitotales.pdf"
-          download="Brochure-Corporativo-Servitotales.pdf"
-          target="_blank"
+          href="/brochure"
           class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1.5 whitespace-nowrap font-bold"
-          title="Descargar Brochure Oficial en PDF"
+          title="Ver Brochure Corporativo Oficial"
         >
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          <span>Descargar Brochure PDF</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+          <span>Ver Brochure Oficial</span>
         </a>
         <span class="text-slate-700">|</span>
-        <a href="tel:963895085" class="hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        <a
+          href="https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20solicitar%20una%20cotizaci%C3%B3n."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-white transition flex items-center gap-1.5 whitespace-nowrap"
+          title="Atención directa por WhatsApp"
+        >
+          <svg class="w-3.5 h-3.5 text-emerald-400 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
           <span class="text-slate-300 hover:text-white">+51 963 895 085</span>
         </a>
@@ -85,32 +88,16 @@ const catalogSubItems = [
 
   <!-- Main Navigation Row -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20 gap-4">
+    <div class="flex items-center justify-between h-20 gap-2 xl:gap-4">
       <!-- Left: Brand Logo -->
-      <a href="/" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0B2545] to-[#040A14] dark:from-blue-600 dark:to-[#07172C] p-2 flex items-center justify-center border border-blue-500/40 shadow-md group-hover:scale-105 transition-transform">
-          <svg viewBox="0 0 40 40" class="w-full h-full" fill="none">
-            <circle cx="20" cy="20" r="18" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="80 30"></circle>
-            <path d="M12 25C12 20 16 18 20 16C24 14 28 14 28 10C28 7 24 6 20 6C16 6 13 8 13 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
-            <path d="M28 15C28 20 24 22 20 24C16 26 12 26 12 30C12 33 16 34 20 34C24 34 27 32 27 32" stroke="#DC2626" stroke-width="3" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="flex flex-col">
-          <span id="nav-brand-text" class="text-xl sm:text-2xl font-black tracking-wider text-white font-heading leading-tight transition-colors">
-            SERVI<span class="text-[#DC2626]">TOTALES</span>
-          </span>
-          <span class="text-[8px] sm:text-[9px] tracking-widest uppercase font-bold text-blue-400 whitespace-nowrap">
-            EPP • Suministros • Maquinaria • Minería
-          </span>
-        </div>
-      </a>
+      <BrandLogo variant="full" size="md" href="/" />
 
-      <!-- Center: Main Navigation Menu (ORDER: Inicio | Nosotros | Catálogo & Divisiones | Compromiso Social | Contacto) -->
-      <nav id="nav-links-container" class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-5 xl:gap-8 text-xs font-bold uppercase tracking-wider text-slate-300">
+      <!-- Center: Main Navigation Menu (ORDER: Inicio | Nosotros | Catálogo y Divisiones | Compromiso Social | Contacto) -->
+      <nav id="nav-links-container" class="hidden lg:flex items-center justify-center flex-1 mx-2 xl:mx-8 gap-3.5 xl:gap-7 text-[11px] xl:text-xs font-bold uppercase tracking-wider text-slate-300">
         <!-- 1. Inicio -->
         <a
           href="/"
-          class={`py-2 relative whitespace-nowrap transition-colors ${
+          class={`py-2 relative whitespace-nowrap uppercase transition-colors ${
             isActive('/')
               ? 'text-[#DC2626] font-black'
               : 'nav-link-item hover:text-[#DC2626]'
@@ -122,32 +109,32 @@ const catalogSubItems = [
           )}
         </a>
 
-        <!-- 2. Nosotros & ISO 9001 -->
+        <!-- 2. Nosotros e ISO 9001 -->
         <a
           href="/nosotros"
-          class={`py-2 relative whitespace-nowrap transition-colors ${
+          class={`py-2 relative whitespace-nowrap uppercase transition-colors ${
             isActive('/nosotros')
               ? 'text-[#DC2626] font-black'
               : 'nav-link-item hover:text-[#DC2626]'
           }`}
         >
-          <span>Nosotros & ISO 9001</span>
+          <span>Nosotros e ISO 9001</span>
           {isActive('/nosotros') && (
             <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
           )}
         </a>
 
-        <!-- 3. Catálogo & Divisiones -->
+        <!-- 3. Catálogo y Divisiones -->
         <div class="relative group py-2">
           <button
             type="button"
-            class={`flex items-center gap-1.5 relative whitespace-nowrap transition-colors cursor-pointer ${
+            class={`flex items-center gap-1.5 relative whitespace-nowrap uppercase transition-colors cursor-pointer ${
               isCatalogActive
                 ? 'text-[#DC2626] font-black'
                 : 'nav-link-item hover:text-[#DC2626]'
             }`}
           >
-            <span>Catálogo & Divisiones</span>
+            <span>Catálogo</span>
             <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-[#DC2626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
             </svg>
@@ -188,7 +175,7 @@ const catalogSubItems = [
         <!-- 4. Compromiso Social (NUEVA PÁGINA) -->
         <a
           href="/compromiso-social"
-          class={`py-2 relative whitespace-nowrap transition-colors ${
+          class={`py-2 relative whitespace-nowrap uppercase transition-colors ${
             isActive('/compromiso-social')
               ? 'text-[#DC2626] font-black'
               : 'nav-link-item hover:text-[#DC2626]'
@@ -203,7 +190,7 @@ const catalogSubItems = [
         <!-- 5. Contacto -->
         <a
           href="/contacto"
-          class={`py-2 relative whitespace-nowrap transition-colors ${
+          class={`py-2 relative whitespace-nowrap uppercase transition-colors ${
             isActive('/contacto')
               ? 'text-[#DC2626] font-black'
               : 'nav-link-item hover:text-[#DC2626]'
@@ -217,13 +204,13 @@ const catalogSubItems = [
       </nav>
 
       <!-- Right Controls -->
-      <div class="flex items-center gap-3 shrink-0">
+      <div class="flex items-center gap-2 xl:gap-3 shrink-0">
         <ThemeToggle />
 
         <!-- Primary Quotation CTA -->
         <a
           href="/contacto"
-          class="px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
+          class="px-3.5 xl:px-5 py-2 xl:py-2.5 text-[11px] xl:text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
         >
           Cotizar
         </a>
@@ -234,9 +221,13 @@ const catalogSubItems = [
           id="mobile-menu-btn"
           class="lg:hidden p-2.5 rounded-xl border border-slate-800 bg-[#0B1528] text-slate-200 hover:border-[#DC2626] transition-colors cursor-pointer"
           aria-label="Abrir Menú"
+          aria-expanded="false"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="menu-open-icon" class="w-5 h-5 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -246,22 +237,22 @@ const catalogSubItems = [
   <!-- Mobile Dropdown Menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0A1224] border-b border-slate-200 dark:border-slate-800 px-6 py-5 space-y-3 shadow-2xl animate-in fade-in duration-200">
     <a href="/" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Inicio</a>
-    <a href="/nosotros" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/nosotros') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Nosotros & ISO 9001</a>
+    <a href="/nosotros" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/nosotros') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Nosotros e ISO 9001</a>
     
     <!-- Divisiones reordenadas: EPP -> Suministros -> Maquinaria -->
     <div class="py-2 px-3 space-y-2 bg-slate-50 dark:bg-[#0F1E3A] rounded-xl border border-slate-200 dark:border-slate-800">
-      <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Divisiones y Catálogos:</span>
+      <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Catálogo:</span>
       <a href="/epp" class="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 py-1.5 transition-colors">
         <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-        <span>Seguridad Industrial & EPP</span>
+        <span>Seguridad Industrial y EPP</span>
       </a>
       <a href="/suministros" class="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-blue-500 py-1.5 transition-colors">
         <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
-        <span>Ferretería & Suministros</span>
+        <span>Ferretería y Suministros</span>
       </a>
       <a href="/maquinaria" class="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-[#DC2626] py-1.5 transition-colors">
         <svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-        <span>Maquinaria Pesada & Minería</span>
+        <span>Maquinaria Pesada y Minería</span>
       </a>
     </div>
 
@@ -269,20 +260,9 @@ const catalogSubItems = [
     <a href="/contacto" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/contacto') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Contacto</a>
 
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
-      <!-- Brochure Download Mobile -->
-      <a
-        href="/docs/Brochure-Corporativo-Servitotales.pdf"
-        download="Brochure-Corporativo-Servitotales.pdf"
-        target="_blank"
-        class="w-full py-2.5 px-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 hover:bg-amber-500 hover:text-white text-xs font-bold transition flex items-center justify-center gap-2"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-        <span>Descargar Brochure Corporativo (PDF)</span>
-      </a>
-
       <a
         href="/contacto"
-        class="w-full py-3 text-center text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] rounded-xl shadow-md"
+        class="w-full py-3 text-center text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md transition-colors"
       >
         Solicitar Cotización Técnica
       </a>
@@ -329,10 +309,40 @@ const catalogSubItems = [
   const header = document.getElementById('main-header');
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const menuOpenIcon = document.getElementById('menu-open-icon');
+  const menuCloseIcon = document.getElementById('menu-close-icon');
 
-  mobileBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+  function toggleMobileMenu(forceClose = false) {
+    if (!mobileMenu) return;
+    const isCurrentlyOpen = !mobileMenu.classList.contains('hidden');
+    const shouldOpen = forceClose ? false : !isCurrentlyOpen;
+
+    if (shouldOpen) {
+      mobileMenu.classList.remove('hidden');
+      menuOpenIcon?.classList.add('hidden');
+      menuCloseIcon?.classList.remove('hidden');
+      mobileBtn?.setAttribute('aria-expanded', 'true');
+    } else {
+      mobileMenu.classList.add('hidden');
+      menuOpenIcon?.classList.remove('hidden');
+      menuCloseIcon?.classList.add('hidden');
+      mobileBtn?.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  mobileBtn?.addEventListener('click', () => toggleMobileMenu());
+
+  // Close menu when clicking on any link inside mobile menu
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => toggleMobileMenu(true));
   });
+
+  // Close menu on desktop resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      toggleMobileMenu(true);
+    }
+  }, { passive: true });
 
   function handleHeaderScroll() {
     const scrollY = window.scrollY || window.pageYOffset;

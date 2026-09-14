@@ -4,138 +4,213 @@ import Layout from '../layouts/Layout.astro';
 const machineryCategories = [
   {
     id: "movimiento-tierras",
-    title: "Movimiento de Tierras & Excavación",
-    description: "Equipos pesados para obras civiles de gran envergadura, apertura de vías y canteras.",
+    title: "1. Movimiento de Tierras y Excavación",
+    description: "Excavadoras de orugas, retroexcavadoras, tractores bulldozers y minicargadores para obras civiles masivas, canteras y movimientos de tierras.",
     items: [
       {
-        name: "Excavadora sobre Orugas CAT 320 / 336",
-        specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³",
-        brand: "Caterpillar / Komatsu",
-        image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80"
+        name: "Excavadora sobre Orugas",
+        specs: "Capacidad de Cuchara: 1.2 - 2.5 m³ • Peso: 22 - 38 Tn",
+        brand: "Línea Amarilla Pesada",
+        image: "/images/products/maq_excavadora_orugas.webp"
       },
       {
-        name: "Cargador Frontal CAT 950 / 966",
-        specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP",
-        brand: "Caterpillar / Volvo",
-        image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80"
+        name: "Retroexcavadora 4x4",
+        specs: "Brazo Extensible • Línea Hidráulica para Martillo",
+        brand: "Equipo Multiuso",
+        image: "/images/products/maq_retroexcavadora_4x4.webp"
       },
       {
-        name: "Tractor sobre Orugas D6T / D8T",
-        specs: "Hoja Semi-Universal • Ripper Multivástago",
-        brand: "Caterpillar",
-        image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=600&q=80"
+        name: "Tractor sobre Orugas (Bulldozer)",
+        specs: "Hoja Semi-Universal • Escarificador / Ripper",
+        brand: "Movimiento Masivo",
+        image: "/images/products/maq_tractor_orugas_bulldozer.webp"
       },
       {
-        name: "Motoniveladora CAT 140M / 160M",
-        specs: "Vertedera: 14 pies • Tracción Tándem",
-        brand: "Caterpillar",
-        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"
-      }
-    ]
-  },
-  {
-    id: "mineria-subterranea-trackless",
-    title: "Minería Subterránea Trackless",
-    description: "Sistemas especializados de perforación, acarreo y sostenimiento en túneles y labores mineras.",
-    items: [
-      {
-        name: "Jumbo Electrohidráulico de Perforación",
-        specs: "1 y 2 Brazos • Cobertura: 35-65 m²",
-        brand: "Sandvik / Epiroc",
-        image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Scooptram (LHD Subterráneo)",
-        specs: "Capacidad: 3.5 a 7.0 yd³ • Motor Diésel / Eléctrico",
-        brand: "Sandvik / Epiroc",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Dumper Subterráneo para Mina",
-        specs: "Capacidad de Carga: 20 a 35 Tn",
-        brand: "Epiroc / Sandvik",
-        image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Roboshot para Proyección de Shotcrete",
-        specs: "Brazo Telescópico 10m • Compresor Integrado",
-        brand: "Putzmeister / Normet",
-        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+        name: "Minicargador Frontal",
+        specs: "Cuchara Frontal • Acoples para Martillo y Barredora",
+        brand: "Carga Compacta",
+        image: "/images/products/maq_minicargador_bobcat.webp"
       }
     ]
   },
   {
     id: "elevacion-carga",
-    title: "Elevación, Izaje & Maniobras",
-    description: "Manipuladores versátiles y grúas para montaje electromecánico y logística de campamento.",
+    title: "2. Elevación, Carga e Izaje",
+    description: "Elevadores de tijera, montacargas, manlifts telescópicos/articulados y manipuladores telescópicos para maniobras seguras.",
     items: [
       {
+        name: "Elevadores de Tijera (Scissor Lift)",
+        specs: "Altura de Trabajo: 8m a 14m • Tracción Eléctrica y Diésel",
+        brand: "Plataformas de Altura",
+        image: "/images/products/maq_elevador_tijera.webp"
+      },
+      {
+        name: "Montacargas Industrial",
+        specs: "Capacidad: 2.5 a 5.0 Tn • Mástil Triple y Desplazador",
+        brand: "Manipulación y Logística",
+        image: "/images/products/maq_montacargas_industrial.webp"
+      },
+      {
+        name: "Manlift Plataforma Articulada y Telescópica",
+        specs: "Alcance: 16m a 43m • Giro Continuo 360°",
+        brand: "Trabajos en Altura",
+        image: "/images/products/maq_manlift_articulado.webp"
+      },
+      {
         name: "Manipulador Telescópico (Telehandler)",
-        specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn",
-        brand: "JCB / Manitou / CAT",
-        image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Camión Grúa Articulado",
-        specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica",
-        brand: "Palfinger / Hiab / Fassi",
-        image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Manlift / Plataforma Tijera Articulada",
-        specs: "Altura de Trabajo: 12 a 26 m",
-        brand: "Genie / JLG",
-        image: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80"
+        specs: "Capacidad: 4.0 - 5.0 Tn • Alcance: 14m - 17m",
+        brand: "Izaje y Alcance Variable",
+        image: "/images/products/maq_telehandler_grua.webp"
       }
     ]
   },
   {
     id: "vial-compactacion",
-    title: "Maquinaria Vial & Compactación",
-    description: "Equipos para conformación de terraplenes, bases granulares y pavimentación.",
+    title: "3. Maquinaria Vial y de Compactación",
+    description: "Motoniveladoras, rodillos compactadores lisos y pata de cabra, pavimentadoras de asfalto y camiones cisterna.",
     items: [
       {
-        name: "Rodillo Compactador Liso / Pata de Cabra",
-        specs: "Peso Operativo: 10 - 14 Tn",
-        brand: "Hamm / CAT / Bomag",
-        image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80"
+        name: "Motoniveladora",
+        specs: "Vertedera: 14 pies • Perfilado y Nivelación de Terrenos",
+        brand: "Rasante y Mantenimiento Vial",
+        image: "/images/products/maq_motoniveladora.webp"
+      },
+      {
+        name: "Rodillo Compactador Liso y Pata de Cabra",
+        specs: "Peso Operativo: 10 - 14 Tn • Alta Frecuencia",
+        brand: "Compactación de Suelos",
+        image: "/images/products/maq_rodillo_compactador.webp"
+      },
+      {
+        name: "Pavimentadora de Asfalto",
+        specs: "Ancho de Extendido: 2.5m - 6.0m • Tolva de Gran Capacidad",
+        brand: "Pavimentación Vial",
+        image: "/images/products/maq_pavimentadora_asfalto.webp"
       },
       {
         name: "Camión Cisterna de Agua 5,000 Galones",
-        specs: "Bomba de Descarga y Regadera Posterior",
-        brand: "Mercedes-Benz / Volvo",
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80"
+        specs: "Bomba de Descarga y Aspersores Delanteros/Posteriores",
+        brand: "Riego y Mitigación de Polvo",
+        image: "/images/products/maq_cisterna_agua.webp"
+      }
+    ]
+  },
+  {
+    id: "vehiculos-transporte",
+    title: "4. Vehículos de Transporte y Obras",
+    description: "Camiones volquete convencionales de alta capacidad y camiones articulados para acarreo en minería y obras civiles.",
+    items: [
+      {
+        name: "Camión Volquete (Dumper) 6x4 y 8x4 de 15 m³",
+        specs: "Tolva Semirroquera de Alta Resistencia • Motor 440-480 HP",
+        brand: "Transporte de Agregados",
+        image: "/images/products/maq_volquete_dumper.webp"
       },
       {
-        name: "Minicargador con Accesorios",
-        specs: "Brazo Excavador, Martillo Hidráulico, Barredora",
-        brand: "Bobcat / CAT",
-        image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80"
+        name: "Camión Articulado Minero",
+        specs: "Capacidad de Carga: 30 a 40 Tn • Tracción Integral 6x6",
+        brand: "Acarreo Pesado en Terreno Difícil",
+        image: "/images/products/maq_camion_articulado.webp"
+      }
+    ]
+  },
+  {
+    id: "limpieza-industrial",
+    title: "5. Maquinaria de Limpieza Industrial y Ambiental",
+    description: "Aspiradoras industriales de polvo/líquido, fregadoras de pisos automáticas, barredoras e hidrolavadoras de alta presión.",
+    items: [
+      {
+        name: "Aspiradoras Industriales de Polvo y Líquido",
+        specs: "Alto Vacío • Tanque de Acero Inox 80L • Filtro HEPA",
+        brand: "Limpieza Industrial Pesada",
+        image: "/images/products/maq_aspiradora_industrial.webp"
+      },
+      {
+        name: "Fregadoras Automáticas y Barredoras de Calzada",
+        specs: "Rendimiento: 3,000 - 6,000 m²/h • Conductor Sentado/A Pie",
+        brand: "Aseo de Grandes Superficies",
+        image: "/images/products/maq_fregadora_barredora.webp"
+      },
+      {
+        name: "Hidrolavadoras de Alta Presión",
+        specs: "Presión: 3000 a 5000 PSI • Agua Fría y Caliente",
+        brand: "Lavado y Desengrase Industrial",
+        image: "/images/products/maq_hidrolavadora_presion.webp"
       }
     ]
   },
   {
     id: "generacion-electrica",
-    title: "Generación de Energía & Iluminación",
-    description: "Grupos electrógenos insonorizados y torres autónomas para faenas 24/7.",
+    title: "6. Equipos Generadores y Grupos Electrógenos",
+    description: "Grupos electrógenos diésel insonorizados, torres de iluminación LED y tableros de transferencia automática para faenas continuas.",
     items: [
       {
-        name: "Grupo Electrógeno Insonorizado",
-        specs: "Potencia: 50 a 500 kVA • 60 Hz Trifásico",
-        brand: "Cummins / Perkins / CAT",
-        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+        name: "Grupo Electrógeno Insonorizado Diésel",
+        specs: "Potencia: 20 a 500 kVA • 60 Hz Trifásico 220V/440V",
+        brand: "Generación Continua y Respaldo",
+        image: "/images/products/maq_grupo_electrogeno.webp"
       },
       {
-        name: "Torre de Iluminación LED Móvil",
-        specs: "4x350W LED • Mástil Telescópico 9m",
-        brand: "Generac / Doosan",
-        image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80"
+        name: "Torre de Iluminación LED Móvil para Mina",
+        specs: "4x350W LED • Mástil Telescópico 9m • Gran Autonomía",
+        brand: "Iluminación Nocturna de Faena",
+        image: "/images/products/maq_torre_iluminacion.webp"
       },
       {
-        name: "Compresor de Aire Portátil para Obra",
-        specs: "Caudal: 185 a 750 CFM • Presión: 100-150 PSI",
-        brand: "Atlas Copco / Sullair",
-        image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80"
+        name: "Tableros de Transferencia Automática y Cables",
+        specs: "Protección IP65 • Conmutación Instantánea de Respaldo",
+        brand: "Distribución Eléctrica",
+        image: "/images/products/maq_tablero_transferencia.webp"
+      }
+    ]
+  },
+  {
+    id: "mineria-especializada",
+    title: "7. Maquinaria para Minería Especializada (Cielo Abierto y Subterránea)",
+    description: "Jumbos electrohidráulicos, cargadores de bajo perfil (Scooptrams), dumpers subterráneos y equipos para minería masiva a cielo abierto.",
+    items: [
+      {
+        name: "Jumbo Electrohidráulico de Perforación",
+        specs: "Perforación Frontal y Empernado en Interior Mina",
+        brand: "Minería Subterránea Trackless",
+        image: "/images/products/maq_jumbo_perforacion.webp"
+      },
+      {
+        name: "Scooptram (Cargador LHD de Bajo Perfil)",
+        specs: "Capacidad: 3.5 a 7.0 yd³ • Perfil Bajo Articulado",
+        brand: "Carga y Acarreo Subterráneo",
+        image: "/images/products/maq_scooptram_lhd.webp"
+      },
+      {
+        name: "Dumper Minero Subterráneo de Bajo Perfil",
+        specs: "Capacidad de Carga: 20 a 35 Tn • Chasis Articulado",
+        brand: "Acarreo en Galerías y Túneles",
+        image: "/images/products/maq_dumper_subterraneo.webp"
+      },
+      {
+        name: "Maquinaria para Minería a Cielo Abierto",
+        specs: "Camiones de Gran Tonelaje y Palas de Alta Capacidad",
+        brand: "Gran Minería Superficial",
+        image: "/images/products/maq_mineria_cielo_abierto.webp"
+      }
+    ]
+  },
+  {
+    id: "suministros-especiales",
+    title: "8. Suministros Especiales y Maquinaria bajo Demanda",
+    description: "Provisión corporativa bajo demanda de insumos críticos, químicos especiales, maquinaria de línea amarilla y equipos auxiliares homologados.",
+    items: [
+      {
+        name: "Suministros Corporativos e Insumos Auxiliares a Medida",
+        specs: "Abastecimiento bajo Especificaciones Técnicas del Cliente",
+        brand: "Provisión Corporativa",
+        image: "/images/products/maq_suministros_especiales_demanda.webp"
+      },
+      {
+        name: "Maquinaria y Equipos Especiales bajo Demanda",
+        specs: "Venta y Alquiler de Flota Complementaria y Soporte Técnico",
+        brand: "Flota Homologada bajo Demanda",
+        image: "/images/products/maq_flota_especial_demanda.webp"
       }
     ]
   }
@@ -143,7 +218,7 @@ const machineryCategories = [
 ---
 
 <Layout
-  title="Catálogo de Maquinaria Pesada & Minería | SERVITOTALES S.A.C."
+  title="Catálogo de Maquinaria Pesada y Minería | SERVITOTALES S.A.C."
   description="Alquiler y venta de maquinaria pesada, excavadoras, cargadores, volquetes y equipos para minería subterránea trackless. Disponibilidad inmediata con entrega en obra."
 >
   <!-- Atmospheric Hero Header with Division Image -->
@@ -168,7 +243,7 @@ const machineryCategories = [
           03 // CATÁLOGO DE FLOTA OPERATIVA
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
-          Maquinaria Pesada & Minería Subterránea
+          Maquinaria Pesada y Minería Subterránea
         </h1>
         <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
           Flota moderna en excelentes condiciones mecánicas, con checklist diario, planes de mantenimiento preventivo y operadores homologados para faenas de alta exigencia a nivel nacional.
@@ -187,7 +262,7 @@ const machineryCategories = [
             <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {cat.items.map((item) => (
               <div class="item-card rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group hover:border-[#DC2626] transition-all duration-300">
                 <!-- Product Image Header -->

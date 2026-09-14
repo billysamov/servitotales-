@@ -3,92 +3,182 @@ import Layout from '../layouts/Layout.astro';
 
 const supplyCategories = [
   {
-    title: "Ferretería Pesada & Elementos de Fijación",
-    description: "Pernos estructurales, varillas roscadas, anclajes químicos y cables de acero.",
+    title: "1. Herramientas Manuales, Eléctricas y Neumáticas",
+    description: "Herramientas manuales de golpe, corte, sujeción y medición de precisión, junto con taladros, amoladoras, rotomartillos, llaves de impacto y compresores.",
     items: [
       {
-        name: "Pernos Estructurales Grado 5, 8 y A325",
-        specs: "Acabado Negro / Galvanizado en Caliente",
-        type: "Fijación",
-        image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80"
+        name: "Juegos de Llaves, Alicates, Prensas y Medición",
+        specs: "Cromo Vanadio • Calibradores Vernier y Torquímetros",
+        type: "Herramientas Manuales",
+        image: "/images/products/sum_herramientas_manuales_llaves.webp"
       },
       {
-        name: "Cables de Acero y Eslingas de Izaje",
-        specs: "Alma de Acero / Textil con Certificado",
-        type: "Maniobra",
-        image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80"
+        name: "Taladros Percutores y Rotomartillos SDS Max",
+        specs: "800W - 1500W • Uso Pesado en Concreto",
+        type: "Eléctricas",
+        image: "/images/products/sum_taladro_rotomartillo.webp"
       },
       {
-        name: "Discos de Corte y Desbaste Industrial",
-        specs: "4.5\", 7\", 9\" para Acero e Inoxidable",
+        name: "Amoladoras Angulares de 4.5\", 7\" y 9\"",
+        specs: "Motor con Protección contra Polvo Abrasivo",
+        type: "Eléctricas",
+        image: "/images/products/sum_amoladora_angular.webp"
+      },
+      {
+        name: "Llaves de Impacto Neumáticas y Compresores de Aire",
+        specs: "Encastre 1/2\" a 1\" • Alto Torque para Taller y Mina",
+        type: "Neumáticas",
+        image: "/images/products/sum_llave_impacto_compresor.webp"
+      }
+    ]
+  },
+  {
+    title: "2. Fijación, Sujeción, Abrasivos y Corte",
+    description: "Pernos de alta resistencia A325/Grado 8, tornillos, tuercas 2H, remaches, discos de corte/desbaste, lijas, brocas y hojas de sierra.",
+    items: [
+      {
+        name: "Pernos Estructurales Grado 5, 8 y A325 con Tuercas 2H",
+        specs: "Negro y Galvanizado en Caliente • Certificado de Fábrica",
+        type: "Fijación Pesada",
+        image: "/images/products/sum_pernos_estructurales_a325.webp"
+      },
+      {
+        name: "Tornillos Drywall, Metal, Remaches y Abrazaderas",
+        specs: "Autoperforantes con Arandela de Neopreno",
+        type: "Sujeción",
+        image: "/images/products/sum_tornillos_drywall_remaches.webp"
+      },
+      {
+        name: "Discos de Corte y Desbaste para Metal e Inoxidable",
+        specs: "4.5\", 7\", 9\" Extra Finos y Reforzados",
         type: "Abrasivos",
-        image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80"
+        image: "/images/products/sum_discos_corte_abrasivos.webp"
       },
       {
-        name: "Soldadura y Electrodos Especiales",
-        specs: "E6011, E7018, Inox y Recubrimientos Duros",
-        type: "Soldadura",
-        image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80"
+        name: "Brocas para Concreto SDS, Metal HSS y Hojas de Sierra",
+        specs: "Punta de Carburo de Tungsteno / Bimetálicas",
+        type: "Corte y Perforación",
+        image: "/images/products/sum_brocas_sierra_perforacion.webp"
       }
     ]
   },
   {
-    title: "Mobiliario para Campamentos & Oficinas de Obra",
-    description: "Lockers metálicos reforzados, camarotes modulares y escritorios técnicos.",
+    title: "3. Adhesivos, Selladores, Químicos, Pinturas y Acabados",
+    description: "Siliconas neutras, espuma de poliuretano, pegamentos epóxicos, pinturas látex, esmaltes sintéticos y recubrimientos epóxicos para pisos industriales.",
     items: [
       {
-        name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos",
-        specs: "Plancha LAF 1/32\" con Portacandado",
-        type: "Almacén",
-        image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"
+        name: "Siliconas Neutras, Acéticas y Espuma Poliuretano",
+        specs: "Sellado Estanco y Aislamiento Térmico / Acústico",
+        type: "Selladores",
+        image: "/images/products/sum_siliconas_espuma_poliuretano.webp"
       },
       {
-        name: "Camarotes Metálicos Desarmables de 1.5 Plazas",
-        specs: "Tubo de Acero Reforzado para Campamento",
-        type: "Dormitorio",
-        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Escritorios Gerenciales y Mesas de Reunión",
-        specs: "Melamina 18mm con Estructura Metálica",
-        type: "Oficina",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Sillas Ergonómicas y Bancas de Vestuario",
-        specs: "Uso Intensivo de Alto Tránsito",
-        type: "Ergonomía",
-        image: "https://images.unsplash.com/photo-1580481077197-98c4d38bc60b?auto=format&fit=crop&w=600&q=80"
-      }
-    ]
-  },
-  {
-    title: "Pinturas Epóxicas, Químicos & Aditivos",
-    description: "Recubrimientos anticorrosivos de alto rendimiento para estructuras y tanques.",
-    items: [
-      {
-        name: "Pinturas Epóxicas y Poliuretano de Alto Sólidos",
-        specs: "Resistencia Química y a la Abrasión",
-        type: "Recubrimientos",
-        image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Grout y Morteros de Nivelación sin Contracción",
-        specs: "Para Anclaje de Maquinaria Pesada",
-        type: "Construcción",
-        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        name: "Desmoldantes y Curadores de Concreto",
-        specs: "Bidón 5 Gal / Cilindro 55 Gal",
+        name: "Resinas Epóxicas de Anclaje y Cemento de Contacto",
+        specs: "Fijación de Espárragos en Concreto Fisurado",
         type: "Químicos",
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80"
+        image: "/images/products/sum_resinas_epoxicas_quimicos.webp"
       },
       {
-        name: "Señalética Vial y Fotoluminiscente SST",
-        specs: "Cumplimiento NTP 399.010-1",
-        type: "Señalización",
-        image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80"
+        name: "Pinturas Epóxicas y Poliuretano para Pisos Industriales",
+        specs: "Alto Tránsito • Resistencia Química y a la Abrasión",
+        type: "Recubrimientos",
+        image: "/images/products/sum_pintura_epoxica_pisos.webp"
+      },
+      {
+        name: "Bases Anticorrosivas, Esmaltes, Thinner y Herramientas",
+        specs: "Zinc Cromato / Epóxico • Brochas y Rodillos Industriales",
+        type: "Pinturas",
+        image: "/images/products/sum_anticorrosivo_brochas_rodillos.webp"
+      }
+    ]
+  },
+  {
+    title: "4. Cerrajería, Electricidad, Iluminación y Fontanería",
+    description: "Candados de seguridad, cables eléctricos TW/THW/vulcanizados, reflectores LED, cables de acero, tuberías PVC/CPVC y válvulas.",
+    items: [
+      {
+        name: "Candados de Alta Seguridad, Cerrojos y Cables de Acero",
+        specs: "Arco Cementado • Accesorios Prensacables y Tensores",
+        type: "Cerrajería",
+        image: "/images/products/sum_candados_cables_acero.webp"
+      },
+      {
+        name: "Cables Eléctricos TW, THW y Vulcanizados NLT/NMT",
+        specs: "100% Cobre Electrolítico • Certificación Indeco / Ceper",
+        type: "Electricidad",
+        image: "/images/products/sum_cables_electricos_cobre.webp"
+      },
+      {
+        name: "Reflectores LED, Llaves Termomagnéticas y Cajas de Paso",
+        specs: "IP66 / IP67 • Tableros y Canaletas de Distribución",
+        type: "Iluminación",
+        image: "/images/products/sum_reflectores_led_tableros.webp"
+      },
+      {
+        name: "Tuberías PVC / CPVC, Válvulas de Bola y Pegamentos",
+        specs: "Clase 10 / Sap / Sanitaria para Redes de Agua y Desagüe",
+        type: "Fontanería",
+        image: "/images/products/sum_tuberias_pvc_valvulas.webp"
+      }
+    ]
+  },
+  {
+    title: "5. Insumos y Materiales de Oficina",
+    description: "Papelería (papel bond A4/A3), archivadores de palanca, artículos de escritura, tóners/tintas, memorias USB, periféricos y destructoras de papel.",
+    items: [
+      {
+        name: "Papel Bond A4 / A3 (75g y 80g) y Cuadernos de Obra",
+        specs: "Cajas x 5 millares • Blancura 98% • Membretados",
+        type: "Papelería",
+        image: "/images/products/sum_papel_bond_cuadernos.webp"
+      },
+      {
+        name: "Archivadores Lomo Ancho, Carpetas Manila y Micas",
+        specs: "Mecanismo de Palanca Reforzado • Tamaño Oficio/A4",
+        type: "Organización",
+        image: "/images/products/sum_archivadores_carpetas.webp"
+      },
+      {
+        name: "Cartuchos de Tinta, Tóners y Cintas para Rotuladoras",
+        specs: "Originales y Homologados HP, Epson, Canon, Brother",
+        type: "Tecnología",
+        image: "/images/products/sum_toners_tintas_impresora.webp"
+      },
+      {
+        name: "Pizarras Acrílicas, Engrapadoras Pesadas y Artículos de Escritura",
+        specs: "Plumones, Cúters Metálicos, Perforadores y Dispensadores",
+        type: "Útiles de Escritorio",
+        image: "/images/products/sum_pizarras_utiles_escritorio.webp"
+      }
+    ]
+  },
+  {
+    title: "6. Mobiliario de Oficina",
+    description: "Sillas ergonómicas con soporte lumbar, escritorios ejecutivos, workstations modulares, sistemas de almacenamiento documental y lockers metálicos.",
+    items: [
+      {
+        name: "Sillas Gerenciales y Operativas Ergonómicas de Alto Tránsito",
+        specs: "Malla Antitranspirante • Regulación Lumbar y de Brazos",
+        type: "Ergonomía",
+        image: "/images/products/sum_sillas_ergonomicas_oficina.webp"
+      },
+      {
+        name: "Estaciones de Trabajo (Workstations) y Escritorios Gerenciales",
+        specs: "Melamina 18mm / 25mm • Estructura de Acero Electrostático",
+        type: "Mobiliario",
+        image: "/images/products/sum_estaciones_trabajo_escritorios.webp"
+      },
+      {
+        name: "Sistemas de Almacenamiento Documental y Armarios con Llave",
+        specs: "Archivadores de 2, 3 y 4 Gavetas • Estantes Modulares y Libreros",
+        type: "Almacenamiento",
+        image: "/images/products/sum_sistemas_almacenamiento_oficina.webp"
+      },
+      {
+        name: "Mobiliario de Soporte, Cajoneras Móviles y Lockers Metálicos",
+        specs: "Pedestales con Ruedas • Plancha LAF Reforzada con Portacandado",
+        type: "Organización",
+        image: "/images/products/sum_lockers_metalicos_personal.webp"
       }
     ]
   }
@@ -96,8 +186,8 @@ const supplyCategories = [
 ---
 
 <Layout
-  title="Ferretería Industrial, Mobiliario & Suministros | SERVITOTALES S.A.C."
-  description="Abastecimiento corporativo de ferretería pesada, pernos A325, abrasivos, lockers metálicos para campamento y pinturas industriales."
+  title="Ferretería Industrial, Mobiliario y Suministros | SERVITOTALES S.A.C."
+  description="Abastecimiento corporativo de ferretería pesada, pernos A325, abrasivos, mobiliario de oficina y pinturas industriales."
 >
   <!-- Atmospheric Hero Header with Division Image -->
   <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
@@ -118,13 +208,13 @@ const supplyCategories = [
       <div class="max-w-3xl space-y-4" id="sum-hero-content">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
           <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-          05 // FERRETERÍA & SUMINISTROS
+          05 // FERRETERÍA Y SUMINISTROS
         </span>
         <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
-          Ferretería Industrial, Mobiliario & Suministros
+          Ferretería Industrial, Mobiliario y Suministros
         </h1>
         <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-          Soluciones de aprovisionamiento continuo para campamentos mineros, talleres de maestranza y frentes de obra. Pernos de alta resistencia, abrasivos y mobiliario metálico.
+          Soluciones de aprovisionamiento continuo para empresas, talleres de maestranza y frentes de obra. Pernos de alta resistencia, abrasivos, pinturas y mobiliario corporativo.
         </p>
       </div>
     </div>
@@ -140,7 +230,7 @@ const supplyCategories = [
             <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {cat.items.map((item) => (
               <div class="item-card rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group hover:border-blue-500 transition-all duration-300">
                 <!-- Product Image Header -->

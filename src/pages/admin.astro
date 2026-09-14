@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import BrandLogo from '../components/BrandLogo.astro';
 ---
 
 <!doctype html>
@@ -8,7 +9,7 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Panel de Administración & CMS Integral | SERVITOTALES S.A.C.</title>
+    <title>Panel de Administración y CMS Integral | SERVITOTALES S.A.C.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -31,17 +32,12 @@ import '../styles/global.css';
     <!-- Top Admin Header -->
     <header class="sticky top-0 z-50 w-full px-4 sm:px-6 py-2.5 bg-slate-900/95 border-b border-slate-800 backdrop-blur-md flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <a href="/admin" class="flex items-center gap-2.5 group">
-          <div class="w-8 h-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center text-sm shadow-md group-hover:scale-105 transition-transform">
-            ST
-          </div>
-          <div class="flex flex-col">
-            <span class="text-sm font-black tracking-wider text-white font-heading leading-tight">
-              SERVI<span class="text-red-500">TOTALES</span> <span class="text-[10px] font-mono font-medium text-slate-400">ADMIN</span>
-            </span>
-            <span class="text-[8px] font-mono font-bold text-amber-400 tracking-wider">SGC ISO 9001:2015</span>
-          </div>
-        </a>
+        <BrandLogo
+          variant="full"
+          size="sm"
+          subtitle="ADMIN // ISO 9001:2015"
+          href="/admin"
+        />
 
         <div class="hidden md:flex items-center gap-2 pl-4 border-l border-slate-800 text-[11px] text-slate-400 font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -100,7 +96,7 @@ import '../styles/global.css';
             class="admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            <span>Gestor de Productos & Fotos</span>
+            <span>Gestor de Productos y Fotos</span>
           </button>
 
           <button
@@ -109,7 +105,7 @@ import '../styles/global.css';
             class="admin-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800/80 cursor-pointer"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-            <span>Mesa de Cotizaciones Web</span>
+            <span>Cotizaciones Web</span>
           </button>
         </div>
 
@@ -131,7 +127,7 @@ import '../styles/global.css';
         <div id="panel-cms" class="admin-tab-panel space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
-              <h1 class="text-xl font-black text-white font-heading">Editor de Contenidos & Textos (CMS)</h1>
+              <h1 class="text-xl font-black text-white font-heading">Editor de Contenidos y Textos (CMS)</h1>
               <p class="text-xs text-slate-400">Selecciona la página que deseas modificar. Todos los campos son editables.</p>
             </div>
             <span id="cms-save-indicator" class="hidden text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/30">
@@ -143,11 +139,11 @@ import '../styles/global.css';
           <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800" id="cms-page-tabs">
             <button type="button" data-page="home" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition">1. Inicio</button>
             <button type="button" data-page="nosotros" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">2. Nosotros</button>
-            <button type="button" data-page="epp" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">3. Seguridad & EPP</button>
-            <button type="button" data-page="suministros" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">4. Ferretería & Suministros</button>
+            <button type="button" data-page="epp" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">3. Seguridad y EPP</button>
+            <button type="button" data-page="suministros" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">4. Ferretería y Suministros</button>
             <button type="button" data-page="maquinaria" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">5. Maquinaria</button>
             <button type="button" data-page="social" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">6. Compromiso Social</button>
-            <button type="button" data-page="contacto" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">7. Contacto & Global</button>
+            <button type="button" data-page="contacto" class="cms-page-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">7. Contacto y Global</button>
           </div>
 
           <form id="form-master-cms" class="space-y-6">
@@ -159,7 +155,7 @@ import '../styles/global.css';
               <div class="space-y-3">
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior del Hero</label>
-                  <input type="text" id="c_home_badge" value="SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  <input type="text" id="c_home_badge" value="ISO 9001:2015 • EPP Y SUMINISTROS INDUSTRIALES" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal del Hero (H1)</label>
@@ -200,12 +196,12 @@ import '../styles/global.css';
 
             <!-- CMS PÁGINA 2: NOSOTROS -->
             <div id="cms-page-nosotros" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h2 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Contenidos de Nosotros & ISO 9001 (/nosotros)</h2>
+              <h2 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Contenidos de Nosotros e ISO 9001 (/nosotros)</h2>
               
               <div class="space-y-3">
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
-                  <input type="text" id="c_nos_badge" value="02 // NOSOTROS & SGC ISO 9001:2015" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                  <input type="text" id="c_nos_badge" value="02 // NOSOTROS E ISO 9001:2015" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
@@ -230,7 +226,7 @@ import '../styles/global.css';
 
             <!-- CMS PÁGINA 3: MAQUINARIA -->
             <div id="cms-page-maquinaria" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h2 class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Contenidos de Maquinaria Pesada & Minería (/maquinaria)</h2>
+              <h2 class="text-xs font-mono font-bold text-red-400 uppercase tracking-wider">Contenidos de Maquinaria Pesada y Minería (/maquinaria)</h2>
               
               <div class="space-y-3">
                 <div>
@@ -239,7 +235,7 @@ import '../styles/global.css';
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
-                  <input type="text" id="c_maq_title" value="Maquinaria Pesada & Minería Subterránea" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
+                  <input type="text" id="c_maq_title" value="Maquinaria Pesada y Minería Subterránea" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Descripción del Catálogo de Maquinaria</label>
@@ -250,7 +246,7 @@ import '../styles/global.css';
 
             <!-- CMS PÁGINA 4: EPP -->
             <div id="cms-page-epp" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h2 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Contenidos de Seguridad & EPP (/epp)</h2>
+              <h2 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Contenidos de Seguridad y EPP (/epp)</h2>
               
               <div class="space-y-3">
                 <div>
@@ -259,7 +255,7 @@ import '../styles/global.css';
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
-                  <input type="text" id="c_epp_title" value="Seguridad Industrial & EPP Normado" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
+                  <input type="text" id="c_epp_title" value="Seguridad Industrial y EPP Normado" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Descripción del Catálogo de EPP</label>
@@ -270,32 +266,32 @@ import '../styles/global.css';
 
             <!-- CMS PÁGINA 5: SUMINISTROS -->
             <div id="cms-page-suministros" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h2 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Contenidos de Ferretería & Suministros (/suministros)</h2>
+              <h2 class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Contenidos de Ferretería y Suministros (/suministros)</h2>
               
               <div class="space-y-3">
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
-                  <input type="text" id="c_sum_badge" value="05 // FERRETERÍA & SUMINISTROS" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                  <input type="text" id="c_sum_badge" value="05 // FERRETERÍA Y SUMINISTROS" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
-                  <input type="text" id="c_sum_title" value="Ferretería Industrial, Mobiliario & Suministros" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
+                  <input type="text" id="c_sum_title" value="Ferretería Industrial, Mobiliario y Suministros" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-bold" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Descripción del Catálogo de Suministros</label>
-                  <textarea id="c_sum_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Soluciones de aprovisionamiento continuo para campamentos mineros, talleres de maestranza y frentes de obra. Pernos de alta resistencia, abrasivos y mobiliario metálico.</textarea>
+                  <textarea id="c_sum_desc" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300">Soluciones de aprovisionamiento continuo para empresas, talleres de maestranza y frentes de obra. Pernos de alta resistencia, abrasivos, pinturas y mobiliario corporativo.</textarea>
                 </div>
               </div>
             </div>
 
                         <!-- CMS PÁGINA 6: COMPROMISO SOCIAL -->
             <div id="cms-page-social" class="cms-page-box hidden space-y-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
-              <h2 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">Contenidos de Compromiso Social & Sostenibilidad (/compromiso-social)</h2>
+              <h2 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">Contenidos de Compromiso Social y Sostenibilidad (/compromiso-social)</h2>
               
               <div class="space-y-3">
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Badge Superior</label>
-                  <input type="text" id="c_soc_badge" value="04 // RESPONSABILIDAD SOCIAL CORPORATIVA & SOSTENIBILIDAD" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
+                  <input type="text" id="c_soc_badge" value="04 // RESPONSABILIDAD SOCIAL CORPORATIVA Y SOSTENIBILIDAD" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono" />
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-300 mb-1">Titular Principal H1</label>
@@ -331,11 +327,11 @@ import '../styles/global.css';
                 </div>
                 <div class="sm:col-span-2">
                   <label class="block text-xs font-bold text-slate-300 mb-1">Texto de Barra Superior (Top Docked Bar)</label>
-                  <input type="text" id="c_con_topbar" value="SGC ISO 9001:2015 CERTIFICADO • Servicios Totales del Perú S.A.C." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  <input type="text" id="c_con_topbar" value="ISO 9001:2015 CERTIFICADO" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                 </div>
                 <div class="sm:col-span-2">
                   <label class="block text-xs font-bold text-slate-300 mb-1">Texto de Derechos de Autor (Footer Copyright)</label>
-                  <input type="text" id="c_con_copy" value="© 2026 Servicios Totales del Perú S.A.C. Todos los derechos reservados. SGC ISO 9001:2015." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
+                  <input type="text" id="c_con_copy" value="© 2026 Servicios Totales del Perú S.A.C. Todos los derechos reservados." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white" />
                 </div>
               </div>
             </div>
@@ -363,7 +359,7 @@ import '../styles/global.css';
         <div id="panel-catalog" class="admin-tab-panel hidden space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
-              <h2 class="text-xl font-black text-white font-heading">Gestor de Productos & Fotografías</h2>
+              <h2 class="text-xl font-black text-white font-heading">Gestor de Productos y Fotografías</h2>
               <p class="text-xs text-slate-400">Administra los productos de las 3 divisiones, cambia fotos por URL o añade nuevos ítems.</p>
             </div>
 
@@ -381,9 +377,9 @@ import '../styles/global.css';
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800" id="division-filter-tabs">
               <button type="button" data-div="all" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 transition">Todos (45)</button>
-              <button type="button" data-div="epp" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Seguridad & EPP</button>
-              <button type="button" data-div="suministros" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Ferretería & Suministros</button>
-              <button type="button" data-div="maquinaria" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Maquinaria & Minería</button>
+              <button type="button" data-div="epp" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Seguridad y EPP</button>
+              <button type="button" data-div="suministros" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Ferretería y Suministros</button>
+              <button type="button" data-div="maquinaria" class="div-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition">Maquinaria y Minería</button>
             </div>
 
             <input
@@ -406,7 +402,7 @@ import '../styles/global.css';
         <div id="panel-leads" class="admin-tab-panel hidden space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
             <div>
-              <h2 class="text-xl font-black text-white font-heading">Mesa de Cotizaciones Recibidas</h2>
+              <h2 class="text-xl font-black text-white font-heading">Cotizaciones Recibidas</h2>
               <p class="text-xs text-slate-400">Solicitudes registradas a través del formulario de contacto y WhatsApp.</p>
             </div>
 
@@ -445,7 +441,7 @@ import '../styles/global.css';
 
     <!-- Clean Minimal Footer -->
     <footer class="w-full py-3.5 px-6 border-t border-slate-900 bg-slate-950 text-center text-[11px] text-slate-500 font-mono">
-      Servicios Totales del Perú S.A.C. • Panel de Control & CMS v3.2 • SGC ISO 9001:2015
+      Servicios Totales del Perú S.A.C. • Panel de Control y CMS v3.2 • ISO 9001:2015
     </footer>
 
     <script>
@@ -515,7 +511,7 @@ import '../styles/global.css';
 
       // Master Real Product Catalog Data (All products across the 3 divisions)
       let allProducts = [
-        // 1. Maquinaria Pesada & Minería
+        // 1. Maquinaria Pesada y Minería
         { id: 101, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Excavadora sobre Orugas CAT 320 / 336", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&w=600&q=80" },
         { id: 102, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Cargador Frontal CAT 950 / 966", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" },
         { id: 103, category: "maquinaria", division: "Maquinaria Pesada", brand: "Caterpillar", name: "Tractor sobre Orugas D6T / D8T", specs: "Hoja Semi-Universal • Ripper Multivástago", image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=600&q=80" },
@@ -524,28 +520,28 @@ import '../styles/global.css';
         { id: 106, category: "maquinaria", division: "Minería Trackless", brand: "Sandvik / Epiroc", name: "Scooptram (LHD Subterráneo)", specs: "Capacidad: 3.5 a 7.0 yd³ • Motor Diésel", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
         { id: 107, category: "maquinaria", division: "Minería Trackless", brand: "Epiroc / Sandvik", name: "Dumper Subterráneo para Mina", specs: "Capacidad de Carga: 20 a 35 Tn", image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=600&q=80" },
         { id: 108, category: "maquinaria", division: "Minería Trackless", brand: "Putzmeister", name: "Roboshot para Proyección de Shotcrete", specs: "Brazo Telescópico 10m • Compresor Integrado", image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" },
-        { id: 109, category: "maquinaria", division: "Elevación & Carga", brand: "JCB / CAT", name: "Manipulador Telescópico (Telehandler)", specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn", image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" },
-        { id: 110, category: "maquinaria", division: "Elevación & Carga", brand: "Palfinger / Hiab", name: "Camión Grúa Articulado", specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica", image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=600&q=80" },
-        { id: 111, category: "maquinaria", division: "Vial & Compactación", brand: "Hamm / CAT", name: "Rodillo Compactador Liso / Pata de Cabra", specs: "Peso Operativo: 10 - 14 Tn", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" },
-        { id: 112, category: "maquinaria", division: "Energía & Soporte", brand: "Cummins / CAT", name: "Grupo Electrógeno Insonorizado", specs: "Potencia: 50 a 500 kVA • Trifásico", image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" },
+        { id: 109, category: "maquinaria", division: "Elevación y Carga", brand: "JCB / CAT", name: "Manipulador Telescópico (Telehandler)", specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn", image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" },
+        { id: 110, category: "maquinaria", division: "Elevación y Carga", brand: "Palfinger / Hiab", name: "Camión Grúa Articulado", specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica", image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=600&q=80" },
+        { id: 111, category: "maquinaria", division: "Vial y Compactación", brand: "Hamm / CAT", name: "Rodillo Compactador Liso / Pata de Cabra", specs: "Peso Operativo: 10 - 14 Tn", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" },
+        { id: 112, category: "maquinaria", division: "Energía y Soporte", brand: "Cummins / CAT", name: "Grupo Electrógeno Insonorizado", specs: "Potencia: 50 a 500 kVA • Trifásico", image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" },
 
-        // 2. Seguridad & EPP
-        { id: 201, category: "epp", division: "Seguridad & EPP", brand: "3M", name: "Respiradores de Medio Rostro Serie 6200 / 7500", specs: "Norma NIOSH / OSHA • Filtros P100", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
-        { id: 202, category: "epp", division: "Seguridad & EPP", brand: "3M / Moldex", name: "Respiradores Full Face Rostro Completo", specs: "Protección Ocular + Respiratoria", image: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80" },
-        { id: 203, category: "epp", division: "Seguridad & EPP", brand: "3M", name: "Filtros y Cartuchos P100 Serie 2097 / 7093", specs: "Retención 99.97% Partículas", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
-        { id: 204, category: "epp", division: "Seguridad & EPP", brand: "Capital Safety / MSA", name: "Arnés de Cuerpo Entero de 4 Anillos", specs: "ANSI Z359.11 / OSHA Dieléctrico", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
-        { id: 205, category: "epp", division: "Seguridad & EPP", brand: "3M DBI-SALA", name: "Líneas de Vida con Doble Mosquetón", specs: "Capacidad 140 kg con Absorbedor", image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" },
-        { id: 206, category: "epp", division: "Seguridad & EPP", brand: "MSA V-Gard", name: "Cascos de Seguridad Dieléctricos Tipo I y II", specs: "ANSI Z89.1 Clase E & G con Barboquejo", image: "https://images.unsplash.com/photo-1578873375972-04b321a4f027?auto=format&fit=crop&w=600&q=80" },
-        { id: 207, category: "epp", division: "Seguridad & EPP", brand: "DuPont", name: "Trajes de Protección Química Tyvek / Tychem", specs: "Barrera Micropartículas y Salpicaduras", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
-        { id: 208, category: "epp", division: "Seguridad & EPP", brand: "CAT / Bata", name: "Calzado de Seguridad Dieléctrico con Puntera", specs: "Norma ASTM F2413 / NTP Puntera Composite", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" },
+        // 2. Seguridad y EPP
+        { id: 201, category: "epp", division: "Seguridad y EPP", brand: "3M", name: "Respiradores de Medio Rostro Serie 6200 / 7500", specs: "Norma NIOSH / OSHA • Filtros P100", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 202, category: "epp", division: "Seguridad y EPP", brand: "3M / Moldex", name: "Respiradores Full Face Rostro Completo", specs: "Protección Ocular + Respiratoria", image: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80" },
+        { id: 203, category: "epp", division: "Seguridad y EPP", brand: "3M", name: "Filtros y Cartuchos P100 Serie 2097 / 7093", specs: "Retención 99.97% Partículas", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 204, category: "epp", division: "Seguridad y EPP", brand: "Capital Safety / MSA", name: "Arnés de Cuerpo Entero de 4 Anillos", specs: "ANSI Z359.11 / OSHA Dieléctrico", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
+        { id: 205, category: "epp", division: "Seguridad y EPP", brand: "3M DBI-SALA", name: "Líneas de Vida con Doble Mosquetón", specs: "Capacidad 140 kg con Absorbedor", image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" },
+        { id: 206, category: "epp", division: "Seguridad y EPP", brand: "MSA V-Gard", name: "Cascos de Seguridad Dieléctricos Tipo I y II", specs: "ANSI Z89.1 Clase E y G con Barboquejo", image: "https://images.unsplash.com/photo-1578873375972-04b321a4f027?auto=format&fit=crop&w=600&q=80" },
+        { id: 207, category: "epp", division: "Seguridad y EPP", brand: "DuPont", name: "Trajes de Protección Química Tyvek / Tychem", specs: "Barrera Micropartículas y Salpicaduras", image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=600&q=80" },
+        { id: 208, category: "epp", division: "Seguridad y EPP", brand: "CAT / Bata", name: "Calzado de Seguridad Dieléctrico con Puntera", specs: "Norma ASTM F2413 / NTP Puntera Composite", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" },
 
-        // 3. Ferretería & Suministros
-        { id: 301, category: "suministros", division: "Ferretería & Suministros", brand: "Servitotales", name: "Pernos Estructurales Grado 5, 8 y A325", specs: "Acabado Negro / Galvanizado en Caliente", image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80" },
-        { id: 302, category: "suministros", division: "Ferretería & Suministros", brand: "Certificado", name: "Cables de Acero y Eslingas de Izaje", specs: "Alma de Acero / Textil Certificado", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80" },
-        { id: 303, category: "suministros", division: "Ferretería & Suministros", brand: "Norton", name: "Discos de Corte y Desbaste Industrial 4.5\", 7\", 9\"", specs: "Abrasivo para Acero e Inoxidable", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80" },
-        { id: 304, category: "suministros", division: "Ferretería & Suministros", brand: "Servitotales", name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos", specs: "Plancha LAF Reforzada para Campamento", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" },
-        { id: 305, category: "suministros", division: "Ferretería & Suministros", brand: "Servitotales", name: "Camarotes Metálicos Desarmables 1.5 Plazas", specs: "Tubo de Acero Reforzado para Obra", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" },
-        { id: 306, category: "suministros", division: "Ferretería & Suministros", brand: "Industrial", name: "Pinturas Epóxicas y Poliuretano Alto Sólidos", specs: "Resistencia Química y Anticorrosiva", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" }
+        // 3. Ferretería y Suministros
+        { id: 301, category: "suministros", division: "Ferretería y Suministros", brand: "Servitotales", name: "Pernos Estructurales Grado 5, 8 y A325", specs: "Acabado Negro / Galvanizado en Caliente", image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80" },
+        { id: 302, category: "suministros", division: "Ferretería y Suministros", brand: "Certificado", name: "Cables de Acero y Eslingas de Izaje", specs: "Alma de Acero / Textil Certificado", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80" },
+        { id: 303, category: "suministros", division: "Ferretería y Suministros", brand: "Norton", name: "Discos de Corte y Desbaste Industrial 4.5\", 7\", 9\"", specs: "Abrasivo para Acero e Inoxidable", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=600&q=80" },
+        { id: 304, category: "suministros", division: "Ferretería y Suministros", brand: "Servitotales", name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos", specs: "Plancha LAF Reforzada para Personal de Obra y Planta", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" },
+        { id: 305, category: "suministros", division: "Ferretería y Suministros", brand: "Servitotales", name: "Camarotes Metálicos Desarmables 1.5 Plazas", specs: "Tubo de Acero Reforzado para Obra", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" },
+        { id: 306, category: "suministros", division: "Ferretería y Suministros", brand: "Industrial", name: "Pinturas Epóxicas y Poliuretano Alto Sólidos", specs: "Resistencia Química y Anticorrosiva", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" }
       ];
 
       let currentFilter = "all";
@@ -635,7 +631,7 @@ import '../styles/global.css';
           allProducts.unshift({
             id: Date.now(),
             category: cat || 'maquinaria',
-            division: (cat === 'epp' ? 'Seguridad & EPP' : (cat === 'suministros' ? 'Ferretería & Suministros' : 'Maquinaria Pesada')),
+            division: (cat === 'epp' ? 'Seguridad y EPP' : (cat === 'suministros' ? 'Ferretería y Suministros' : 'Maquinaria Pesada')),
             brand: brand || 'Servitotales',
             name: name,
             specs: specs || 'Especificación según requerimiento.',
